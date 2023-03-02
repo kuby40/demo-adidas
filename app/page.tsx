@@ -165,13 +165,71 @@ const Home = () => {
             Get Fit. <br />
             Have Fun.
           </h1>
-          <h3 className="">
-            Look good, feel good
-          </h3>
+          <h3 className="">Look good, feel good</h3>
         </div>
-          <button className="absolute uppercase bg-white p-3 font-bold hover:text-gray-500 border-slate-900 border-2 bottom-5 left-5">
-            Shop Athletic Wear
-          </button>
+        <button className="absolute uppercase bg-white p-3 font-bold hover:text-gray-500 border-slate-900 border-2 bottom-5 left-5">
+          Shop Athletic Wear
+        </button>
+      </div>
+      <div>
+        <div className="mt-8 flex flex-wrap justify-center w-full">
+          <div className="bg-gray-200 w-2/5 m-2">
+            <div className="h-32">Picture</div>
+            <div className="h-12">
+              <h5 className="underline font-bold mx-auto my-auto">Title</h5>
+            </div>
+          </div>
+          <div className="bg-gray-200 w-2/5 m-2">
+            <div className="h-32">Picture</div>
+            <div className="h-12">
+              <h5 className="underline font-bold">Title</h5>
+            </div>
+          </div>
+          <div className="bg-gray-200 w-2/5 m-2">
+            <div className="h-32">Picture</div>
+            <div className="h-12">
+              <h5 className="mx-auto underline font-bold hover:text-black hover:bg-white">
+                Title
+              </h5>
+            </div>
+          </div>
+          <div className="bg-gray-200 w-2/5 m-2">
+            <div className="h-32">Picture</div>
+            <div className="h-12">
+              <h5 className="underline font-bold">Title</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="mt-5">
+        <div className="flex">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={1.5}
+            stroke="currentColor"
+            className="w-10 h-7 ml-3"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"
+            />
+          </svg>
+          <h3 className="font-extrabold">New Arrivals</h3>
+          <h3 className="font-extrabold ml-4">What's Trending</h3>
+        </div>
+        <div className="flex flex-col bg-white m-auto p-auto">
+          <div className="mt-8 flex justify-center overflow-x-scroll hide-scroll-bar">
+            <div className="w-40 h-40 mx-1 max-w-xs overflow-hidden bg-gray-200 transition-shadow duration-300 ease-in-out"></div>
+            <div className="w-40 h-40 mx-1 max-w-xs overflow-hidden bg-gray-200 transition-shadow duration-300 ease-in-out"></div>
+            <div className="w-40 h-40 mx-1 max-w-xs overflow-hidden bg-gray-200 transition-shadow duration-300 ease-in-out"></div>
+            <div className="w-40 h-40 mx-1 max-w-xs overflow-hidden bg-gray-200 transition-shadow duration-300 ease-in-out"></div>
+            <div className="w-40 h-40 mx-1 max-w-xs overflow-hidden bg-gray-200 transition-shadow duration-300 ease-in-out"></div>
+          </div>
+        </div>
       </div>
 
       {showBanner ? (
