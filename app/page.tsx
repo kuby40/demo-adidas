@@ -12,9 +12,6 @@ const Home = () => {
         setShowBanner(!showBanner);
     }
 
-  
-
-
   return (
     <div>
       <div className="grid grid-rows-2">
@@ -173,30 +170,68 @@ const Home = () => {
       </div>
       <div>
         <div className="mt-8 flex flex-wrap justify-center w-full">
-          <div className="bg-gray-200 w-2/5 m-2">
-            <div className="h-32">Picture</div>
-            <div className="h-12">
-              <h5 className="underline font-bold mx-auto my-auto">Title</h5>
+          <div className="bg-gray-200 w-2/5 m-2 cursor-pointer">
+            <div className="flex justify-center h-32">
+              <CldImage
+                alt="3 dudes chilling"
+                width="150"
+                height="150"
+                src="FakeBrand/pictures/result_z5s6cp.png"
+                sizes="100vw"
+              />
             </div>
-          </div>
-          <div className="bg-gray-200 w-2/5 m-2">
-            <div className="h-32">Picture</div>
             <div className="h-12">
-              <h5 className="underline font-bold">Title</h5>
-            </div>
-          </div>
-          <div className="bg-gray-200 w-2/5 m-2">
-            <div className="h-32">Picture</div>
-            <div className="h-12">
-              <h5 className="mx-auto underline font-bold hover:text-black hover:bg-white">
-                Title
+              <h5 className="flex justify-center underline font-bold mx-auto my-auto">
+                <p className="hover:text-white hover:bg-black">Title</p>
               </h5>
             </div>
           </div>
-          <div className="bg-gray-200 w-2/5 m-2">
-            <div className="h-32">Picture</div>
+          <div className="bg-gray-200 w-2/5 m-2 cursor-pointer">
+            <div className="flex justify-center h-32">
+              <CldImage
+                alt="3 dudes chilling"
+                width="150"
+                height="150"
+                src="FakeBrand/pictures/result_z5s6cp.png"
+                sizes="100vw"
+              />
+            </div>
             <div className="h-12">
-              <h5 className="underline font-bold">Title</h5>
+              <h5 className="flex justify-center underline font-bold">
+                <p className="hover:text-white hover:bg-black">Title</p>
+              </h5>
+            </div>
+          </div>
+          <div className="bg-gray-200 w-2/5 m-2 cursor-pointer">
+            <div className="flex justify-center h-32">
+              <CldImage
+                alt="3 dudes chilling"
+                width="150"
+                height="150"
+                src="FakeBrand/pictures/result_z5s6cp.png"
+                sizes="100vw"
+              />
+            </div>
+            <div className="h-12">
+              <h5 className="flex justify-center underline font-bold">
+                <p className="hover:text-white hover:bg-black">Title</p>
+              </h5>
+            </div>
+          </div>
+          <div className="bg-gray-200 w-2/5 m-2 cursor-pointer">
+            <div className="flex justify-center h-32">
+              <CldImage
+                alt="3 dudes chilling"
+                width="150"
+                height="150"
+                src="FakeBrand/pictures/result_z5s6cp.png"
+                sizes="100vw"
+              />
+            </div>
+            <div className="h-12">
+              <h5 className="flex justify-center underline font-bold">
+                <p className="hover:text-white hover:bg-black">Title</p>
+              </h5>
             </div>
           </div>
         </div>
@@ -269,7 +304,7 @@ const Home = () => {
               SHOP NOW. PAY OVER TIME WITH KLARNA
             </h3>
             <p className="py-5 mr-12 lg:m-0 lg:py-5">
-              With Klarna, pay in 4 interest-free installments. The first
+              With Clarna, pay in 4 interest-free installments. The first
               payment is taken when the order is processed and the remaining 3
               are automatically taken every two weeks.
             </p>
