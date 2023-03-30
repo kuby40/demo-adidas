@@ -4,14 +4,22 @@ import Image from "next/image";
 import { CldImage } from "next-cloudinary";
 import { useState } from "react";
 import Logo from "../public/logo.png";
-import FirstBannerPhoto from "../public/frontPageFirstPhoto.jpg";
-
+import HeaderPhoto from "../public/frontPageFirstPhoto2.jpg"
+import { AdvancedImage, responsive } from "@cloudinary/react";
+import { Cloudinary } from "@cloudinary/url-gen";
 const Home = () => {
-    const [showBanner, setShowBanner] = useState(false);
+  const cld = new Cloudinary({
+    cloud: {
+      cloudName: process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME,
+    },
+  });
+  const winterHeader = cld.image("FakeBrand/pictures/frontPageFirstPhoto");
+
+  const [showBanner, setShowBanner] = useState(false);
     const showBannerHandler = () => {
         setShowBanner(!showBanner);
-    }
-
+  }
+  
   return (
     <div>
       <div className="grid grid-rows-2">
@@ -116,14 +124,23 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <div className="relative">
-        <CldImage
-          alt="3 dudes chilling"
-          width="1920"
-          height="1080"
-          src="FakeBrand/pictures/frontPageFirstPhoto_cb2qvm.jpg"
-          sizes="100vw"
-        />
+      <div className="relative h-85vh">
+        <h1 className="absolute text-3xl md:text-5xl lg:text-7xl xl:text-9xl text-white font-extrabold top-1/4 left-5">
+          Casual.
+          <div className="bg-clip-text from-white to-green-800">Redefined</div>
+        </h1>
+        <div className="imgBack -z-10">
+          {/* <AdvancedImage
+            cldImg={winterHeader}
+          /> */}
+          <Image
+            src={HeaderPhoto}
+            width={9999}
+            height={9999}
+            alt="three dudes chilling"
+            className="imgBack"
+          ></Image>
+        </div>
         <div className="flex absolute bottom-0 ml-5 mb-6">
           <button className="flex bg-white p-3 font-bold hover:text-gray-500 border-slate-900 border-2">
             EXPLORE MORE
@@ -144,14 +161,8 @@ const Home = () => {
           </button>
         </div>
       </div>
-      <div className="relative">
-        <video
-          className="-z-10 "
-          src={"WebsiteVideo.mp4"}
-          autoPlay
-          loop
-          muted
-        />
+      <div className="relative ">
+        <video className="-z-10" src={"WebsiteVideo.mp4"} autoPlay loop muted />
         {/* VIDEO ATTRIBUTION
            <a href="https://www.vecteezy.com/video/13219158-young-athletic-caucasian-girl-in-a-red-tank-top-doing-squats-on-a-lake-background-he-is-engaged-in-fitness">
             Young athletic Caucasian girl in a red tank top doing squats on a
@@ -238,31 +249,141 @@ const Home = () => {
       </div>
 
       <div className="mt-5">
-        <div className="flex">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth={1.5}
-            stroke="currentColor"
-            className="w-10 h-7 ml-3"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"
-            />
-          </svg>
-          <h3 className="font-extrabold">New Arrivals</h3>
-          <h3 className="font-extrabold ml-4">What's Trending</h3>
+        <div className="flex justify-around">
+          <div className="flex">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={1.5}
+              stroke="currentColor"
+              className="w-10 h-7 ml-4"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"
+              />
+            </svg>
+            <h3 className="font-extrabold cursor-pointer">New Arrivals</h3>
+            <h3 className="font-extrabold ml-4 cursor-pointer">
+              What's Trending
+            </h3>
+          </div>
+          <div className="flex">
+            <h5 className="underline font-bold cursor-pointer">
+              <p className="hover:text-white hover:bg-black mx-auto">
+                View All
+              </p>
+            </h5>
+          </div>
+          <div className="flex">
+            <button className="text-3xl hover:bg-black hover:text-white">
+              &lt;
+            </button>
+            <button className="text-3xl hover:bg-black hover:text-white">
+              &gt;
+            </button>
+          </div>
         </div>
-        <div className="flex flex-col bg-white m-auto p-auto">
-          <div className="mt-8 flex justify-center overflow-x-scroll hide-scroll-bar">
-            <div className="w-40 h-40 mx-1 max-w-xs overflow-hidden bg-gray-200 transition-shadow duration-300 ease-in-out"></div>
-            <div className="w-40 h-40 mx-1 max-w-xs overflow-hidden bg-gray-200 transition-shadow duration-300 ease-in-out"></div>
-            <div className="w-40 h-40 mx-1 max-w-xs overflow-hidden bg-gray-200 transition-shadow duration-300 ease-in-out"></div>
-            <div className="w-40 h-40 mx-1 max-w-xs overflow-hidden bg-gray-200 transition-shadow duration-300 ease-in-out"></div>
-            <div className="w-40 h-40 mx-1 max-w-xs overflow-hidden bg-gray-200 transition-shadow duration-300 ease-in-out"></div>
+        <div className="flex flex-row overflow-x-scroll scrollbar-hide">
+          <div className="mt-8 flex">
+            <div className="w-40 h-40 mx-1 max-w-xs overflow-hidden bg-gray-200"></div>
+            <div className="w-40 h-40 mx-1 max-w-xs overflow-hidden bg-gray-200"></div>
+            <div className="w-40 h-40 mx-1 max-w-xs overflow-hidden bg-gray-200"></div>
+            <div className="w-40 h-40 mx-1 max-w-xs overflow-hidden bg-gray-200"></div>
+            <div className="w-40 h-40 mx-1 max-w-xs overflow-hidden bg-gray-200"></div>
+            <div className="w-40 h-40 mx-1 max-w-xs overflow-hidden bg-gray-200"></div>
+            <div className="w-40 h-40 mx-1 max-w-xs overflow-hidden bg-gray-200"></div>
+            <div className="w-40 h-40 mx-1 max-w-xs overflow-hidden bg-gray-200"></div>
+            <div className="w-40 h-40 mx-1 max-w-xs overflow-hidden bg-gray-200"></div>
+            <div className="w-40 h-40 mx-1 max-w-xs overflow-hidden bg-gray-200"></div>
+            <div className="w-40 h-40 mx-1 max-w-xs overflow-hidden bg-gray-200"></div>
+            <div className="w-40 h-40 mx-1 max-w-xs overflow-hidden bg-gray-200"></div>
+          </div>
+        </div>
+      </div>
+      <div className="flex flex-row h-50vh mx-10">
+        <div className="flex justify-center mt-16 h-full">
+          <div className="cursor-pointer h-full mx-2 bg-slate-300">
+            <div className="h-96">
+              <CldImage
+                alt="3 dudes chilling"
+                width="400"
+                height="384"
+                src="https://res.cloudinary.com/drscfsenq/image/upload/v1644437760/samples/ecommerce/car-interior-design.jpg"
+              ></CldImage>
+            </div>
+            <h5 className="uppercase font-bold">Fake Sportwear</h5>
+            <p>
+              Iconic sportswear reimagined for any wear. On or Off the pitch.
+            </p>
+            <h5 className="flex underline font-bold">
+              <p className=" hover:text-white hover:bg-black uppercase">
+                Shop Now
+              </p>
+            </h5>
+          </div>
+          <div className="cursor-pointer h-full mx-2">
+            <div className="h-96">
+              <CldImage
+                alt="3 dudes chilling"
+                width={400}
+                height={400}
+                sizes="(max-height: 400px) 100vw,
+          (max-height: 400px) 50vw,
+          33vw"
+                src="https://res.cloudinary.com/drscfsenq/image/upload/v1644437760/samples/ecommerce/car-interior-design.jpg"
+              ></CldImage>
+            </div>
+            <h5 className="uppercase font-bold">Fake Sportwear</h5>
+            <p>
+              Iconic sportswear reimagined for any wear. On or Off the pitch.
+            </p>
+            <h5 className="flex underline font-bold">
+              <p className=" hover:text-white hover:bg-black uppercase">
+                Shop Now
+              </p>
+            </h5>
+          </div>
+          <div className="cursor-pointer h-full mx-2 bg-slate-300">
+            <div className="h-96">
+              <CldImage
+                alt="3 dudes chilling"
+                width="400"
+                height="384"
+                src="https://res.cloudinary.com/drscfsenq/image/upload/v1644437760/samples/ecommerce/car-interior-design.jpg"
+                sizes="50vw"
+              ></CldImage>
+            </div>
+            <h5 className="uppercase font-bold">Fake Sportwear</h5>
+            <p>
+              Iconic sportswear reimagined for any wear. On or Off the pitch.
+            </p>
+            <h5 className="flex underline font-bold">
+              <p className=" hover:text-white hover:bg-black uppercase">
+                Shop Now
+              </p>
+            </h5>
+          </div>
+          <div className="cursor-pointer h-full mx-2">
+            <div className="h-96">
+              <CldImage
+                alt="3 dudes chilling"
+                width="400"
+                height="384"
+                src="https://res.cloudinary.com/drscfsenq/image/upload/v1644437760/samples/ecommerce/car-interior-design.jpg"
+              ></CldImage>
+            </div>
+            <h5 className="uppercase font-bold">Fake Sportwear</h5>
+            <p>
+              Iconic sportswear reimagined for any wear. On or Off the pitch.
+            </p>
+            <h5 className="flex underline font-bold">
+              <p className="hover:text-white hover:bg-black uppercase">
+                Shop Now
+              </p>
+            </h5>
           </div>
         </div>
       </div>
