@@ -248,7 +248,7 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="mt-5">
+      <div className="pt-8 border-t-2">
         <div className="flex justify-around">
           <div className="flex">
             <svg
@@ -287,7 +287,7 @@ const Home = () => {
           </div>
         </div>
         <div className="flex flex-row overflow-x-scroll scrollbar-hide">
-          <div className="mt-8 flex">
+          <div className="mt-8 mx-6 flex">
             <div className="w-40 h-40 mx-1 max-w-xs overflow-hidden bg-gray-200"></div>
             <div className="w-40 h-40 mx-1 max-w-xs overflow-hidden bg-gray-200"></div>
             <div className="w-40 h-40 mx-1 max-w-xs overflow-hidden bg-gray-200"></div>
@@ -303,88 +303,97 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <div className="flex flex-row h-50vh mx-10">
-        <div className="flex justify-center mt-16 h-full">
-          <div className="cursor-pointer h-full mx-2 bg-slate-300">
-            <div className="h-96">
+      <div className="mt-10">
+        <div className="flex flex-row overflow-x-auto xl:mx-28">
+          <div className="cursor-pointer mx-4">
+            <div className="w-96">
               <CldImage
                 alt="3 dudes chilling"
-                width="400"
-                height="384"
+                width="2000"
+                height="2000"
                 src="https://res.cloudinary.com/drscfsenq/image/upload/v1644437760/samples/ecommerce/car-interior-design.jpg"
               ></CldImage>
             </div>
-            <h5 className="uppercase font-bold">Fake Sportwear</h5>
-            <p>
+            <div className="uppercase font-bold my-2">Fake Sportwear</div>
+            <p className=" font-thin text-sm my-2">
               Iconic sportswear reimagined for any wear. On or Off the pitch.
             </p>
-            <h5 className="flex underline font-bold">
-              <p className=" hover:text-white hover:bg-black uppercase">
+            <div className="flex underline font-bold">
+              <p className=" hover:text-white hover:bg-black uppercase my-3">
                 Shop Now
               </p>
-            </h5>
+            </div>
           </div>
-          <div className="cursor-pointer h-full mx-2">
-            <div className="h-96">
+          <div className="cursor-pointer mx-4">
+            <div className="w-96">
               <CldImage
                 alt="3 dudes chilling"
-                width={400}
-                height={400}
-                sizes="(max-height: 400px) 100vw,
-          (max-height: 400px) 50vw,
-          33vw"
+                width="2000"
+                height="2000"
                 src="https://res.cloudinary.com/drscfsenq/image/upload/v1644437760/samples/ecommerce/car-interior-design.jpg"
               ></CldImage>
             </div>
-            <h5 className="uppercase font-bold">Fake Sportwear</h5>
-            <p>
+            <div className="uppercase font-bold my-2">Fake Sportwear</div>
+            <p className=" font-thin text-sm my-2">
               Iconic sportswear reimagined for any wear. On or Off the pitch.
             </p>
-            <h5 className="flex underline font-bold">
-              <p className=" hover:text-white hover:bg-black uppercase">
+            <div className="flex underline font-bold">
+              <p className=" hover:text-white hover:bg-black uppercase my-3">
                 Shop Now
               </p>
-            </h5>
-          </div>
-          <div className="cursor-pointer h-full mx-2 bg-slate-300">
-            <div className="h-96">
-              <CldImage
-                alt="3 dudes chilling"
-                width="400"
-                height="384"
-                src="https://res.cloudinary.com/drscfsenq/image/upload/v1644437760/samples/ecommerce/car-interior-design.jpg"
-                sizes="50vw"
-              ></CldImage>
             </div>
-            <h5 className="uppercase font-bold">Fake Sportwear</h5>
-            <p>
-              Iconic sportswear reimagined for any wear. On or Off the pitch.
-            </p>
-            <h5 className="flex underline font-bold">
-              <p className=" hover:text-white hover:bg-black uppercase">
-                Shop Now
-              </p>
-            </h5>
           </div>
-          <div className="cursor-pointer h-full mx-2">
-            <div className="h-96">
+          <div className="cursor-pointer mx-4">
+            <div className="w-96">
               <CldImage
                 alt="3 dudes chilling"
-                width="400"
-                height="384"
+                width="2000"
+                height="2000"
                 src="https://res.cloudinary.com/drscfsenq/image/upload/v1644437760/samples/ecommerce/car-interior-design.jpg"
               ></CldImage>
             </div>
-            <h5 className="uppercase font-bold">Fake Sportwear</h5>
-            <p>
+            <div className="uppercase font-bold my-2">Fake Sportwear</div>
+            <p className=" font-thin text-sm my-2">
               Iconic sportswear reimagined for any wear. On or Off the pitch.
             </p>
-            <h5 className="flex underline font-bold">
-              <p className="hover:text-white hover:bg-black uppercase">
+            <div className="flex underline font-bold">
+              <p className=" hover:text-white hover:bg-black uppercase my-3">
                 Shop Now
               </p>
-            </h5>
+            </div>
           </div>
+          <div className="cursor-pointer mx-4">
+            <div className="w-96">
+              <CldImage
+                alt="3 dudes chilling"
+                width="2000"
+                height="2000"
+                src="https://res.cloudinary.com/drscfsenq/image/upload/v1644437760/samples/ecommerce/car-interior-design.jpg"
+              ></CldImage>
+            </div>
+            <div className="uppercase font-bold my-2">Fake Sportwear</div>
+            <p className=" font-thin text-sm my-2">
+              Iconic sportswear reimagined for any wear. On or Off the pitch.
+            </p>
+            <div className="flex underline font-bold">
+              <p className=" hover:text-white hover:bg-black uppercase my-3">
+                Shop Now
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="">
+        <div>
+          <h1>Popular Right Now</h1>
+        </div>
+        <div>
+          <h2>Winter</h2>
+          <h2>Spring</h2>
+          <h2>Golf</h2>
+          <h2>Running</h2>
+          <h2>Hats</h2>
+          <h2>Accessories</h2>
         </div>
       </div>
 
