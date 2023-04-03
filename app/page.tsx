@@ -304,7 +304,26 @@ const Home = () => {
         </div>
       </div>
       <div className="mt-10">
-        <div className="flex flex-row overflow-x-auto xl:mx-28">
+        <div className="flex flex-row overflow-x-auto scrollbar-hide xl:mx-28">
+          <div className="cursor-pointer mx-4">
+            <div className="w-96">
+              <CldImage
+                alt="3 dudes chilling"
+                width="2000"
+                height="2000"
+                src="https://res.cloudinary.com/drscfsenq/image/upload/v1644437760/samples/ecommerce/car-interior-design.jpg"
+              ></CldImage>
+            </div>
+            <div className="uppercase font-bold my-2">Fake Sportwear</div>
+            <p className=" font-thin text-sm my-2">
+              Iconic sportswear reimagined for any wear. On or Off the pitch.
+            </p>
+            <div className="flex underline font-bold">
+              <p className=" hover:text-white hover:bg-black uppercase my-3">
+                Shop Now
+              </p>
+            </div>
+          </div>
           <div className="cursor-pointer mx-4">
             <div className="w-96">
               <CldImage
@@ -383,19 +402,147 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <div className="">
+      <div className="font-extrabold m-6">
         <div>
-          <h1>Popular Right Now</h1>
+          <h1 className="text-xl">Popular Right Now</h1>
         </div>
-        <div>
-          <h2>Winter</h2>
-          <h2>Spring</h2>
-          <h2>Golf</h2>
-          <h2>Running</h2>
-          <h2>Hats</h2>
-          <h2>Accessories</h2>
+        <div className="text-4xl">
+          <h2 className="my-5 py-3 border-black border-b-2 hover:border-b-8">
+            Winter
+          </h2>
+          <h2 className="my-5 py-3 border-black border-b-2 hover:border-b-8">
+            Spring
+          </h2>
+          <h2 className="my-5 py-3 border-black border-b-2 hover:border-b-8">
+            Golf
+          </h2>
+          <h2 className="my-5 py-2 border-black border-b-2 hover:border-b-8">
+            Running
+          </h2>
+          <h2 className="my-5 py-2 border-black border-b-2 hover:border-b-8">
+            Hats
+          </h2>
+          <h2 className="my-5 py-2 border-black border-b-2 hover:border-b-8">
+            Accessories
+          </h2>
         </div>
       </div>
+      <div className="bg-yellow-100 p-6">
+        <h1 className="font-bold text-3xl">
+          Stories, styles and sportswear at Fake, since 1949
+        </h1>
+        <p className="my-3">
+          Sport keeps us fit. Keeps you mindful. Brings us together. Through
+          sport we have the power to change lives. Whether it is through stories
+          of inspiring athletes. Helping you to get up and get moving.
+          Sportswear featuring the latest technologies, to up your performance.
+          Beat your PB. Fake offers a home to the runner, the basketball player,
+          the soccer kid, the fitness enthusiast. The weekend hiker that loves
+          to escape the city. The yoga teacher that spreads the moves. The
+          3-Stripes are seen in the music scene. On stage, at festivals. Our
+          sports clothing keeps you focused before that whistle blows. During
+          the race. And at the finish lines. We’re here to support creators.
+          Improve their game. Their lives. And change the world.
+        </p>
+        <p className="my-3">
+          Fake is about more than sportswear and workout clothes. We partner
+          with the best in the industry to co-create. This way we offer our fans
+          the sports apparel and style that match their athletic needs, while
+          keeping sustainability in mind. We’re here to support creators.
+          Improve their game. Create change. And we think about the impact we
+          have on our world.
+        </p>
+        <h1 className="font-bold text-3xl my-3">
+          Workout clothes, for any sport
+        </h1>
+        <p>
+          Fake designs for and with athletes of all kinds. Creators, who love to
+          change the game. Challenge conventions. Break the rules and define new
+          ones. Then break them again. We supply teams and individuals with
+          athletic clothing pre-match. To stay focussed. We design sports
+          apparel that get you to the finish line. To win the match. We support
+          women, with bras and tights made for purpose. From low to high
+          support. Maximum comfort. We design, innovate and iterate. Testing new
+          technologies in action. On the pitch, the tracks, the court, the pool.
+          Retro workout clothes inspire new street-wear essentials. Like NMD,
+          Ozweego and our Firebird tracksuits. Classic sports models are brought
+          back to life. Like Stan Smith. And Superstar. Now seen on the streets
+          and the stages.
+        </p>
+        <p className="my-3">
+          Through our collections we blur the borders between high fashion and
+          high performance. Like our Fake by Stella McCartney athletic clothing
+          collection – designed to look the part inside and outside of the gym.
+          Or some of our Fake Originals lifestyle pieces, that can be worn as
+          sportswear too. Our lives are constantly changing. Becoming more and
+          more versatile. And Fake designs with that in mind.
+        </p>
+      </div>
+      <div className="p-6 bg-slate-200">
+        <h2 className="font-bold uppercase my-2">Your Opinion Matters</h2>
+        <p className="my-2">
+          We strive to serve you better and appreciate your feedback
+        </p>
+      </div>
+      <div className="flex justify-center cursor-pointer p-4">
+        <button
+          onClick={() => {
+            window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+          }}
+        >
+          ^Back to Top
+        </button>
+      </div>
+
+      <div>
+        <div className="flex justify-around bg-black text-white h-14">
+          <button className="uppercase">Login</button>
+          <button className="uppercase">Your bag</button>
+        </div>
+        <div className="bg-amber-300 h-40">
+          <div className="h-1/2">
+            <h1 className="uppercase font-extrabold text-center py-7">
+              Become a member & get 15% off
+            </h1>
+          </div>
+          <div className="h-1/2 flex justify-center">
+            <button className="border-black bg-black text-white h-3/4 p-3 rounded-md">
+              Sign up for free
+            </button>
+          </div>
+        </div>
+      </div>
+      <div className="bg-black text-white font-bold text-xs">
+        <ul>
+          <div className="flex justify-around p-3">
+            <li>One</li>
+            <li>Two</li>
+          </div>
+          <div className="flex justify-around p-3">
+            <li>One</li>
+            <li>Two</li>
+          </div>
+          <div className="flex justify-around p-3">
+            <li>One</li>
+            <li>Two</li>
+          </div>
+        </ul>
+      </div>
+      <div className="bg-zinc-700 text-white font-bold text-xs border-t-2 border-zinc-500">
+        <ul>
+          <div className="flex justify-around py-4">
+            <li>Cookie Settings</li>
+            <li>Cookies</li>
+          </div>
+          <div className="flex justify-around py-4">
+            <li>Privacy Policy</li>
+            <li>Terms and Conditions</li>
+          </div>
+        </ul>
+      </div>
+        <div className="bg-zinc-900 flex justify-center p-3 text-white">
+          <span>2023 Fake Limited</span>
+        </div>
 
       {showBanner ? (
         <div className="absolute top-0 h-screen lg:h-1/2 w-full grid grid-row-4 bg-white lg:grid-cols-4 lg:flex lg:flex-row-reverse lg:text-left overflow-auto">
