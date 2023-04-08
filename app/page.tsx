@@ -2,7 +2,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { CldImage } from "next-cloudinary";
-import { useState } from "react";
+import { useState, useRef, MutableRefObject } from "react";
 import Logo from "../public/logo.png";
 import HeaderPhoto from "../public/frontPageFirstPhoto2.jpg"
 import { AdvancedImage, responsive } from "@cloudinary/react";
@@ -13,12 +13,16 @@ const Home = () => {
       cloudName: process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME,
     },
   });
-  const winterHeader = cld.image("FakeBrand/pictures/frontPageFirstPhoto");
 
+//States
   const [showBanner, setShowBanner] = useState(false);
     const showBannerHandler = () => {
-        setShowBanner(!showBanner);
+      setShowBanner(!showBanner);
   }
+
+  //Refs
+  const trendingScrollable = useRef<HTMLDivElement>(null);
+  const showcaseScrollable = useRef<HTMLDivElement>(null);
   
   return (
     <div>
@@ -125,9 +129,9 @@ const Home = () => {
         </div>
       </div>
       <div className="relative h-85vh">
-        <h1 className="absolute text-3xl md:text-5xl lg:text-7xl xl:text-9xl text-white font-extrabold top-1/4 left-5">
+        <h1 className="absolute text-3xl md:text-5xl lg:text-7xl xl:text-9xl text-stone-400 font-extrabold top-1/4 left-5">
           Casual.
-          <div className="bg-clip-text from-white to-green-800">Redefined</div>
+          <div className="bg-clip-text">Redefined</div>
         </h1>
         <div className="imgBack -z-10">
           {/* <AdvancedImage
@@ -247,7 +251,6 @@ const Home = () => {
           </div>
         </div>
       </div>
-
       <div className="pt-8 border-t-2">
         <div className="flex justify-around">
           <div className="flex">
@@ -278,15 +281,39 @@ const Home = () => {
             </h5>
           </div>
           <div className="flex">
-            <button className="text-3xl hover:bg-black hover:text-white">
+            <button
+              className="text-3xl hover:bg-black hover:text-white"
+              onClick={() => {
+                if (trendingScrollable.current != null) {
+                  trendingScrollable.current.scrollBy({
+                    left: -300,
+                    behavior: "smooth",
+                  });
+                }
+              }}
+            >
               &lt;
             </button>
-            <button className="text-3xl hover:bg-black hover:text-white">
+            <button
+              className="text-3xl hover:bg-black hover:text-white"
+              onClick={() => {
+                if (trendingScrollable.current != null) {
+                  trendingScrollable.current.scrollBy({
+                    left: 300,
+                    behavior: "smooth",
+                  });
+                  console.log(trendingScrollable)
+                }
+              }}
+            >
               &gt;
             </button>
           </div>
         </div>
-        <div className="flex flex-row overflow-x-scroll scrollbar-hide">
+        <div
+          className="flex flex-row overflow-scroll scrollbar-hide mx-24"
+          ref={trendingScrollable}
+        >
           <div className="mt-8 mx-6 flex">
             <div className="w-40 h-40 mx-1 max-w-xs overflow-hidden bg-gray-200"></div>
             <div className="w-40 h-40 mx-1 max-w-xs overflow-hidden bg-gray-200"></div>
@@ -304,7 +331,36 @@ const Home = () => {
         </div>
       </div>
       <div className="mt-10">
-        <div className="flex flex-row overflow-x-auto scrollbar-hide xl:mx-28">
+        <button
+          className="absolute text-8xl right-0 centerScrollButton invisible xl:visible"
+          onClick={() => {
+            if (showcaseScrollable.current != null) {
+              showcaseScrollable.current.scrollBy({
+                left: 500,
+                behavior: "smooth",
+              });
+            }
+          }}
+        >
+          ➲
+        </button>
+        <button
+          className="absolute text-8xl rotate-180 centerScrollButton invisible xl:visible"
+          onClick={() => {
+            if (showcaseScrollable.current != null) {
+              showcaseScrollable.current.scrollBy({
+                left: -500,
+                behavior: "smooth",
+              });
+            }
+          }}
+        >
+          ➲
+        </button>
+        <div
+          className="flex flex-row overflow-x-auto scrollbar-hide xl:mx-28"
+          ref={showcaseScrollable}
+        >
           <div className="cursor-pointer mx-4">
             <div className="w-96">
               <CldImage
@@ -402,9 +458,9 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <div className="font-extrabold m-6">
+      <div className="font-extrabold m-12">
         <div>
-          <h1 className="text-xl">Popular Right Now</h1>
+          <h1 className="text-xl my-3">Popular Right Now</h1>
         </div>
         <div className="text-4xl">
           <h2 className="my-5 py-3 border-black border-b-2 hover:border-b-8">
@@ -416,13 +472,13 @@ const Home = () => {
           <h2 className="my-5 py-3 border-black border-b-2 hover:border-b-8">
             Golf
           </h2>
-          <h2 className="my-5 py-2 border-black border-b-2 hover:border-b-8">
+          <h2 className="my-5 py-3 border-black border-b-2 hover:border-b-8">
             Running
           </h2>
-          <h2 className="my-5 py-2 border-black border-b-2 hover:border-b-8">
+          <h2 className="my-5 py-3 border-black border-b-2 hover:border-b-8">
             Hats
           </h2>
-          <h2 className="my-5 py-2 border-black border-b-2 hover:border-b-8">
+          <h2 className="my-5 py-3 border-black border-b-2 hover:border-b-8">
             Accessories
           </h2>
         </div>
@@ -493,7 +549,6 @@ const Home = () => {
           ^Back to Top
         </button>
       </div>
-
       <div>
         <div className="flex justify-around bg-black text-white h-14">
           <button className="uppercase">Login</button>
@@ -540,9 +595,9 @@ const Home = () => {
           </div>
         </ul>
       </div>
-        <div className="bg-zinc-900 flex justify-center p-3 text-white">
-          <span>2023 Fake Limited</span>
-        </div>
+      <div className="bg-zinc-900 flex justify-center p-3 text-white">
+        <span>2023 Fake Limited</span>
+      </div>
 
       {showBanner ? (
         <div className="absolute top-0 h-screen lg:h-1/2 w-full grid grid-row-4 bg-white lg:grid-cols-4 lg:flex lg:flex-row-reverse lg:text-left overflow-auto">
@@ -550,9 +605,9 @@ const Home = () => {
             <button
               type="button"
               onClick={showBannerHandler}
-              className="float-right p-5 text-black text-6xl"
+              className="float-right p-5 text-black text-4xl"
             >
-              &#10062;
+              ❌
             </button>
           </div>
           <div className="ml-24 mb-12 lg:self-center lg:m-0">
