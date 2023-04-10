@@ -2,9 +2,9 @@
 import Link from "next/link";
 import Image from "next/image";
 import { CldImage } from "next-cloudinary";
-import { useState, useRef, MutableRefObject } from "react";
+import { useState, useRef } from "react";
 import Logo from "../public/logo.png";
-import HeaderPhoto from "../public/frontPageFirstPhoto2.jpg"
+import HeaderPhoto from "../public/frontPageFirstPhoto2.jpg";
 import { AdvancedImage, responsive } from "@cloudinary/react";
 import { Cloudinary } from "@cloudinary/url-gen";
 const Home = () => {
@@ -130,8 +130,8 @@ const Home = () => {
       </div>
       <div className="relative h-85vh">
         <h1 className="absolute text-3xl md:text-5xl lg:text-7xl xl:text-9xl text-stone-400 font-extrabold top-1/4 left-5">
-          Casual.
-          <div className="bg-clip-text">Redefined</div>
+          Casual,
+          <div className="bg-clip-text text-white">Redefined.</div>
         </h1>
         <div className="imgBack -z-10">
           {/* <AdvancedImage
@@ -302,7 +302,7 @@ const Home = () => {
                     left: 300,
                     behavior: "smooth",
                   });
-                  console.log(trendingScrollable)
+                  console.log(trendingScrollable);
                 }
               }}
             >
@@ -597,6 +597,196 @@ const Home = () => {
       </div>
       <div className="bg-zinc-900 flex justify-center p-3 text-white">
         <span>2023 Fake Limited</span>
+      </div>
+
+      <div className="flex px-96 py-10 justify-between">
+        <div>
+          <h2 className="font-bold text-2xl pb-3">Products</h2>
+          <h5 className="pb-1 font-thin text-sm hover:underline hover:cursor-pointer">
+            Shoes
+          </h5>
+          <h5 className="pb-1 font-thin text-sm hover:underline hover:cursor-pointer">
+            Clothing
+          </h5>
+          <h5 className="pb-1 font-thin text-sm hover:underline hover:cursor-pointer">
+            Accessories
+          </h5>
+          <h5 className="pb-1 font-thin text-sm hover:underline hover:cursor-pointer">
+            New Arrivals
+          </h5>
+          <h5 className="pb-1 font-thin text-sm hover:underline hover:cursor-pointer">
+            Best Sellers
+          </h5>
+          <h5 className="pb-1 font-thin text-sm hover:underline hover:cursor-pointer">
+            Release Dates
+          </h5>
+          <h5 className="pb-1 font-thin text-sm hover:underline hover:cursor-pointer">
+            Outlet
+          </h5>
+          <h5 className="pb-1 font-thin text-sm hover:underline hover:cursor-pointer">
+            Fake Exclusives
+          </h5>
+        </div>
+        <div>
+          <div>
+            <h2 className="font-bold text-2xl pb-3">Sports</h2>
+            <h5 className="pb-1 font-thin text-sm hover:underline hover:cursor-pointer">
+              Soccer
+            </h5>
+            <h5 className="pb-1 font-thin text-sm hover:underline hover:cursor-pointer">
+              Running
+            </h5>
+            <h5 className="pb-1 font-thin text-sm hover:underline hover:cursor-pointer">
+              Basketball
+            </h5>
+            <h5 className="pb-1 font-thin text-sm hover:underline hover:cursor-pointer">
+              Training
+            </h5>
+            <h5 className="pb-1 font-thin text-sm hover:underline hover:cursor-pointer">
+              Golf
+            </h5>
+            <h5 className="pb-1 font-thin text-sm hover:underline hover:cursor-pointer">
+              Hockey
+            </h5>
+            <h5 className="pb-1 font-thin text-sm hover:underline hover:cursor-pointer">
+              Outdoor
+            </h5>
+            <h5 className="pb-1 font-thin text-sm hover:underline hover:cursor-pointer">
+              Tennis
+            </h5>
+            <h5 className="pb-1 font-thin text-sm hover:underline hover:cursor-pointer">
+              Snowboarding
+            </h5>
+            <h5 className="pb-1 font-thin text-sm hover:underline hover:cursor-pointer">
+              Volleyball
+            </h5>
+            <h5 className="pb-1 font-thin text-sm hover:underline hover:cursor-pointer">
+              Swimming
+            </h5>
+            <h5 className="pb-1 font-thin text-sm hover:underline hover:cursor-pointer">
+              Skateboarding
+            </h5>
+          </div>
+        </div>
+        <div>
+          <div>
+            <h2 className="font-bold text-2xl pb-3">Collections</h2>
+            <h5 className="pb-1 font-thin text-sm hover:underline hover:cursor-pointer">
+              No. 01
+            </h5>
+            <h5 className="pb-1 font-thin text-sm hover:underline hover:cursor-pointer">
+              No. 02
+            </h5>
+            <h5 className="pb-1 font-thin text-sm hover:underline hover:cursor-pointer">
+              No. 03
+            </h5>
+            <h5 className="pb-1 font-thin text-sm hover:underline hover:cursor-pointer">
+              No. 04
+            </h5>
+            <h5 className="pb-1 font-thin text-sm hover:underline hover:cursor-pointer">
+              No. 05
+            </h5>
+            <h5 className="pb-1 font-thin text-sm hover:underline hover:cursor-pointer">
+              No. 06
+            </h5>
+            <h5 className="pb-1 font-thin text-sm hover:underline hover:cursor-pointer">
+              No. 07
+            </h5>
+            <h5 className="pb-1 font-thin text-sm hover:underline hover:cursor-pointer">
+              No. 08
+            </h5>
+            <h5 className="pb-1 font-thin text-sm hover:underline hover:cursor-pointer">
+              No. 09
+            </h5>
+            <h5 className="pb-1 font-thin text-sm hover:underline hover:cursor-pointer">
+              No. 10
+            </h5>
+          </div>
+        </div>
+        <div>
+          <div>
+            <h2 className="font-bold text-2xl pb-3">Support</h2>
+            <h5 className="pb-1 font-thin text-sm hover:underline hover:cursor-pointer">
+              Help & Customer Service
+            </h5>
+            <h5 className="pb-1 font-thin text-sm hover:underline hover:cursor-pointer">
+              Contact Us
+            </h5>
+            <h5 className="pb-1 font-thin text-sm hover:underline hover:cursor-pointer">
+              Returns & Exchanges
+            </h5>
+            <h5 className="pb-1 font-thin text-sm hover:underline hover:cursor-pointer">
+              Order Tracking
+            </h5>
+            <h5 className="pb-1 font-thin text-sm hover:underline hover:cursor-pointer">
+              Gift Cards
+            </h5>
+            <h5 className="pb-1 font-thin text-sm hover:underline hover:cursor-pointer">
+              Store Locator
+            </h5>
+            <h5 className="pb-1 font-thin text-sm hover:underline hover:cursor-pointer">
+              How to Clean
+            </h5>
+            <h5 className="pb-1 font-thin text-sm hover:underline hover:cursor-pointer">
+              Bra Fit Guide
+            </h5>
+            <h5 className="pb-1 font-thin text-sm hover:underline hover:cursor-pointer">
+              Affiliate Program
+            </h5>
+            <h5 className="pb-1 font-thin text-sm hover:underline hover:cursor-pointer">
+              Team Uniform Inquiries
+            </h5>
+          </div>
+        </div>
+        <div>
+          <div>
+            <h2 className="font-bold text-2xl pb-3">Company Info</h2>
+            <h5 className="pb-1 font-thin text-sm hover:underline hover:cursor-pointer">
+              About Us
+            </h5>
+            <h5 className="pb-1 font-thin text-sm hover:underline hover:cursor-pointer">
+              Careers
+            </h5>
+            <h5 className="pb-1 font-thin text-sm hover:underline hover:cursor-pointer">
+              Fake News
+            </h5>
+            <h5 className="pb-1 font-thin text-sm hover:underline hover:cursor-pointer">
+              Fake Club
+            </h5>
+            <h5 className="pb-1 font-thin text-sm hover:underline hover:cursor-pointer">
+              Sustainability
+            </h5>
+            <h5 className="pb-1 font-thin text-sm hover:underline hover:cursor-pointer">
+              Mobile Apps
+            </h5>
+            <h5 className="pb-1 font-thin text-sm hover:underline hover:cursor-pointer">
+              Fake Stories
+            </h5>
+          </div>
+        </div>
+        <div>
+          <div>
+            <h2 className="font-bold text-2xl pb-3">Follow Us</h2>
+            <h5 className="pb-1 font-thin text-sm hover:underline hover:cursor-pointer">
+              Facebook
+            </h5>
+            <h5 className="pb-1 font-thin text-sm hover:underline hover:cursor-pointer">
+              Instagram
+            </h5>
+            <h5 className="pb-1 font-thin text-sm hover:underline hover:cursor-pointer">
+              Twitter
+            </h5>
+            <h5 className="pb-1 font-thin text-sm hover:underline hover:cursor-pointer">
+              Pinterest
+            </h5>
+            <h5 className="pb-1 font-thin text-sm hover:underline hover:cursor-pointer">
+              TikTok
+            </h5>
+            <h5 className="pb-1 font-thin text-sm hover:underline hover:cursor-pointer">
+              Youtube
+            </h5>
+          </div>
+        </div>
       </div>
 
       {showBanner ? (
