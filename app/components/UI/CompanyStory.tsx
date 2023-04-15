@@ -1,7 +1,6 @@
-import { Fragment } from "react";
 const CompanyStory = () => {
     return (
-      <Fragment>
+      <div>
         <div className="bg-yellow-100 p-6">
           <h1 className="font-bold text-3xl">
             Stories, styles and sportswear at Fake, since 1949
@@ -61,7 +60,7 @@ const CompanyStory = () => {
             We strive to serve you better and appreciate your feedback
           </p>
         </div>
-      </Fragment>
+      </div>
     );
 };
 export default CompanyStory;
