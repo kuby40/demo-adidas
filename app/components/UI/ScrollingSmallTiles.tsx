@@ -66,18 +66,7 @@ const ScrollingSmallTiles = () => {
         ref={trendingScrollable}
       >
         <div className="mt-8 mx-6 flex">
-          <div className="w-40 h-40 mx-1 max-w-xs overflow-hidden bg-gray-200"></div>
-          <div className="w-40 h-40 mx-1 max-w-xs overflow-hidden bg-gray-200"></div>
-          <div className="w-40 h-40 mx-1 max-w-xs overflow-hidden bg-gray-200"></div>
-          <div className="w-40 h-40 mx-1 max-w-xs overflow-hidden bg-gray-200"></div>
-          <div className="w-40 h-40 mx-1 max-w-xs overflow-hidden bg-gray-200"></div>
-          <div className="w-40 h-40 mx-1 max-w-xs overflow-hidden bg-gray-200"></div>
-          <div className="w-40 h-40 mx-1 max-w-xs overflow-hidden bg-gray-200"></div>
-          <div className="w-40 h-40 mx-1 max-w-xs overflow-hidden bg-gray-200"></div>
-          <div className="w-40 h-40 mx-1 max-w-xs overflow-hidden bg-gray-200"></div>
-          <div className="w-40 h-40 mx-1 max-w-xs overflow-hidden bg-gray-200"></div>
-          <div className="w-40 h-40 mx-1 max-w-xs overflow-hidden bg-gray-200"></div>
-          <div className="w-40 h-40 mx-1 max-w-xs overflow-hidden bg-gray-200"></div>
+          <div className="w-60 h-60 mx-1 max-w-xs overflow-hidden bg-gray-200"></div>
         </div>
       </div>
     </div>

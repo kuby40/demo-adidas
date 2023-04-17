@@ -45,23 +45,7 @@ const Footer = () => {
           </div>
         </ul>
       </div>
-      <div className="bg-zinc-700 text-white font-bold text-xs border-t-2 border-zinc-500">
-        <ul>
-          <div className="flex justify-around py-4">
-            <li>Cookie Settings</li>
-            <li>Cookies</li>
-          </div>
-          <div className="flex justify-around py-4">
-            <li>Privacy Policy</li>
-            <li>Terms and Conditions</li>
-          </div>
-        </ul>
-      </div>
-      <div className="bg-zinc-900 flex justify-center p-3 text-white">
-        <span>2023 Fake Limited</span>
-      </div>
-
-      <div className="flex px-96 py-10 justify-between">
+      <div className="flex-row px-12 py-10 justify-between hidden lg:flex xl:px-36">
         <div>
           <h2 className="font-bold text-2xl pb-3">Products</h2>
           <h5 className="pb-1 font-thin text-sm hover:underline hover:cursor-pointer">
@@ -249,6 +233,22 @@ const Footer = () => {
             </h5>
           </div>
         </div>
+      </div>
+      
+      <div className="bg-zinc-700 text-white font-bold text-xs border-t-2 border-zinc-500">
+        <ul>
+          <div className="flex justify-around py-4">
+            <li>Cookie Settings</li>
+            <li>Cookies</li>
+          </div>
+          <div className="flex justify-around py-4">
+            <li>Privacy Policy</li>
+            <li>Terms and Conditions</li>
+          </div>
+        </ul>
+      </div>
+      <div className="bg-zinc-900 flex justify-center p-3 text-white">
+        <span>2023 Fake Limited</span>
       </div>
     </div>
   );

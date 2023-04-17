@@ -1,4 +1,4 @@
-import FourTileProductShowcase from "./components/UI/FourTileProductShowcase";
+import LargeTileProductShowcase from "./components/UI/LargeTileProductShowcase";
 import ShowcaseVideoFrontPage from "./components/UI/ShowcaseVideoFrontPage";
 import FirstCustomerSee from "./components/UI/FirstCustomerSee";
 import ScrollingSmallTiles from "./components/UI/ScrollingSmallTiles";
@@ -7,14 +7,14 @@ import PopularRightNow from "./components/UI/PopularRightNow";
 import CompanyStory from "./components/UI/CompanyStory";
 const Home = () => {
   return (
-    <div> 
+    <div>
       <FirstCustomerSee/>
       <ShowcaseVideoFrontPage/>
-      <FourTileProductShowcase />
+      <LargeTileProductShowcase />
       <ScrollingSmallTiles />
       <ScrollingLargeTiles />
       <PopularRightNow />
-      <CompanyStory />    
+      <CompanyStory />  
     </div>
   );
 }

@@ -1,0 +1,98 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+type AccessoriesDescription {
+  explanation String
+  title       String
+}
+
+type AccessoriesSizes {
+  availableColors AccessoriesSizesAvailableColors[]
+  size            String
+}
+
+type AccessoriesSizesAvailableColors {
+  color String
+  stock Int
+}
+
+type ClothingDescription {
+  explanation String
+  title       String
+}
+
+type ClothingSizes {
+  availableColors ClothingSizesAvailableColors[]
+  size            String
+}
+
+type ClothingSizesAvailableColors {
+  color String
+  stock Int
+}
+
+type ShoesDescription {
+  explanation String
+  title       String
+}
+
+type ShoesSizes {
+  availableColors ShoesSizesAvailableColors[]
+  size            String
+}
+
+type ShoesSizesAvailableColors {
+  color String
+  stock Int
+}
+
+type Review {
+  title String
+  stars Int
+  description String
+}
+
+model accessories {
+  id          String                 @id @default(auto()) @map("_id") @db.ObjectId
+  description AccessoriesDescription
+  details     String[]
+  gender      String
+  name        String
+  picture     String
+  price       Float
+  reviews     Json
+  sizes       AccessoriesSizes[]
+  unitsSold   Int
+}
+
+model clothing {
+  id          String              @id @default(auto()) @map("_id") @db.ObjectId
+  description ClothingDescription
+  details     String[]
+  gender      String
+  name        String
+  picture     String
+  price       Float
+  reviews     Json
+  sizes       ClothingSizes[]
+  unitsSold   Int
+}
+
+model shoes {
+  id          String           @id @default(auto()) @map("_id") @db.ObjectId
+  description ShoesDescription
+  details     String[]
+  gender      String
+  name        String
+  picture     String
+  price       Float
+  reviews     Review[]
+  sizes       ShoesSizes[]
+  unitsSold   Int
+}

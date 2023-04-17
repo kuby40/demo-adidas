@@ -180,203 +180,409 @@ for (i = 0; i < 5; i++) {
 }
 
 
-
 const createClothing = () => {
     const obj = {
-      name: "Basic Hoodie",
+      name: "Fake NO.2 Long Sleeve",
       description: {
-        title: "The most Comfy Hoodie!",
-        explanation: "Made of cotton this hoodie will make you feel pure bliss",
+        title: "Long Days, Long Nights, Long sleeves",
+        explanation:
+          "Cover those arms of yours with our NO.2 series long sleeve shirt designed to keep you warm and cool with patent pending material HOTCOOLZ",
       },
-        details: materialAndDescription,
+      details: materialAndDescription,
       gender: "Unisex",
       sizes: [
-          {
-              size: "extraSmall",
-              availableColors: [
-                  {
-                  color: "red",
-                  stock: Math.floor(Math.random() * 50)
-                  },
-                  {
-                  color: "blue",
-                  stock: Math.floor(Math.random() * 50)
-                  },
-                  {
-                  color: "green",
-                  stock: Math.floor(Math.random() * 50)
-                  },
-                  {
-                  color: "black",
-                  stock: Math.floor(Math.random() * 50)
-                  },
-                  {
-                  color: "white",
-                  stock: Math.floor(Math.random() * 50)
-                  },
-                  {
-                  color: "orange",
-                  stock: Math.floor(Math.random() * 50)
-                  },
-                  {
-                  color: "yellow",
-                  stock: Math.floor(Math.random() * 50)
-                  },
-                  {
-                  color: "purple",
-                  stock: Math.floor(Math.random() * 50)
-                  },]
-          },
-          {
-              size: "small",
-              availableColors: [
-                  {
-                  color: "red",
-                  stock: Math.floor(Math.random() * 50)
-                  },
-                  {
-                  color: "blue",
-                  stock: Math.floor(Math.random() * 50)
-                  },
-                  {
-                  color: "green",
-                  stock: Math.floor(Math.random() * 50)
-                  },
-                  {
-                  color: "black",
-                  stock: Math.floor(Math.random() * 50)
-                  },
-                  {
-                  color: "white",
-                  stock: Math.floor(Math.random() * 50)
-                  },
-                  {
-                  color: "orange",
-                  stock: Math.floor(Math.random() * 50)
-                  },
-                  {
-                  color: "yellow",
-                  stock: Math.floor(Math.random() * 50)
-                  },
-                  {
-                  color: "purple",
-                  stock: Math.floor(Math.random() * 50)
-                  },]
-          },
-          {
-              size: "medium",
-              availableColors: [
-                  {
-                  color: "red",
-                  stock: Math.floor(Math.random() * 50)
-                  },
-                  {
-                  color: "blue",
-                  stock: Math.floor(Math.random() * 50)
-                  },
-                  {
-                  color: "green",
-                  stock: Math.floor(Math.random() * 50)
-                  },
-                  {
-                  color: "black",
-                  stock: Math.floor(Math.random() * 50)
-                  },
-                  {
-                  color: "white",
-                  stock: Math.floor(Math.random() * 50)
-                  },
-                  {
-                  color: "orange",
-                  stock: Math.floor(Math.random() * 50)
-                  },
-                  {
-                  color: "yellow",
-                  stock: Math.floor(Math.random() * 50)
-                  },
-                  {
-                  color: "purple",
-                  stock: Math.floor(Math.random() * 50)
-                  },]
-          },
-          {
-              size: "large",
-              availableColors: [
-                  {
-                  color: "red",
-                  stock: Math.floor(Math.random() * 50)
-                  },
-                  {
-                  color: "blue",
-                  stock: Math.floor(Math.random() * 50)
-                  },
-                  {
-                  color: "green",
-                  stock: Math.floor(Math.random() * 50)
-                  },
-                  {
-                  color: "black",
-                  stock: Math.floor(Math.random() * 50)
-                  },
-                  {
-                  color: "white",
-                  stock: Math.floor(Math.random() * 50)
-                  },
-                  {
-                  color: "orange",
-                  stock: Math.floor(Math.random() * 50)
-                  },
-                  {
-                  color: "yellow",
-                  stock: Math.floor(Math.random() * 50)
-                  },
-                  {
-                  color: "purple",
-                  stock: Math.floor(Math.random() * 50)
-                  },]
-          },
-          {
-              size: "extraLarge",
-              availableColors: [
-                  {
-                  color: "red",
-                  stock: Math.floor(Math.random() * 50)
-                  },
-                  {
-                  color: "blue",
-                  stock: Math.floor(Math.random() * 50)
-                  },
-                  {
-                  color: "green",
-                  stock: Math.floor(Math.random() * 50)
-                  },
-                  {
-                  color: "black",
-                  stock: Math.floor(Math.random() * 50)
-                  },
-                  {
-                  color: "white",
-                  stock: Math.floor(Math.random() * 50)
-                  },
-                  {
-                  color: "orange",
-                  stock: Math.floor(Math.random() * 50)
-                  },
-                  {
-                  color: "yellow",
-                  stock: Math.floor(Math.random() * 50)
-                  },
-                  {
-                  color: "purple",
-                  stock: Math.floor(Math.random() * 50)
-                  },]
-          },
-        ],
-      picture: "Replace This String With the Photo Link On Cloudinary",
-      price: 40.0,
+        {
+          size: "extraSmall",
+          availableColors: [
+            {
+              color: "red",
+              stock: Math.floor(Math.random() * 50),
+            },
+            {
+              color: "blue",
+              stock: Math.floor(Math.random() * 50),
+            },
+            {
+              color: "green",
+              stock: Math.floor(Math.random() * 50),
+            },
+            {
+              color: "black",
+              stock: Math.floor(Math.random() * 50),
+            },
+            {
+              color: "white",
+              stock: Math.floor(Math.random() * 50),
+            },
+            {
+              color: "orange",
+              stock: Math.floor(Math.random() * 50),
+            },
+            {
+              color: "yellow",
+              stock: Math.floor(Math.random() * 50),
+            },
+            {
+              color: "purple",
+              stock: Math.floor(Math.random() * 50),
+            },
+          ],
+        },
+        {
+          size: "small",
+          availableColors: [
+            {
+              color: "red",
+              stock: Math.floor(Math.random() * 50),
+            },
+            {
+              color: "blue",
+              stock: Math.floor(Math.random() * 50),
+            },
+            {
+              color: "green",
+              stock: Math.floor(Math.random() * 50),
+            },
+            {
+              color: "black",
+              stock: Math.floor(Math.random() * 50),
+            },
+            {
+              color: "white",
+              stock: Math.floor(Math.random() * 50),
+            },
+            {
+              color: "orange",
+              stock: Math.floor(Math.random() * 50),
+            },
+            {
+              color: "yellow",
+              stock: Math.floor(Math.random() * 50),
+            },
+            {
+              color: "purple",
+              stock: Math.floor(Math.random() * 50),
+            },
+          ],
+        },
+        {
+          size: "medium",
+          availableColors: [
+            {
+              color: "red",
+              stock: Math.floor(Math.random() * 50),
+            },
+            {
+              color: "blue",
+              stock: Math.floor(Math.random() * 50),
+            },
+            {
+              color: "green",
+              stock: Math.floor(Math.random() * 50),
+            },
+            {
+              color: "black",
+              stock: Math.floor(Math.random() * 50),
+            },
+            {
+              color: "white",
+              stock: Math.floor(Math.random() * 50),
+            },
+            {
+              color: "orange",
+              stock: Math.floor(Math.random() * 50),
+            },
+            {
+              color: "yellow",
+              stock: Math.floor(Math.random() * 50),
+            },
+            {
+              color: "purple",
+              stock: Math.floor(Math.random() * 50),
+            },
+          ],
+        },
+        {
+          size: "large",
+          availableColors: [
+            {
+              color: "red",
+              stock: Math.floor(Math.random() * 50),
+            },
+            {
+              color: "blue",
+              stock: Math.floor(Math.random() * 50),
+            },
+            {
+              color: "green",
+              stock: Math.floor(Math.random() * 50),
+            },
+            {
+              color: "black",
+              stock: Math.floor(Math.random() * 50),
+            },
+            {
+              color: "white",
+              stock: Math.floor(Math.random() * 50),
+            },
+            {
+              color: "orange",
+              stock: Math.floor(Math.random() * 50),
+            },
+            {
+              color: "yellow",
+              stock: Math.floor(Math.random() * 50),
+            },
+            {
+              color: "purple",
+              stock: Math.floor(Math.random() * 50),
+            },
+          ],
+        },
+        {
+          size: "extraLarge",
+          availableColors: [
+            {
+              color: "red",
+              stock: Math.floor(Math.random() * 50),
+            },
+            {
+              color: "blue",
+              stock: Math.floor(Math.random() * 50),
+            },
+            {
+              color: "green",
+              stock: Math.floor(Math.random() * 50),
+            },
+            {
+              color: "black",
+              stock: Math.floor(Math.random() * 50),
+            },
+            {
+              color: "white",
+              stock: Math.floor(Math.random() * 50),
+            },
+            {
+              color: "orange",
+              stock: Math.floor(Math.random() * 50),
+            },
+            {
+              color: "yellow",
+              stock: Math.floor(Math.random() * 50),
+            },
+            {
+              color: "purple",
+              stock: Math.floor(Math.random() * 50),
+            },
+          ],
+        },
+      ],
+      picture:
+        "https://res.cloudinary.com/drscfsenq/image/upload/v1681678298/FakeBrand/pictures/clothing/womanLongSleeve_gfatzd.png",
+      price: 38.0,
       reviews: [reviewsArray],
       unitsSold: Math.floor(Math.random() * 500),
     };
     console.log(JSON.stringify(obj));   
 };
-createClothing();
+///////
+///////
+////////
+/////////
+///////
+////////
+////////
+//////
+////////
+////////
+const createShoe= () => {
+  const obj = {
+    name: "NO.1 Slide",
+    description: {
+      title: "The most comfortable slide you can slide",
+      explanation:
+        "Trust us when we say you will want to wear these to work, school, sports, sleeping, etc. SO COMFY!",
+    },
+    details: materialAndDescription,
+    gender: "Unisex",
+    sizes: [
+      {
+        size: 7,
+        availableColors: [
+          {
+            color: "black",
+            stock: Math.floor(Math.random() * 50),
+          },
+          {
+            color: "white",
+            stock: Math.floor(Math.random() * 50),
+          },
+        ],
+      },
+      {
+        size: 7.5,
+        availableColors: [
+          {
+            color: "black",
+            stock: Math.floor(Math.random() * 50),
+          },
+          {
+            color: "white",
+            stock: Math.floor(Math.random() * 50),
+          },
+        ],
+      },
+      {
+        size: 8,
+        availableColors: [
+          {
+            color: "black",
+            stock: Math.floor(Math.random() * 50),
+          },
+          {
+            color: "white",
+            stock: Math.floor(Math.random() * 50),
+          },
+        ],
+      },
+      {
+        size: 8.5,
+        availableColors: [
+          {
+            color: "black",
+            stock: Math.floor(Math.random() * 50),
+          },
+          {
+            color: "white",
+            stock: Math.floor(Math.random() * 50),
+          },
+        ],
+      },
+      {
+        size: 9,
+        availableColors: [
+          {
+            color: "black",
+            stock: Math.floor(Math.random() * 50),
+          },
+          {
+            color: "white",
+            stock: Math.floor(Math.random() * 50),
+          },
+        ],
+      },
+      {
+        size: 9.5,
+        availableColors: [
+          {
+            color: "black",
+            stock: Math.floor(Math.random() * 50),
+          },
+          {
+            color: "white",
+            stock: Math.floor(Math.random() * 50),
+          },
+        ],
+      },
+      {
+        size: 10,
+        availableColors: [
+          {
+            color: "black",
+            stock: Math.floor(Math.random() * 50),
+          },
+          {
+            color: "white",
+            stock: Math.floor(Math.random() * 50),
+          },
+        ],
+      },
+      {
+        size: 10.5,
+        availableColors: [
+          {
+            color: "black",
+            stock: Math.floor(Math.random() * 50),
+          },
+          {
+            color: "white",
+            stock: Math.floor(Math.random() * 50),
+          },
+        ],
+      },
+      {
+        size: 11,
+        availableColors: [
+          {
+            color: "black",
+            stock: Math.floor(Math.random() * 50),
+          },
+          {
+            color: "white",
+            stock: Math.floor(Math.random() * 50),
+          },
+        ],
+      },
+      {
+        size: 11.5,
+        availableColors: [
+          {
+            color: "black",
+            stock: Math.floor(Math.random() * 50),
+          },
+          {
+            color: "white",
+            stock: Math.floor(Math.random() * 50),
+          },
+        ],
+      },
+      {
+        size: 12,
+        availableColors: [
+          {
+            color: "black",
+            stock: Math.floor(Math.random() * 50),
+          },
+          {
+            color: "white",
+            stock: Math.floor(Math.random() * 50),
+          },
+        ],
+      },
+      {
+        size: 12.5,
+        availableColors: [
+          {
+            color: "black",
+            stock: Math.floor(Math.random() * 50),
+          },
+          {
+            color: "white",
+            stock: Math.floor(Math.random() * 50),
+          },
+        ],
+      },
+      {
+        size: 13,
+        availableColors: [
+          {
+            color: "black",
+            stock: Math.floor(Math.random() * 50),
+          },
+          {
+            color: "white",
+            stock: Math.floor(Math.random() * 50),
+          },
+        ],
+      },
+    ],
+    picture:
+      "https://res.cloudinary.com/drscfsenq/image/upload/v1681750876/FakeBrand/pictures/shoes/shoeSlides_c30hv1.png",
+    price: 35.0,
+    reviews: [reviewsArray[0], reviewsArray[1]],
+    unitsSold: Math.floor(Math.random() * 500),
+  };
+  console.log(JSON.stringify(obj));
+};
+//createClothing()
+createShoe()
