@@ -1,4 +1,5 @@
 'use client'
+import SmallTile from "../models/SmallTile";
 import { useRef } from "react";
 
 const ScrollingSmallTiles = () => {
@@ -66,7 +67,30 @@ const ScrollingSmallTiles = () => {
         ref={trendingScrollable}
       >
         <div className="mt-8 mx-6 flex">
-          <div className="w-60 h-60 mx-1 max-w-xs overflow-hidden bg-gray-200"></div>
+          <SmallTile
+            title="shoes"
+            imgURL="https://res.cloudinary.com/drscfsenq/image/upload/v1678300996/FakeBrand/pictures/shoes/result_z5s6cp.png"
+            gender="Male"
+            collection="NO.3"
+          />
+          <SmallTile
+            title="shoes"
+            imgURL="https://res.cloudinary.com/drscfsenq/image/upload/v1678300996/FakeBrand/pictures/shoes/result_z5s6cp.png"
+            gender="Male"
+            collection="NO.3"
+          />
+          <SmallTile
+            title="shoes"
+            imgURL="https://res.cloudinary.com/drscfsenq/image/upload/v1678300996/FakeBrand/pictures/shoes/result_z5s6cp.png"
+            gender="Male"
+            collection="NO.3"
+          />
+          <SmallTile
+            title="shoes"
+            imgURL="https://res.cloudinary.com/drscfsenq/image/upload/v1678300996/FakeBrand/pictures/shoes/result_z5s6cp.png"
+            gender="Male"
+            collection="NO.3"
+          />
         </div>
       </div>
     </div>

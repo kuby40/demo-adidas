@@ -12,6 +12,12 @@ type AccessoriesDescription {
   title       String
 }
 
+type AccessoriesReviews {
+  description String
+  stars       Int
+  title       String
+}
+
 type AccessoriesSizes {
   availableColors AccessoriesSizesAvailableColors[]
   size            String
@@ -24,6 +30,12 @@ type AccessoriesSizesAvailableColors {
 
 type ClothingDescription {
   explanation String
+  title       String
+}
+
+type ClothingReviews {
+  description String
+  stars       Int
   title       String
 }
 
@@ -42,6 +54,12 @@ type ShoesDescription {
   title       String
 }
 
+type ShoesReviews {
+  description String
+  stars       Int
+  title       String
+}
+
 type ShoesSizes {
   availableColors ShoesSizesAvailableColors[]
   size            String
@@ -52,12 +70,6 @@ type ShoesSizesAvailableColors {
   stock Int
 }
 
-type Review {
-  title String
-  stars Int
-  description String
-}
-
 model accessories {
   id          String                 @id @default(auto()) @map("_id") @db.ObjectId
   description AccessoriesDescription
@@ -66,7 +78,7 @@ model accessories {
   name        String
   picture     String
   price       Float
-  reviews     Json
+  reviews     AccessoriesReviews[]
   sizes       AccessoriesSizes[]
   unitsSold   Int
 }
@@ -79,7 +91,7 @@ model clothing {
   name        String
   picture     String
   price       Float
-  reviews     Json
+  reviews     ClothingReviews[]
   sizes       ClothingSizes[]
   unitsSold   Int
 }
@@ -92,7 +104,15 @@ model shoes {
   name        String
   picture     String
   price       Float
-  reviews     Review[]
+  reviews     ShoesReviews[]
   sizes       ShoesSizes[]
   unitsSold   Int
+}
+
+model users {
+  id        String @id @default(auto()) @map("_id") @db.ObjectId
+  email     String
+  firstName String
+  lastName  String
+  password  String
 }

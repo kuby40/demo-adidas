@@ -248,7 +248,7 @@ const Footer = () => {
         </ul>
       </div>
       <div className="bg-zinc-900 flex justify-center p-3 text-white">
-        <span>2023 Fake Limited</span>
+        <span>&copy;2023 Fake Limited</span>
       </div>
     </div>
   );

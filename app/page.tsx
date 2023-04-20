@@ -9,7 +9,6 @@ const Home = () => {
   return (
     <div>
       <FirstCustomerSee/>
-      <ShowcaseVideoFrontPage/>
       <LargeTileProductShowcase />
       <ScrollingSmallTiles />
       <ScrollingLargeTiles />
