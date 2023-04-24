@@ -3,12 +3,14 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
 import Logo from "../../../public/logo.png";
+import LoginModal from "../models/LoginModal";
 const Header = () => {
     //States
   const [showBanner, setShowBanner] = useState(false);
     const showBannerHandler = () => {
       setShowBanner(!showBanner);
   }
+
   return (
     <div className="grid grid-rows-2">
       <div

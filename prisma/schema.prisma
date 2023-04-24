@@ -7,112 +7,49 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-type AccessoriesDescription {
-  explanation String
-  title       String
-}
 
-type AccessoriesReviews {
-  description String
+type Review {
+  description String?
   stars       Int
   title       String
 }
 
-type AccessoriesSizes {
-  availableColors AccessoriesSizesAvailableColors[]
-  size            String
-}
-
-type AccessoriesSizesAvailableColors {
-  color String
-  stock Int
-}
-
-type ClothingDescription {
+type Description {
   explanation String
   title       String
 }
 
-type ClothingReviews {
-  description String
-  stars       Int
-  title       String
-}
-
-type ClothingSizes {
-  availableColors ClothingSizesAvailableColors[]
-  size            String
-}
-
-type ClothingSizesAvailableColors {
+type Stock {
   color String
-  stock Int
+  size Float
+  available Int
 }
 
-type ShoesDescription {
-  explanation String
-  title       String
+model Product {
+  id String @id @default(auto()) @map("_id") @db.ObjectId
+  description Description
+  details String[]
+  gender String
+  name String
+  picture String
+  price Float
+  reviews Review[]
+  stock Stock[]
+  unitsSold Int
+  dateAdded DateTime @default(now())
 }
 
-type ShoesReviews {
-  description String
-  stars       Int
-  title       String
+enum Role {
+  USER
+  ADMIN
 }
 
-type ShoesSizes {
-  availableColors ShoesSizesAvailableColors[]
-  size            String
-}
-
-type ShoesSizesAvailableColors {
-  color String
-  stock Int
-}
-
-model accessories {
-  id          String                 @id @default(auto()) @map("_id") @db.ObjectId
-  description AccessoriesDescription
-  details     String[]
-  gender      String
-  name        String
-  picture     String
-  price       Float
-  reviews     AccessoriesReviews[]
-  sizes       AccessoriesSizes[]
-  unitsSold   Int
-}
-
-model clothing {
-  id          String              @id @default(auto()) @map("_id") @db.ObjectId
-  description ClothingDescription
-  details     String[]
-  gender      String
-  name        String
-  picture     String
-  price       Float
-  reviews     ClothingReviews[]
-  sizes       ClothingSizes[]
-  unitsSold   Int
-}
-
-model shoes {
-  id          String           @id @default(auto()) @map("_id") @db.ObjectId
-  description ShoesDescription
-  details     String[]
-  gender      String
-  name        String
-  picture     String
-  price       Float
-  reviews     ShoesReviews[]
-  sizes       ShoesSizes[]
-  unitsSold   Int
-}
-
-model users {
-  id        String @id @default(auto()) @map("_id") @db.ObjectId
-  email     String
+model User {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  email     String   @unique
+  favorites String[] @default([])
   firstName String
   lastName  String
   password  String
+  role Role @default(USER)
 }
