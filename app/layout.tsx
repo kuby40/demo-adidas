@@ -10,7 +10,11 @@ export default function RootLayout({
   return (
     <html>
       <body>
-        <LoginModal isOpen />
+        <LoginModal
+          title="Login"
+          isOpen
+          actionLabel="Login"
+        />
         <Header />
         {children}
         <Footer />
