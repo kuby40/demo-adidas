@@ -1,15 +1,16 @@
-'use client'
+"use client";
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
 import Logo from "../../../public/logo.png";
-import LoginModal from "../models/LoginModal";
+import useRegisterModal from "../../hooks/useRegisterModal";
 const Header = () => {
-    //States
+  const registerModal = useRegisterModal();
+  //States
   const [showBanner, setShowBanner] = useState(false);
-    const showBannerHandler = () => {
-      setShowBanner(!showBanner);
-  }
+  const showBannerHandler = () => {
+    setShowBanner(!showBanner);
+  };
 
   return (
     <div className="grid grid-rows-2">
@@ -78,6 +79,7 @@ const Header = () => {
             strokeWidth={1.5}
             stroke="currentColor"
             className="w-8 h-10 ml-3 cursor-pointer hover:-translate-y-1"
+            onClick={registerModal.onOpen}
           >
             <path
               strokeLinecap="round"
@@ -167,7 +169,6 @@ const Header = () => {
       )}
     </div>
   );
-    
-}
+};
 
 export default Header;

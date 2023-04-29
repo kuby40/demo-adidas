@@ -2,7 +2,7 @@
 import { useEffect, useState, useCallback } from "react";
 import { IoMdClose } from "react-icons/io";
 import Button from "../UI/Button"; 
-interface LoginModalProps {
+interface ModalProps {
   isOpen?: boolean;
   onClose: () => void;
   onSubmit: () => void;
@@ -12,10 +12,10 @@ interface LoginModalProps {
   actionLabel: string;
   disabled?: boolean;
   secondaryAction?: () => void;
-  secondaryLabel?: string;
+  secondaryActionLabel?: string;
 }
 
-const LoginModal: React.FC<LoginModalProps> = ({
+const Modal: React.FC<ModalProps> = ({
   isOpen,
   onClose,
   onSubmit,
@@ -25,7 +25,7 @@ const LoginModal: React.FC<LoginModalProps> = ({
   actionLabel,
   disabled,
   secondaryAction,
-  secondaryLabel,
+  secondaryActionLabel,
 }) => {
   const [showModal, setShowModal] = useState(isOpen);
 
@@ -80,7 +80,20 @@ const LoginModal: React.FC<LoginModalProps> = ({
             </div>
             <div className="relative p-6 flex-auto">{body}</div>
             <div className="flex flex-col gap-2 p-6">
-              <div className="flex flex-row items-center gap-4 w-full"><Button label="Login" onClick={onSubmit}/></div>
+              <div className="flex flex-row items-center gap-4 w-full">
+                {secondaryAction && secondaryActionLabel && (
+                <Button
+                  disabled={disabled}
+                  label={secondaryActionLabel}
+                  onClick={handleSecondaryAction}
+                  />
+                  )}
+                <Button
+                  disabled={disabled}
+                  label={actionLabel}
+                  onClick={onSubmit}
+                />
+              </div>
             </div>
           </div>
         </div>
@@ -89,4 +102,4 @@ const LoginModal: React.FC<LoginModalProps> = ({
   );
 };
 
-export default LoginModal;
+export default Modal;

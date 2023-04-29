@@ -1,7 +1,8 @@
 import "../styles/globals.css";
 import Header from "./components/UI/Header";
 import Footer from "./components/UI/Footer";
-import LoginModal from "./components/models/LoginModal";
+import RegisterModal from "./components/models/RegisterModal";
+import ToasterProvider from "./providers/ToasterProvider";
 export default function RootLayout({
   children,
 }: {
@@ -10,11 +11,8 @@ export default function RootLayout({
   return (
     <html>
       <body>
-        <LoginModal
-          title="Login"
-          isOpen
-          actionLabel="Login"
-        />
+        <ToasterProvider/>
+        <RegisterModal />
         <Header />
         {children}
         <Footer />

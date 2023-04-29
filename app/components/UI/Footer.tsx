@@ -1,5 +1,7 @@
 'use client'
+import useRegisterModal from "../../hooks/useRegisterModal";
 const Footer = () => {
+  const registerModal = useRegisterModal();
   return (
     <div>
       <div className="flex justify-center cursor-pointer p-4">
@@ -23,7 +25,10 @@ const Footer = () => {
             </h1>
           </div>
           <div className="h-1/2 flex justify-center">
-            <button className="border-black bg-black text-white h-3/4 p-3 rounded-md">
+            <button
+              className="border-black bg-black text-white h-3/4 p-3 rounded-md"
+              onClick={registerModal.onOpen}
+            >
               Sign up for free
             </button>
           </div>
@@ -234,7 +239,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      
+
       <div className="bg-zinc-700 text-white font-bold text-xs border-t-2 border-zinc-500">
         <ul>
           <div className="flex justify-around py-4">

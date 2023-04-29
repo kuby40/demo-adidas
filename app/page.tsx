@@ -5,6 +5,7 @@ import ScrollingSmallTiles from "./components/UI/ScrollingSmallTiles";
 import ScrollingLargeTiles from "./components/UI/ScrollingLargeTiles";
 import PopularRightNow from "./components/UI/PopularRightNow";
 import CompanyStory from "./components/UI/CompanyStory";
+
 const Home = () => {
   return (
     <div>
