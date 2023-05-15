@@ -27,22 +27,20 @@ const RegisterModal = () => {
   const onSubmit: SubmitHandler<FieldValues> = (data) => {
     setIsLoading(true);
     axios
-      .post("api/register", data)
-      .then(() => {
+      .post("api/register", data).then(() => {
         RegisterModal.onClose();
-      })
-      .catch((err) => {  
+        toast.success('Account Successfully Created');
+      }).catch(() => {  
         toast.error('Something went wrong');
-        ;
-      })
-      .finally(() => {
+      }).finally(() => {
         setIsLoading(false);
       });
     };
     
-    const bodyContent = (
+  const bodyContent = (
+    <div>
       <div className="flex flex-col gap-4">
-        <Heading title="Join the Club" subtitle="Create an Account" />
+        <Heading title="Join the Club" subtitle="Create an Account" center />
         <Input
           id="firstName"
           label="First Name"
@@ -77,7 +75,8 @@ const RegisterModal = () => {
           required
         />
       </div>
-    );
+    </div>
+  );
 
   return (
     <Modal
@@ -86,8 +85,8 @@ const RegisterModal = () => {
       title="Register"
       actionLabel="Continue"
       onClose={RegisterModal.onClose}
-    onSubmit={handleSubmit(onSubmit)}
-          body={bodyContent}
+      onSubmit={handleSubmit(onSubmit)}
+      body={bodyContent}
     />
   );
 };

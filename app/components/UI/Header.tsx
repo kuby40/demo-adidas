@@ -4,8 +4,19 @@ import Image from "next/image";
 import { useState } from "react";
 import Logo from "../../../public/logo.png";
 import useRegisterModal from "../../hooks/useRegisterModal";
-const Header = () => {
+import { User } from "@prisma/client";
+import LoginModal from './../models/LoginModal';
+import useLoginModal from "../../hooks/useLoginModal";
+interface HeaderProps {
+  currentUser?: User | null;
+}
+const Header: React.FC<HeaderProps> = (
+  currentUser
+) => {
+  console.log({currentUser})
   const registerModal = useRegisterModal();
+  const loginModal = useLoginModal();
+  
   //States
   const [showBanner, setShowBanner] = useState(false);
   const showBannerHandler = () => {
@@ -79,7 +90,7 @@ const Header = () => {
             strokeWidth={1.5}
             stroke="currentColor"
             className="w-8 h-10 ml-3 cursor-pointer hover:-translate-y-1"
-            onClick={registerModal.onOpen}
+            onClick={loginModal.onOpen}
           >
             <path
               strokeLinecap="round"
