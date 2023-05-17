@@ -27,15 +27,14 @@ const LoginModal = () => {
     },
   });
   const onSubmit: SubmitHandler<FieldValues> = (data) => {
-    console.log(data)
     setIsLoading(true);
-      signIn('Credentials', {...data , redirect: false }).then((callback) => {
+    signIn('Credentials', { ...data, redirect: false }).then((callback) => {
+      console.log(callback)
         if (callback?.error) {
           console.log("WAS ERROR")
           toast.error(callback.error);
     }
       if (callback?.ok && callback?.error) {
-          console.log("WASN'T ERROR")
           toast.success("Successfully Logged In");
         // router.refresh();
           loginModal.onClose();

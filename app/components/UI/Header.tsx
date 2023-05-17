@@ -13,7 +13,6 @@ interface HeaderProps {
 const Header: React.FC<HeaderProps> = (
   currentUser
 ) => {
-  console.log({currentUser})
   const registerModal = useRegisterModal();
   const loginModal = useLoginModal();
   

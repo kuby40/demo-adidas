@@ -14,12 +14,12 @@ export default async function RootLayout({
   return (
     <html>
       <body>
-        <RegisterModal />
+        <ToasterProvider />
         <LoginModal />
-        <Header currentUser={currentUser} />
+        <RegisterModal />
+        <Header />
         {children}
         <Footer />
-        <ToasterProvider />
       </body>
     </html>
   );

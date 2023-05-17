@@ -26,7 +26,7 @@ type Stock {
 }
 
 model Product {
-  id String @id @default(auto()) @map("_id") @db.ObjectId
+  id  String @id @default(auto()) @map("_id") @db.ObjectId
   description Description
   details String[]
   gender String
@@ -37,6 +37,8 @@ model Product {
   stock Stock[]
   unitsSold Int
   dateAdded DateTime @default(now())
+  favoritedByIDs String[] @db.ObjectId
+  favoritedBy User[] @relation(fields: [favoritedByIDs], references: [id])
 }
 
 enum Role {
@@ -46,10 +48,34 @@ enum Role {
 
 model User {
   id        String   @id @default(auto()) @map("_id") @db.ObjectId
-  email     String   @unique
-  favorites String[] @default([])
-  firstName String
-  lastName  String
-  password  String
+  name      String?
+  email     String?   @unique
+  emailVerified DateTime?
+  image     String?
+  password  String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  favoriteIDs String[] @db.ObjectId
+  favorites Product[] @relation(fields: [favoriteIDs], references: [id])
   role Role @default(USER)
+  accounts      Account[]
+}
+
+model Account {
+  id                 String  @id @default(auto()) @map("_id") @db.ObjectId
+  userId             String   @db.ObjectId
+  type               String
+  provider           String
+  providerAccountId  String
+  refresh_token      String?  @db.String
+  access_token       String?  @db.String
+  expires_at         Int?
+  token_type         String?
+  scope              String?
+  id_token           String?  @db.String
+  session_state      String?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
 }

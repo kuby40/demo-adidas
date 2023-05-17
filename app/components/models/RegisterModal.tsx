@@ -18,8 +18,7 @@ const RegisterModal = () => {
     formState: { errors },
   } = useForm<FieldValues>({
     defaultValues: {
-      firstName: "",
-      lastName: "",
+      name: "",
       email: "",
       password: "",
     },
@@ -42,16 +41,8 @@ const RegisterModal = () => {
       <div className="flex flex-col gap-4">
         <Heading title="Join the Club" subtitle="Create an Account" center />
         <Input
-          id="firstName"
-          label="First Name"
-          disabled={isLoading}
-          register={register}
-          errors={errors}
-          required
-        />
-        <Input
-          id="lastName"
-          label="Last Name"
+          id="name"
+          label="Name"
           disabled={isLoading}
           register={register}
           errors={errors}
