@@ -1,22 +1,26 @@
 "use client";
 import Link from "next/link";
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Logo from "../../../public/logo.png";
 import useRegisterModal from "../../hooks/useRegisterModal";
 import { User } from "@prisma/client";
 import LoginModal from './../models/LoginModal';
 import useLoginModal from "../../hooks/useLoginModal";
-interface HeaderProps {
-  currentUser?: User | null;
-}
-const Header: React.FC<HeaderProps> = (
-  currentUser
+import {useSession} from 'next-auth/react'
+
+const Header: React.FC = (
 ) => {
   const registerModal = useRegisterModal();
   const loginModal = useLoginModal();
   
   //States
+  const session = useSession();
+  useEffect(() => {
+    if (session?.status === 'authenticated') {
+      console.log(session.status)
+    }
+  }, [session?.status])
   const [showBanner, setShowBanner] = useState(false);
   const showBannerHandler = () => {
     setShowBanner(!showBanner);

@@ -9,7 +9,7 @@ import Heading from "./Heading";
 import Input from "../inputs/Input";
 import { toast } from "react-hot-toast";
 
-const RegisterModal = () => {
+const RegisterModal: React.FC = () => {
   const RegisterModal = useRegisterModal();
   const [isLoading, setIsLoading] = useState(false);
   const {

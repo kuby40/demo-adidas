@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useState } from "react";
+import { useEffect, useState } from "react";
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 import Modal from "./Modal";
 import Heading from "./Heading";
@@ -9,11 +9,9 @@ import { toast } from "react-hot-toast";
 import useLoginModal from "../../hooks/useLoginModal";
 import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
-import useRegisterModal from "../../hooks/useRegisterModal";
 
-const LoginModal = () => {
+const LoginModal: React.FC = () => {
   const router = useRouter();
-  const registerModal = useRegisterModal();
   const loginModal = useLoginModal();
   const [isLoading, setIsLoading] = useState(false);
   const {
@@ -28,18 +26,22 @@ const LoginModal = () => {
   });
   const onSubmit: SubmitHandler<FieldValues> = (data) => {
     setIsLoading(true);
-    signIn('Credentials', { ...data, redirect: false }).then((callback) => {
-      console.log(callback)
+    signIn("credentials", {
+      ...data,
+      redirect: false,
+      callbackUrl: "http://localhost:3000",
+    })
+      .then((callback) => {
         if (callback?.error) {
-          console.log("WAS ERROR")
           toast.error(callback.error);
-    }
-      if (callback?.ok && callback?.error) {
-          toast.success("Successfully Logged In");
-        // router.refresh();
+        }
+        if (callback?.ok && !callback?.error) {
+          toast.success('Successfully Logged In');
+          router.refresh();
           loginModal.onClose();
-      }
-    }).finally(() => setIsLoading(false));
+        }
+      })
+      .finally(() => setIsLoading(false));
   };
 
   const bodyContent = (
