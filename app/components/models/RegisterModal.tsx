@@ -8,9 +8,11 @@ import Modal from "./Modal";
 import Heading from "./Heading";
 import Input from "../inputs/Input";
 import { toast } from "react-hot-toast";
+import useLoginModal from "../../hooks/useLoginModal";
 
 const RegisterModal: React.FC = () => {
   const RegisterModal = useRegisterModal();
+  const loginModal = useLoginModal()
   const [isLoading, setIsLoading] = useState(false);
   const {
     register,
@@ -69,6 +71,16 @@ const RegisterModal: React.FC = () => {
     </div>
   );
 
+   const hasAccount = () => {
+    RegisterModal.onClose();
+    loginModal.onOpen();
+  }
+  const footerContent = (
+    <div>
+    <button onClick={hasAccount} className='hover:underline'>Already Have an Account? Login Here</button>
+    </div>
+  );
+
   return (
     <Modal
       disabled={isLoading}
@@ -78,6 +90,7 @@ const RegisterModal: React.FC = () => {
       onClose={RegisterModal.onClose}
       onSubmit={handleSubmit(onSubmit)}
       body={bodyContent}
+      footer={footerContent}
     />
   );
 };

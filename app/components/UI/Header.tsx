@@ -3,15 +3,11 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState, useEffect } from "react";
 import Logo from "../../../public/logo.png";
-import useRegisterModal from "../../hooks/useRegisterModal";
-import { User } from "@prisma/client";
-import LoginModal from './../models/LoginModal';
 import useLoginModal from "../../hooks/useLoginModal";
 import {useSession} from 'next-auth/react'
 
 const Header: React.FC = (
 ) => {
-  const registerModal = useRegisterModal();
   const loginModal = useLoginModal();
   
   //States

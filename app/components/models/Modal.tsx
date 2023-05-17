@@ -94,6 +94,7 @@ const Modal: React.FC<ModalProps> = ({
                   onClick={onSubmit}
                 />
               </div>
+              <div className='p-5 font-light justify-center flex'>{footer}</div>
             </div>
           </div>
         </div>

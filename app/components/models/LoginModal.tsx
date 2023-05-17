@@ -9,10 +9,12 @@ import { toast } from "react-hot-toast";
 import useLoginModal from "../../hooks/useLoginModal";
 import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
+import useRegisterModal from './../../hooks/useRegisterModal';
 
 const LoginModal: React.FC = () => {
   const router = useRouter();
   const loginModal = useLoginModal();
+  const registerModal = useRegisterModal();
   const [isLoading, setIsLoading] = useState(false);
   const {
     register,
@@ -29,7 +31,6 @@ const LoginModal: React.FC = () => {
     signIn("credentials", {
       ...data,
       redirect: false,
-      callbackUrl: "http://localhost:3000",
     })
       .then((callback) => {
         if (callback?.error) {
@@ -66,16 +67,28 @@ const LoginModal: React.FC = () => {
       />
     </div>
   );
-
+  
+  const createAccount = () => {
+    loginModal.onClose();
+    registerModal.onOpen();
+  }
+  const footerContent = (
+    <div>
+    <button onClick={createAccount} className='hover:underline'>Don't Have an Account? Create One</button>
+    </div>
+  );
+  
+  
   return (
     <Modal
       disabled={isLoading}
       isOpen={loginModal.isOpen}
-      title="Login"
+      title="Fake Apparel"
       actionLabel="Submit"
       onClose={loginModal.onClose}
       onSubmit={handleSubmit(onSubmit)}
       body={bodyContent}
+      footer={footerContent}
     />
   );
 };
