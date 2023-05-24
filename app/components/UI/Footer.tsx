@@ -1,7 +1,14 @@
 'use client'
 import useRegisterModal from "../../hooks/useRegisterModal";
-const Footer = () => {
+import useLoginModal from "../../hooks/useLoginModal";
+import {signOut} from 'next-auth/react';
+import { User } from "@prisma/client";
+interface FooterProps {
+  currentUser: User
+}
+const Footer: React.FC<FooterProps> = ({currentUser}) => {
   const registerModal = useRegisterModal();
+  const loginModal = useLoginModal();
   return (
     <div>
       <div className="flex justify-center cursor-pointer p-4">
@@ -15,9 +22,11 @@ const Footer = () => {
       </div>
       <div>
         <div className="flex justify-around bg-black text-white h-14">
-          <button className="uppercase">Login</button>
+          {currentUser === null && <button className="uppercase" onClick={loginModal.onOpen}>Login</button>}
+          {currentUser != null && <button className="uppercase" onClick={() => signOut()}>Logout</button>}
           <button className="uppercase">Your bag</button>
         </div>
+      {currentUser === null && 
         <div className="bg-amber-300 h-40">
           <div className="h-1/2">
             <h1 className="uppercase font-extrabold text-center py-7">
@@ -32,21 +41,22 @@ const Footer = () => {
               Sign up for free
             </button>
           </div>
-        </div>
+        </div>}
       </div>
+      
       <div className="bg-black text-white font-bold text-xs">
         <ul>
-          <div className="flex justify-around p-3">
-            <li>One</li>
-            <li>Two</li>
+          <div className="p-3">
+            <li>fakeClub</li>
+            <li>Store Locator</li>
           </div>
-          <div className="flex justify-around p-3">
-            <li>One</li>
-            <li>Two</li>
+          <div className="flex justify-between p-3">
+            <li>Returns & Exchanges</li>
+            <li>Mobile Apps</li>
           </div>
-          <div className="flex justify-around p-3">
-            <li>One</li>
-            <li>Two</li>
+          <div className="flex justify-between p-3">
+            <li>Order Tracker</li>
+            <li>Help and Customer Service</li>
           </div>
         </ul>
       </div>
