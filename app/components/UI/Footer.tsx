@@ -44,19 +44,19 @@ const Footer: React.FC<FooterProps> = ({currentUser}) => {
         </div>}
       </div>
       
-      <div className="bg-black text-white font-bold text-xs">
+      <div className="bg-black text-white font-bold text-xs border-t-2 border-white">
         <ul>
-          <div className="p-3">
-            <li>fakeClub</li>
-            <li>Store Locator</li>
+          <div className="flex w-full p-3">
+            <li className='flex w-1/2 justify-center'>fakeClub</li>
+            <li className='flex w-1/2 justify-center'>Store Locator</li>
           </div>
-          <div className="flex justify-between p-3">
-            <li>Returns & Exchanges</li>
-            <li>Mobile Apps</li>
+          <div className="flex w-full p-3">
+            <li className='flex w-1/2 justify-center'>Returns & Exchanges</li>
+            <li className='flex w-1/2 justify-center'>Mobile Apps</li>
           </div>
-          <div className="flex justify-between p-3">
-            <li>Order Tracker</li>
-            <li>Help and Customer Service</li>
+          <div className="flex w-full p-3">
+            <li className='flex w-1/2 justify-center'>Order Tracker</li>
+            <li className='flex w-1/2 justify-center'>Help and Customer Service</li>
           </div>
         </ul>
       </div>
@@ -252,13 +252,13 @@ const Footer: React.FC<FooterProps> = ({currentUser}) => {
 
       <div className="bg-zinc-700 text-white font-bold text-xs border-t-2 border-zinc-500">
         <ul>
-          <div className="flex justify-around py-4">
-            <li>Cookie Settings</li>
-            <li>Cookies</li>
+          <div className="flex py-4">
+            <li className='flex justify-center w-1/2'>Cookie Settings</li>
+            <li className='flex justify-center w-1/2'>Cookies</li>
           </div>
           <div className="flex justify-around py-4">
-            <li>Privacy Policy</li>
-            <li>Terms and Conditions</li>
+            <li className='flex justify-center w-1/2'>Privacy Policy</li>
+            <li className='flex justify-center w-1/2'>Terms and Conditions</li>
           </div>
         </ul>
       </div>
