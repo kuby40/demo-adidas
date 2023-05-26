@@ -22,41 +22,70 @@ const Footer: React.FC<FooterProps> = ({currentUser}) => {
       </div>
       <div>
         <div className="flex justify-around bg-black text-white h-14">
-          {currentUser === null && <button className="uppercase" onClick={loginModal.onOpen}>Login</button>}
-          {currentUser != null && <button className="uppercase" onClick={() => signOut()}>Logout</button>}
-          <button className="uppercase">Your bag</button>
-        </div>
-      {currentUser === null && 
-        <div className="bg-amber-300 h-40">
-          <div className="h-1/2">
-            <h1 className="uppercase font-extrabold text-center py-7">
-              Become a member & get 15% off
-            </h1>
-          </div>
-          <div className="h-1/2 flex justify-center">
+          {currentUser === null && (
             <button
-              className="border-black bg-black text-white h-3/4 p-3 rounded-md"
-              onClick={registerModal.onOpen}
+              className="uppercase hover:underline hover:cursor-pointer"
+              onClick={loginModal.onOpen}
             >
-              Sign up for free
+              Login
             </button>
+          )}
+          {currentUser != null && (
+            <button
+              className="uppercase hover:underline hover:cursor-pointer"
+              onClick={() => signOut()}
+            >
+              Logout
+            </button>
+          )}
+          <button className="uppercase hover:underline hover:cursor-pointer">
+            Your bag
+          </button>
+        </div>
+        {currentUser === null && (
+          <div className="bg-amber-300 h-40">
+            <div className="h-1/2">
+              <h1 className="uppercase font-extrabold text-center py-7">
+                Become a member & get 15% off
+              </h1>
+            </div>
+            <div className="h-1/2 flex justify-center">
+              <button
+                className="border-black bg-black text-white h-3/4 p-3 rounded-md hover:underline hover:cursor-pointer"
+                onClick={registerModal.onOpen}
+              >
+                Sign up for free
+              </button>
+            </div>
           </div>
-        </div>}
+        )}
       </div>
-      
+
       <div className="bg-black text-white font-bold text-xs border-t-2 border-white">
         <ul>
           <div className="flex w-full p-3">
-            <li className='flex w-1/2 justify-center'>fakeClub</li>
-            <li className='flex w-1/2 justify-center'>Store Locator</li>
+            <li className="flex w-1/2 justify-center hover:underline hover:cursor-pointer">
+              fakeClub
+            </li>
+            <li className="flex w-1/2 justify-center hover:underline hover:cursor-pointer">
+              Store Locator
+            </li>
           </div>
           <div className="flex w-full p-3">
-            <li className='flex w-1/2 justify-center'>Returns & Exchanges</li>
-            <li className='flex w-1/2 justify-center'>Mobile Apps</li>
+            <li className="flex w-1/2 justify-center hover:underline hover:cursor-pointer">
+              Returns & Exchanges
+            </li>
+            <li className="flex w-1/2 justify-center hover:underline hover:cursor-pointer">
+              Mobile Apps
+            </li>
           </div>
           <div className="flex w-full p-3">
-            <li className='flex w-1/2 justify-center'>Order Tracker</li>
-            <li className='flex w-1/2 justify-center'>Help and Customer Service</li>
+            <li className="flex w-1/2 justify-center hover:underline hover:cursor-pointer">
+              Order Tracker
+            </li>
+            <li className="flex w-1/2 justify-center hover:underline hover:cursor-pointer">
+              Help and Customer Service
+            </li>
           </div>
         </ul>
       </div>
@@ -253,12 +282,20 @@ const Footer: React.FC<FooterProps> = ({currentUser}) => {
       <div className="bg-zinc-700 text-white font-bold text-xs border-t-2 border-zinc-500">
         <ul>
           <div className="flex py-4">
-            <li className='flex justify-center w-1/2'>Cookie Settings</li>
-            <li className='flex justify-center w-1/2'>Cookies</li>
+            <li className="flex justify-center w-1/2 hover:underline hover:cursor-pointer">
+              Cookie Settings
+            </li>
+            <li className="flex justify-center w-1/2 hover:underline hover:cursor-pointer">
+              Cookies
+            </li>
           </div>
           <div className="flex justify-around py-4">
-            <li className='flex justify-center w-1/2'>Privacy Policy</li>
-            <li className='flex justify-center w-1/2'>Terms and Conditions</li>
+            <li className="flex justify-center w-1/2 hover:underline hover:cursor-pointer">
+              Privacy Policy
+            </li>
+            <li className="flex justify-center w-1/2 hover:underline hover:cursor-pointer">
+              Terms and Conditions
+            </li>
           </div>
         </ul>
       </div>
