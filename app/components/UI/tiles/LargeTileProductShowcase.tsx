@@ -1,5 +1,5 @@
 "use client";
-import LargeTile from "../models/LargeTile";
+import LargeTile from "../../models/LargeTile";
 const LargeTileProductShowcase = () => {
   //const data = use();
 

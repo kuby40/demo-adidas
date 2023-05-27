@@ -1,5 +1,5 @@
-'use client'
-import SmallTile from "../models/SmallTile";
+"use client";
+import SmallTile from "../../models/SmallTile";
 import { useRef } from "react";
 
 const ScrollingSmallTiles = () => {

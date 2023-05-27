@@ -2,9 +2,9 @@
 module.exports = {
   reactStrictMode: false,
   experimental: {
-    appDir: true,
-    swcPlugins: [
-      ["next-superjson-plugin", {}]
-    ]
+     appDir: true,
+    // swcPlugins: [
+    //   ["next-superjson-plugin", {}]
+    // ]
   }
 }
