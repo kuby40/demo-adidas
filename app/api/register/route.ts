@@ -5,9 +5,9 @@ import prisma from "../../libs/primadb";
 export async function POST(request: Request) {
   try {
     const body = await request.json();
-    let { fullName, email, password } = body;
+    let { name, email, password } = body;
 
-    if (!fullName || !email || !password) {
+    if (!name || !email || !password) {
       return new NextResponse("Missing Info", { status: 400 });
     } else {
       password = await bcrypt.hash(password, 12);

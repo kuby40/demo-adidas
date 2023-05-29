@@ -1,5 +1,7 @@
+
 import prisma from "../libs/primadb";
 import getSession from "./getSession";
+
 const getCurrentUser = async () => {
   try {
     const session = await getSession();
@@ -13,7 +15,7 @@ const getCurrentUser = async () => {
       },
     });
     if (!currentUser) {
-      return null;
+      return null
     }
     return currentUser;
   } catch (error: any) {

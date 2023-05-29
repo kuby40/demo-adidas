@@ -1,7 +1,6 @@
 "use client";
 import LargeTile from "../../models/LargeTile";
 const LargeTileProductShowcase = () => {
-  //const data = use();
 
   return (
     <div className="my-8 flex flex-wrap justify-center w-full">

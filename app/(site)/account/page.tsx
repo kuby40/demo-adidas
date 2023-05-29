@@ -38,7 +38,7 @@ const AccountPage: React.FC<UserPageProps> = ({ currentUser }) => {
           </li>
         </ul>
       </div>
-      <div className="h-96 bg-gray-200">
+      <div className="h-full bg-gray-200">
         {orderOrAccount === "order" ? orders : account}
       </div>
       <div className="bg-slate-100">

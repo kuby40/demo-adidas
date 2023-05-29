@@ -1,33 +1,51 @@
 import {User} from '@prisma/client'
+import Button from '../Button'
+import {signOut} from 'next-auth/react'
+import axios from 'axios'
+import { toast } from 'react-hot-toast'
+import {useRouter} from 'next/navigation'
+
 interface AccountProps {
     currentUser: User
 }
 const Account: React.FC<AccountProps> = ({ currentUser }) => {
+  const router = useRouter();
+  const deleteUser = () => {
+    axios.post('api/delete').then(async () => {
+    toast.success('Account Successfully Deleted.') 
+    await signOut();
+    })
+  }
     return (
-      <div className="">
-        <div>
-          <h2>MY DETAILS</h2>
-          <p>
+      <div className="ml-8 mt-5">
+        <div className="my-8">
+          <h2 className="text-3xl font-bold">MY DETAILS</h2>
+          <p className="mt-3">
             Feel free to edit any of your details below so your account is up to
             date.
           </p>
         </div>
-        <div>
-          <h2>DETAILS</h2>
-          <p className="uppercase">{currentUser.name}</p>
+        <div className="my-8">
+          <h2 className="text-3xl font-bold">DETAILS</h2>
+          <p className="uppercase mt-3">{currentUser.name}</p>
           <button className="underline">EDIT</button>
         </div>
-        <div>
-          <h2>LOGIN DETAILS</h2>
-          <h3>EMAIL</h3>
-          <p>{currentUser.email}</p>
-          <h3>PASSWORD</h3>
+        <div className="my-8">
+          <h2 className="text-3xl font-bold">LOGIN DETAILS</h2>
+          <h3 className="text-xl font-bold mt-3">EMAIL</h3>
+          <p className="uppercase">{currentUser.email}</p>
+          <h3 className="text-xl font-bold mt-3">PASSWORD</h3>
           <p>**************</p>
           <button className="underline">EDIT</button>
         </div>
-        <div>
-                <h2>MANAGE ACCOUNT</h2>
-                
+        <div className="my-8">
+          <h2 className="text-3xl font-bold">MANAGE ACCOUNT</h2>
+          <div className="mt-5">
+            <Button label="LOG ME OUT" small onClick={() => signOut()} />
+          </div>
+          <div className="py-5">
+            <Button label="DELETE ACCOUNT" small onClick={deleteUser} />
+          </div>
         </div>
       </div>
     );
