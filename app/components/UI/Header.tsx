@@ -4,12 +4,14 @@ import Image from "next/image";
 import { useState } from "react";
 import Logo from "../../../public/logo.png";
 import useLoginModal from "../../hooks/useLoginModal";
+
 import { User } from "@prisma/client";
 import { IoMenuSharp } from "react-icons/io5";
 import { IoHeartOutline } from "react-icons/io5";
 import { IoPersonOutline } from "react-icons/io5";
 import { IoBagOutline } from "react-icons/io5";
 import { IoSearchOutline } from "react-icons/io5";
+
 
 interface HeaderProps {
   currentUser: User
@@ -20,8 +22,6 @@ const Header: React.FC<HeaderProps> = ({
 }
 ) => {
   const loginModal = useLoginModal();
-
-  
   //States
   const [showBanner, setShowBanner] = useState(false);
   const showBannerHandler = () => {
@@ -62,7 +62,7 @@ const Header: React.FC<HeaderProps> = ({
           </Link>
         </div>
         <div className="flex flex-1 place-items-center justify-end">
-          <IoPersonOutline className='w-8 h-10 ml-3 cursor-pointer hover:-translate-y-1'/>
+          <IoPersonOutline className='w-8 h-10 ml-3 cursor-pointer hover:-translate-y-1' />
           <IoSearchOutline className='w-8 h-10 ml-3 cursor-pointer hover:-translate-y-1'/>
           <IoBagOutline className='w-8 h-10 ml-3 cursor-pointer hover:-translate-y-1'/>
         </div>

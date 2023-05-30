@@ -3,17 +3,16 @@ import Button from '../Button'
 import {signOut} from 'next-auth/react'
 import axios from 'axios'
 import { toast } from 'react-hot-toast'
-import {useRouter} from 'next/navigation'
 
 interface AccountProps {
     currentUser: User
 }
 const Account: React.FC<AccountProps> = ({ currentUser }) => {
-  const router = useRouter();
-  const deleteUser = () => {
-    axios.post('api/delete').then(async () => {
-    toast.success('Account Successfully Deleted.') 
+
+  const deleteUser = async () => {
+    await axios.post('api/delete').then(async () => {
     await signOut();
+    toast.success('Account Successfully Deleted.') 
     })
   }
     return (
@@ -28,7 +27,9 @@ const Account: React.FC<AccountProps> = ({ currentUser }) => {
         <div className="my-8">
           <h2 className="text-3xl font-bold">DETAILS</h2>
           <p className="uppercase mt-3">{currentUser.name}</p>
-          <button className="underline">EDIT</button>
+          <button className="underline hover:font-bold" >
+            EDIT
+          </button>
         </div>
         <div className="my-8">
           <h2 className="text-3xl font-bold">LOGIN DETAILS</h2>
@@ -36,7 +37,9 @@ const Account: React.FC<AccountProps> = ({ currentUser }) => {
           <p className="uppercase">{currentUser.email}</p>
           <h3 className="text-xl font-bold mt-3">PASSWORD</h3>
           <p>**************</p>
-          <button className="underline">EDIT</button>
+          <button className="underline" >
+            EDIT
+          </button>
         </div>
         <div className="my-8">
           <h2 className="text-3xl font-bold">MANAGE ACCOUNT</h2>
