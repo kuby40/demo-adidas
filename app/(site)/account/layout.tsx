@@ -1,7 +1,10 @@
 import getCurrentUser from "../../actions/getCurrentUser";
 import AccountPage from "./page";
 import getSession from "../../actions/getSession";
-import { toast } from "react-hot-toast";
+import ToasterProvider from "../../context/ToasterProvider";
+import ChangeNameModal from "../../components/models/ChangeNameModal";
+import ChangePasswordModal from "../../components/models/ChangePasswordModal";
+import { Fragment } from 'react';
 
 export default async function ProfileLayout({
   children,
@@ -14,5 +17,13 @@ export default async function ProfileLayout({
   if (!session) {
     return <div className='h-96 flex justify-center items-center font-bold'>Please Login To Access Account</div>
   }
-  return <AccountPage currentUser={currentUser!} />;
+  return (
+    <Fragment>
+      <ToasterProvider/>
+    <ChangeNameModal/>
+    <ChangePasswordModal/>
+     <AccountPage currentUser={currentUser!} />
+     </Fragment>
+  )
+
 }

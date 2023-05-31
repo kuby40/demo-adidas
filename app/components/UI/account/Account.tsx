@@ -3,16 +3,19 @@ import Button from '../Button'
 import {signOut} from 'next-auth/react'
 import axios from 'axios'
 import { toast } from 'react-hot-toast'
+import useChangeNameModal from '../../../hooks/useChangeNameModal'
+import useChangePasswordModal from '../../../hooks/useChangePasswordModal'
 
 interface AccountProps {
     currentUser: User
 }
 const Account: React.FC<AccountProps> = ({ currentUser }) => {
-
+  const changeNameModal = useChangeNameModal();
+  const changePasswordModal = useChangePasswordModal();
   const deleteUser = async () => {
     await axios.post('api/delete').then(async () => {
     await signOut();
-    toast.success('Account Successfully Deleted.') 
+      toast.success('Successfully Deleted Account'); 
     })
   }
     return (
@@ -27,7 +30,7 @@ const Account: React.FC<AccountProps> = ({ currentUser }) => {
         <div className="my-8">
           <h2 className="text-3xl font-bold">DETAILS</h2>
           <p className="uppercase mt-3">{currentUser.name}</p>
-          <button className="underline hover:font-bold" >
+          <button className="underline hover:font-bold" onClick={changeNameModal.onOpen}>
             EDIT
           </button>
         </div>
@@ -37,7 +40,7 @@ const Account: React.FC<AccountProps> = ({ currentUser }) => {
           <p className="uppercase">{currentUser.email}</p>
           <h3 className="text-xl font-bold mt-3">PASSWORD</h3>
           <p>**************</p>
-          <button className="underline" >
+          <button className="underline" onClick={changePasswordModal.onOpen}>
             EDIT
           </button>
         </div>
