@@ -1,12 +1,13 @@
-'use client'
+"use client";
 import useRegisterModal from "../../hooks/useRegisterModal";
 import useLoginModal from "../../hooks/useLoginModal";
-import {signOut} from 'next-auth/react';
+import { signOut } from "next-auth/react";
 import { User } from "@prisma/client";
+import Link from "next/link";
 interface FooterProps {
-  currentUser: User
+  currentUser: User;
 }
-const Footer: React.FC<FooterProps> = ({currentUser}) => {
+const Footer: React.FC<FooterProps> = ({ currentUser }) => {
   const registerModal = useRegisterModal();
   const loginModal = useLoginModal();
   return (
@@ -65,26 +66,26 @@ const Footer: React.FC<FooterProps> = ({currentUser}) => {
         <ul>
           <div className="flex w-full p-3">
             <li className="flex w-1/2 justify-center hover:underline hover:cursor-pointer">
-              fakeClub
+              <Link href="/demo">fakeClub</Link>
             </li>
             <li className="flex w-1/2 justify-center hover:underline hover:cursor-pointer">
-              Store Locator
-            </li>
-          </div>
-          <div className="flex w-full p-3">
-            <li className="flex w-1/2 justify-center hover:underline hover:cursor-pointer">
-              Returns & Exchanges
-            </li>
-            <li className="flex w-1/2 justify-center hover:underline hover:cursor-pointer">
-              Mobile Apps
+              <Link href="/demo">Store Locator</Link>
             </li>
           </div>
           <div className="flex w-full p-3">
             <li className="flex w-1/2 justify-center hover:underline hover:cursor-pointer">
-              Order Tracker
+              <Link href="/demo">Returns & Exchanges</Link>
             </li>
             <li className="flex w-1/2 justify-center hover:underline hover:cursor-pointer">
-              Help and Customer Service
+              <Link href="/demo">Mobile Apps</Link>
+            </li>
+          </div>
+          <div className="flex w-full p-3">
+            <li className="flex w-1/2 justify-center hover:underline hover:cursor-pointer">
+              <Link href="/demo">Order Tracker</Link>
+            </li>
+            <li className="flex w-1/2 justify-center hover:underline hover:cursor-pointer">
+              <Link href="/demo">Help and Customer Service</Link>
             </li>
           </div>
         </ul>
@@ -93,68 +94,68 @@ const Footer: React.FC<FooterProps> = ({currentUser}) => {
         <div>
           <h2 className="font-bold text-2xl pb-3">Products</h2>
           <h5 className="pb-1 font-thin text-sm hover:underline hover:cursor-pointer">
-            Shoes
+            <Link href="/demo">Shoes</Link>
           </h5>
           <h5 className="pb-1 font-thin text-sm hover:underline hover:cursor-pointer">
-            Clothing
+            <Link href="/demo">Clothing</Link>
           </h5>
           <h5 className="pb-1 font-thin text-sm hover:underline hover:cursor-pointer">
-            Accessories
+            <Link href="/demo">Accessories</Link>
           </h5>
           <h5 className="pb-1 font-thin text-sm hover:underline hover:cursor-pointer">
-            New Arrivals
+            <Link href="/demo">New Arrivals</Link>
           </h5>
           <h5 className="pb-1 font-thin text-sm hover:underline hover:cursor-pointer">
-            Best Sellers
+            <Link href="/demo">Best Sellers</Link>
           </h5>
           <h5 className="pb-1 font-thin text-sm hover:underline hover:cursor-pointer">
-            Release Dates
+            <Link href="/demo">Release Dates</Link>
           </h5>
           <h5 className="pb-1 font-thin text-sm hover:underline hover:cursor-pointer">
-            Outlet
+            <Link href="/demo">Outlet</Link>
           </h5>
           <h5 className="pb-1 font-thin text-sm hover:underline hover:cursor-pointer">
-            Fake Exclusives
+            <Link href="/demo">Fake Exclusives</Link>
           </h5>
         </div>
         <div>
           <div>
             <h2 className="font-bold text-2xl pb-3">Sports</h2>
             <h5 className="pb-1 font-thin text-sm hover:underline hover:cursor-pointer">
-              Soccer
+              <Link href="/demo">Soccer</Link>
             </h5>
             <h5 className="pb-1 font-thin text-sm hover:underline hover:cursor-pointer">
-              Running
+              <Link href="/demo">Running</Link>
             </h5>
             <h5 className="pb-1 font-thin text-sm hover:underline hover:cursor-pointer">
-              Basketball
+              <Link href="/demo">Basketball</Link>
             </h5>
             <h5 className="pb-1 font-thin text-sm hover:underline hover:cursor-pointer">
-              Training
+              <Link href="/demo">Training</Link>
             </h5>
             <h5 className="pb-1 font-thin text-sm hover:underline hover:cursor-pointer">
-              Golf
+              <Link href="/demo">Golf</Link>
             </h5>
             <h5 className="pb-1 font-thin text-sm hover:underline hover:cursor-pointer">
-              Hockey
+              <Link href="/demo">Hockey</Link>
             </h5>
             <h5 className="pb-1 font-thin text-sm hover:underline hover:cursor-pointer">
-              Outdoor
+              <Link href="/demo"> Outdoor</Link>
             </h5>
             <h5 className="pb-1 font-thin text-sm hover:underline hover:cursor-pointer">
-              Tennis
+              <Link href="/demo">Tennis</Link>
             </h5>
             <h5 className="pb-1 font-thin text-sm hover:underline hover:cursor-pointer">
-              Snowboarding
+              <Link href="/demo">Snowboarding</Link>
             </h5>
             <h5 className="pb-1 font-thin text-sm hover:underline hover:cursor-pointer">
-              Volleyball
+              <Link href="/demo">Volleyball</Link>
             </h5>
             <h5 className="pb-1 font-thin text-sm hover:underline hover:cursor-pointer">
-              Swimming
+              <Link href="/demo">Swimming</Link>
             </h5>
             <h5 className="pb-1 font-thin text-sm hover:underline hover:cursor-pointer">
-              Skateboarding
+              <Link href="/demo">Skateboarding</Link>
             </h5>
           </div>
         </div>
@@ -162,34 +163,34 @@ const Footer: React.FC<FooterProps> = ({currentUser}) => {
           <div>
             <h2 className="font-bold text-2xl pb-3">Collections</h2>
             <h5 className="pb-1 font-thin text-sm hover:underline hover:cursor-pointer">
-              No. 01
+              <Link href="/demo">No. 01</Link>
             </h5>
             <h5 className="pb-1 font-thin text-sm hover:underline hover:cursor-pointer">
-              No. 02
+              <Link href="/demo">No. 02</Link>
             </h5>
             <h5 className="pb-1 font-thin text-sm hover:underline hover:cursor-pointer">
-              No. 03
+              <Link href="/demo"> No. 03</Link>
             </h5>
             <h5 className="pb-1 font-thin text-sm hover:underline hover:cursor-pointer">
-              No. 04
+              <Link href="/demo">No. 04</Link>
             </h5>
             <h5 className="pb-1 font-thin text-sm hover:underline hover:cursor-pointer">
-              No. 05
+              <Link href="/demo"> No. 05</Link>
             </h5>
             <h5 className="pb-1 font-thin text-sm hover:underline hover:cursor-pointer">
-              No. 06
+              <Link href="/demo"> No. 06</Link>
             </h5>
             <h5 className="pb-1 font-thin text-sm hover:underline hover:cursor-pointer">
-              No. 07
+              <Link href="/demo"> No. 07</Link>
             </h5>
             <h5 className="pb-1 font-thin text-sm hover:underline hover:cursor-pointer">
-              No. 08
+              <Link href="/demo"> No. 08</Link>
             </h5>
             <h5 className="pb-1 font-thin text-sm hover:underline hover:cursor-pointer">
-              No. 09
+              <Link href="/demo"> No. 09</Link>
             </h5>
             <h5 className="pb-1 font-thin text-sm hover:underline hover:cursor-pointer">
-              No. 10
+              <Link href="/demo"> No. 10</Link>
             </h5>
           </div>
         </div>
@@ -197,34 +198,34 @@ const Footer: React.FC<FooterProps> = ({currentUser}) => {
           <div>
             <h2 className="font-bold text-2xl pb-3">Support</h2>
             <h5 className="pb-1 font-thin text-sm hover:underline hover:cursor-pointer">
-              Help & Customer Service
+              <Link href="/demo">Help & Customer Service</Link>
             </h5>
             <h5 className="pb-1 font-thin text-sm hover:underline hover:cursor-pointer">
-              Contact Us
+              <Link href="/demo">Contact Us</Link>
             </h5>
             <h5 className="pb-1 font-thin text-sm hover:underline hover:cursor-pointer">
-              Returns & Exchanges
+              <Link href="/demo">Returns & Exchanges</Link>
             </h5>
             <h5 className="pb-1 font-thin text-sm hover:underline hover:cursor-pointer">
-              Order Tracking
+              <Link href="/demo">Order Tracking</Link>
             </h5>
             <h5 className="pb-1 font-thin text-sm hover:underline hover:cursor-pointer">
-              Gift Cards
+              <Link href="/demo">Gift Cards</Link>
             </h5>
             <h5 className="pb-1 font-thin text-sm hover:underline hover:cursor-pointer">
-              Store Locator
+              <Link href="/demo"> Store Locator</Link>
             </h5>
             <h5 className="pb-1 font-thin text-sm hover:underline hover:cursor-pointer">
-              How to Clean
+              <Link href="/demo"> How to Clean</Link>
             </h5>
             <h5 className="pb-1 font-thin text-sm hover:underline hover:cursor-pointer">
-              Bra Fit Guide
+              <Link href="/demo"> Bra Fit Guide</Link>
             </h5>
             <h5 className="pb-1 font-thin text-sm hover:underline hover:cursor-pointer">
-              Affiliate Program
+              <Link href="/demo"> Affiliate Program</Link>
             </h5>
             <h5 className="pb-1 font-thin text-sm hover:underline hover:cursor-pointer">
-              Team Uniform Inquiries
+              <Link href="/demo"> Team Uniform Inquiries</Link>
             </h5>
           </div>
         </div>
@@ -232,25 +233,25 @@ const Footer: React.FC<FooterProps> = ({currentUser}) => {
           <div>
             <h2 className="font-bold text-2xl pb-3">Company Info</h2>
             <h5 className="pb-1 font-thin text-sm hover:underline hover:cursor-pointer">
-              About Us
+              <Link href="/demo"> About Us</Link>
             </h5>
             <h5 className="pb-1 font-thin text-sm hover:underline hover:cursor-pointer">
-              Careers
+              <Link href="/demo"> Careers</Link>
             </h5>
             <h5 className="pb-1 font-thin text-sm hover:underline hover:cursor-pointer">
-              Fake News
+              <Link href="/demo">Fake News</Link>
             </h5>
             <h5 className="pb-1 font-thin text-sm hover:underline hover:cursor-pointer">
-              Fake Club
+              <Link href="/demo">Fake Club</Link>
             </h5>
             <h5 className="pb-1 font-thin text-sm hover:underline hover:cursor-pointer">
-              Sustainability
+              <Link href="/demo"> Sustainability</Link>
             </h5>
             <h5 className="pb-1 font-thin text-sm hover:underline hover:cursor-pointer">
-              Mobile Apps
+              <Link href="/demo"> Mobile Apps</Link>
             </h5>
             <h5 className="pb-1 font-thin text-sm hover:underline hover:cursor-pointer">
-              Fake Stories
+              <Link href="/demo">Fake Stories</Link>
             </h5>
           </div>
         </div>
@@ -258,22 +259,22 @@ const Footer: React.FC<FooterProps> = ({currentUser}) => {
           <div>
             <h2 className="font-bold text-2xl pb-3">Follow Us</h2>
             <h5 className="pb-1 font-thin text-sm hover:underline hover:cursor-pointer">
-              Facebook
+              <Link href="/demo"> Facebook</Link>
             </h5>
             <h5 className="pb-1 font-thin text-sm hover:underline hover:cursor-pointer">
-              Instagram
+              <Link href="/demo"> Instagram</Link>
             </h5>
             <h5 className="pb-1 font-thin text-sm hover:underline hover:cursor-pointer">
-              Twitter
+              <Link href="/demo"> Twitter</Link>
             </h5>
             <h5 className="pb-1 font-thin text-sm hover:underline hover:cursor-pointer">
-              Pinterest
+              <Link href="/demo"> Pinterest</Link>
             </h5>
             <h5 className="pb-1 font-thin text-sm hover:underline hover:cursor-pointer">
-              TikTok
+              <Link href="/demo"> TikTok</Link>
             </h5>
             <h5 className="pb-1 font-thin text-sm hover:underline hover:cursor-pointer">
-              Youtube
+              <Link href="/demo"> Youtube</Link>
             </h5>
           </div>
         </div>
@@ -283,18 +284,18 @@ const Footer: React.FC<FooterProps> = ({currentUser}) => {
         <ul>
           <div className="flex py-4">
             <li className="flex justify-center w-1/2 hover:underline hover:cursor-pointer">
-              Cookie Settings
+              <Link href="/demo"> Cookie Settings</Link>
             </li>
             <li className="flex justify-center w-1/2 hover:underline hover:cursor-pointer">
-              Cookies
+              <Link href="/demo"> Cookies</Link>
             </li>
           </div>
           <div className="flex justify-around py-4">
             <li className="flex justify-center w-1/2 hover:underline hover:cursor-pointer">
-              Privacy Policy
+              <Link href="/demo"> Privacy Policy</Link>
             </li>
             <li className="flex justify-center w-1/2 hover:underline hover:cursor-pointer">
-              Terms and Conditions
+              <Link href="/demo">Terms and Conditions</Link>
             </li>
           </div>
         </ul>
@@ -304,6 +305,6 @@ const Footer: React.FC<FooterProps> = ({currentUser}) => {
       </div>
     </div>
   );
-}
+};
 
 export default Footer;

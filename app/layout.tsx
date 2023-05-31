@@ -6,6 +6,8 @@ import ToasterProvider from "./context/ToasterProvider";
 import LoginModal from "./components/models/LoginModal";
 import AuthContext from "./context/AuthContext";
 import getCurrentUser from "./actions/getCurrentUser";
+import { Suspense } from "react";
+import Loading from "./loading";
 
 export default async function RootLayout({
   children,
@@ -13,7 +15,7 @@ export default async function RootLayout({
   children: React.ReactNode;
 }) {
   const currentUser = await getCurrentUser();
-  
+
   return (
     <html>
       <body>
@@ -22,7 +24,7 @@ export default async function RootLayout({
           <LoginModal />
           <RegisterModal />
           <Header currentUser={currentUser!} />
-          {children}
+          <Suspense fallback={<Loading />}>{children}</Suspense>
           <Footer currentUser={currentUser!} />
         </AuthContext>
       </body>

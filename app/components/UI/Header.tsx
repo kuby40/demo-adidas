@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useState } from "react";
 import Logo from "../../../public/logo.png";
 import useLoginModal from "../../hooks/useLoginModal";
-
+import { useRouter } from "next/navigation";
 import { User } from "@prisma/client";
 import { IoMenuSharp } from "react-icons/io5";
 import { IoHeartOutline } from "react-icons/io5";
@@ -12,16 +12,20 @@ import { IoPersonOutline } from "react-icons/io5";
 import { IoBagOutline } from "react-icons/io5";
 import { IoSearchOutline } from "react-icons/io5";
 
-
 interface HeaderProps {
-  currentUser: User
+  currentUser: User;
 }
 
-const Header: React.FC<HeaderProps> = ({
-  currentUser
-}
-) => {
+const Header: React.FC<HeaderProps> = ({ currentUser }) => {
   const loginModal = useLoginModal();
+  const router = useRouter();
+  const handleProfileClick = () => {
+    if (!currentUser) {
+      loginModal.onOpen(); 
+    } else {
+      router.push("/account");
+    }
+  };
   //States
   const [showBanner, setShowBanner] = useState(false);
   const showBannerHandler = () => {
@@ -48,7 +52,7 @@ const Header: React.FC<HeaderProps> = ({
       <div className="flex p-4">
         <div className="flex flex-1 place-items-center">
           <IoMenuSharp className="w-8 h-10 ml-3 cursor-pointer hover:-translate-y-1" />
-          <IoHeartOutline className="w-8 h-10 ml-3 cursor-pointer hover:-translate-y-1"/>
+          <IoHeartOutline className="w-8 h-10 ml-3 cursor-pointer hover:-translate-y-1" />
         </div>
         <div className="flex flex-1 place-content-center">
           <Link href={"/"}>
@@ -62,9 +66,12 @@ const Header: React.FC<HeaderProps> = ({
           </Link>
         </div>
         <div className="flex flex-1 place-items-center justify-end">
-          <IoPersonOutline className='w-8 h-10 ml-3 cursor-pointer hover:-translate-y-1' />
-          <IoSearchOutline className='w-8 h-10 ml-3 cursor-pointer hover:-translate-y-1'/>
-          <IoBagOutline className='w-8 h-10 ml-3 cursor-pointer hover:-translate-y-1'/>
+          <IoPersonOutline
+            className="w-8 h-10 ml-3 cursor-pointer hover:-translate-y-1"
+            onClick={handleProfileClick}
+          />
+          <IoSearchOutline className="w-8 h-10 ml-3 cursor-pointer hover:-translate-y-1" />
+          <IoBagOutline className="w-8 h-10 ml-3 cursor-pointer hover:-translate-y-1" />
         </div>
       </div>
 

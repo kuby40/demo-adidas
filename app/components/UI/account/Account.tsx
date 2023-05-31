@@ -19,8 +19,8 @@ const Account: React.FC<AccountProps> = ({ currentUser }) => {
     })
   }
     return (
-      <div className="ml-8 mt-5">
-        <div className="my-8">
+      <div className="ml-8 pt-5">
+        <div className="">
           <h2 className="text-3xl font-bold">MY DETAILS</h2>
           <p className="mt-3">
             Feel free to edit any of your details below so your account is up to
@@ -40,7 +40,7 @@ const Account: React.FC<AccountProps> = ({ currentUser }) => {
           <p className="uppercase">{currentUser.email}</p>
           <h3 className="text-xl font-bold mt-3">PASSWORD</h3>
           <p>**************</p>
-          <button className="underline" onClick={changePasswordModal.onOpen}>
+          <button className="underline hover:font-bold" onClick={changePasswordModal.onOpen}>
             EDIT
           </button>
         </div>
