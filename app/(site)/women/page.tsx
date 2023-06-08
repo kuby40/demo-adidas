@@ -1,17 +1,31 @@
 import FirstCustomerSee from "../../components/UI/FirstCustomerSee";
-import ScrollingLargeTiles from "../../components/UI/ScrollingLargeTiles";
+import ScrollingLargeTiles from "../../components/UI/tiles/ScrollingLargeTiles";
 import ScrollingSmallTiles from "../../components/UI/tiles/ScrollingSmallTiles";
-import LargeTileProductShowcase from "../../components/UI/LargeTileProductShowcase";
+import LargeTileProductShowcase from "../../components/UI/tiles/LargeTileProductShowcase";
 import PageDescriptionModal from "../../components/models/PageDescriptionModal";
-const WomanPage = () => {
+import prisma from '../../libs/primadb'
+const WomenPage = async () => {
+  const showcaseProductsLargeTiles = await prisma.product.findMany({
+    where: {
+      showcase: true,
+    },
+  });
+  const showcaseProductsSmallTiles = await prisma.product.findMany({
+    take: 10,
+    where: {
+      unitsSold: {
+        gte: 250,
+      },
+    },
+  });
   return (
     <div>
       <FirstCustomerSee />
-      <LargeTileProductShowcase />
+      <LargeTileProductShowcase productsList={showcaseProductsLargeTiles} />
       <ScrollingLargeTiles />
-      <ScrollingSmallTiles />
+      <ScrollingSmallTiles productsList={showcaseProductsSmallTiles} />
       <PageDescriptionModal
-        title="WOMANS'S CLOTHING & SHOES"
+        title="WOMEN'S CLOTHING & SHOES"
         description="In sport and in life, creators aren’t content on the sidelines. adidas
           women’s shoes and apparel are made for those who understand that rules
           can be negotiated; expectations, evolved. Reach for a new personal
@@ -25,4 +39,4 @@ const WomanPage = () => {
   );
 };
 
-export default WomanPage;
+export default WomenPage;

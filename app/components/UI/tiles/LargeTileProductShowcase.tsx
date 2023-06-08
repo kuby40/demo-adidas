@@ -1,37 +1,27 @@
 "use client";
+import { Product } from "@prisma/client";
 import LargeTile from "../../models/LargeTile";
-const LargeTileProductShowcase = () => {
 
+interface LargeTileProps {
+  productsList: Product[],
+}
+
+const LargeTileProductShowcase: React.FC<LargeTileProps> = ({ 
+  productsList,
+}) => {
+  
   return (
     <div className="my-8 flex flex-wrap justify-center w-full">
-      <LargeTile
-        imgAlt="shoes"
-        imgHeight={150}
-        imgWidth={150}
-        imgURL="https://res.cloudinary.com/drscfsenq/image/upload/v1678300996/FakeBrand/pictures/shoes/result_z5s6cp.png"
-        title="Number 1"
-      />
-      <LargeTile
-        imgAlt="shoes"
-        imgHeight={150}
-        imgWidth={150}
-        imgURL="https://res.cloudinary.com/drscfsenq/image/upload/v1678300996/FakeBrand/pictures/shoes/result_z5s6cp.png"
-        title="Number 2"
-      />
-      <LargeTile
-        imgAlt="shoes"
-        imgHeight={150}
-        imgWidth={150}
-        imgURL="https://res.cloudinary.com/drscfsenq/image/upload/v1678300996/FakeBrand/pictures/shoes/result_z5s6cp.png"
-        title="Number 3"
-      />
-      <LargeTile
-        imgAlt="shoes"
-        imgHeight={150}
-        imgWidth={150}
-        imgURL="https://res.cloudinary.com/drscfsenq/image/upload/v1678300996/FakeBrand/pictures/shoes/result_z5s6cp.png"
-        title="Number 4"
-      />
+      {productsList.map((item) => ( 
+        <LargeTile
+        key={item.id}
+          imgAlt={item.name}
+          imgURL={item.picture}
+          title={item.name}
+          imgHeight={150}
+          imgWidth={150}
+        />
+      ))}
     </div>
   );
 };

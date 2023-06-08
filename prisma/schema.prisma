@@ -21,22 +21,25 @@ type Description {
 
 type Stock {
   color String
-  size Float
+  size String
   available Int
 }
 
 model Product {
   id  String @id @default(auto()) @map("_id") @db.ObjectId
+  name String
   description Description
+  type String
+  collection String
   details String[]
   gender String
-  name String
   picture String
   price Float
   reviews Review[]
   stock Stock[]
   unitsSold Int
   dateAdded DateTime @default(now())
+  showcase Boolean @default(false)
   favoritedByIDs String[] @db.ObjectId
   favoritedBy User[] @relation(fields: [favoritedByIDs], references: [id])
 }

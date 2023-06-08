@@ -1,15 +1,29 @@
 import FirstCustomerSee from "../../components/UI/FirstCustomerSee";
-import ScrollingLargeTiles from "../../components/UI/ScrollingLargeTiles";
+import ScrollingLargeTiles from "../../components/UI/tiles/ScrollingLargeTiles";
 import ScrollingSmallTiles from "../../components/UI/tiles/ScrollingSmallTiles";
-import LargeTileProductShowcase from "../../components/UI/LargeTileProductShowcase";
+import LargeTileProductShowcase from "../../components/UI/tiles/LargeTileProductShowcase";
 import PageDescriptionModal from "../../components/models/PageDescriptionModal";
-const MenPage = () => {
+import prisma from "../../libs/primadb";
+const MenPage = async () => {
+  const showcaseProductsLargeTiles = await prisma.product.findMany({
+    where: {
+      showcase: true,
+    },
+  });
+  const showcaseProductsSmallTiles = await prisma.product.findMany({
+    take: 10,
+    where: {
+      unitsSold: {
+        gte: 250,
+      },
+    },
+  });
   return (
     <div>
       <FirstCustomerSee />
-      <LargeTileProductShowcase />
+      <LargeTileProductShowcase productsList={showcaseProductsLargeTiles} />
       <ScrollingLargeTiles />
-      <ScrollingSmallTiles />
+      <ScrollingSmallTiles productsList={showcaseProductsSmallTiles} />
       <PageDescriptionModal
         title="MEN'S CLOTHING & SHOES"
         description="As a creator, you look for ways to excel and express yourself when

@@ -91,7 +91,8 @@ reviews = [
   {
     title: "Excellent product at a great value.",
     stars: 5,
-    description: "Great feel. Fit is perfect and as expected. Very light weight.",
+    description:
+      "Great feel. Fit is perfect and as expected. Very light weight.",
   },
 ];
 const materials = [
@@ -172,218 +173,515 @@ let reviewsArray = [
   reviews[Math.floor(Math.random() * reviews.length)],
   reviews[Math.floor(Math.random() * reviews.length)],
 ];
-materialAndDescription[0] = materials[Math.floor(Math.random() * materials.length)]
+materialAndDescription[0] =
+  materials[Math.floor(Math.random() * materials.length)];
 for (i = 0; i < 5; i++) {
-    const index = Math.floor(Math.random() * materialDescriptions.length)
-    materialAndDescription.push(materialDescriptions[index])
-    materialDescriptions.splice(index, 1);
+  const index = Math.floor(Math.random() * materialDescriptions.length);
+  materialAndDescription.push(materialDescriptions[index]);
+  materialDescriptions.splice(index, 1);
 }
 
-
 const createClothing = () => {
-    const obj = {
-      name: "Fake NO.2 Long Sleeve",
-      description: {
-        title: "Long Days, Long Nights, Long sleeves",
-        explanation:
-          "Cover those arms of yours with our NO.2 series long sleeve shirt designed to keep you warm and cool with patent pending material HOTCOOLZ",
+  const obj = {
+    name: "The NO.4 TIE-LESS Shoes",
+    description: {
+      title: "Relaxed Sneakers With Vintage Hoops Style",
+      explanation:
+        "Inspired by '80s B-ball high tops, these canvas streetwear shoes have an easygoing vibe. A versatile low-cut shape shows off a rubber toe cap and FAKE-Stripes. A clean-lined sole keeps the look fresh",
+    },
+    type: "shoes",
+    collection: "NO.4",
+    details: materialAndDescription,
+    gender: "unisex",
+    stock: [
+      {
+        color: "white",
+        size: "M 6.5 / W 7.5",
+        available: Math.floor(Math.random() * 50),
       },
-      details: materialAndDescription,
-      gender: "Unisex",
-      sizes: [
-        {
-          size: "extraSmall",
-          availableColors: [
-            {
-              color: "red",
-              stock: Math.floor(Math.random() * 50),
-            },
-            {
-              color: "blue",
-              stock: Math.floor(Math.random() * 50),
-            },
-            {
-              color: "green",
-              stock: Math.floor(Math.random() * 50),
-            },
-            {
-              color: "black",
-              stock: Math.floor(Math.random() * 50),
-            },
-            {
-              color: "white",
-              stock: Math.floor(Math.random() * 50),
-            },
-            {
-              color: "orange",
-              stock: Math.floor(Math.random() * 50),
-            },
-            {
-              color: "yellow",
-              stock: Math.floor(Math.random() * 50),
-            },
-            {
-              color: "purple",
-              stock: Math.floor(Math.random() * 50),
-            },
-          ],
-        },
-        {
-          size: "small",
-          availableColors: [
-            {
-              color: "red",
-              stock: Math.floor(Math.random() * 50),
-            },
-            {
-              color: "blue",
-              stock: Math.floor(Math.random() * 50),
-            },
-            {
-              color: "green",
-              stock: Math.floor(Math.random() * 50),
-            },
-            {
-              color: "black",
-              stock: Math.floor(Math.random() * 50),
-            },
-            {
-              color: "white",
-              stock: Math.floor(Math.random() * 50),
-            },
-            {
-              color: "orange",
-              stock: Math.floor(Math.random() * 50),
-            },
-            {
-              color: "yellow",
-              stock: Math.floor(Math.random() * 50),
-            },
-            {
-              color: "purple",
-              stock: Math.floor(Math.random() * 50),
-            },
-          ],
-        },
-        {
-          size: "medium",
-          availableColors: [
-            {
-              color: "red",
-              stock: Math.floor(Math.random() * 50),
-            },
-            {
-              color: "blue",
-              stock: Math.floor(Math.random() * 50),
-            },
-            {
-              color: "green",
-              stock: Math.floor(Math.random() * 50),
-            },
-            {
-              color: "black",
-              stock: Math.floor(Math.random() * 50),
-            },
-            {
-              color: "white",
-              stock: Math.floor(Math.random() * 50),
-            },
-            {
-              color: "orange",
-              stock: Math.floor(Math.random() * 50),
-            },
-            {
-              color: "yellow",
-              stock: Math.floor(Math.random() * 50),
-            },
-            {
-              color: "purple",
-              stock: Math.floor(Math.random() * 50),
-            },
-          ],
-        },
-        {
-          size: "large",
-          availableColors: [
-            {
-              color: "red",
-              stock: Math.floor(Math.random() * 50),
-            },
-            {
-              color: "blue",
-              stock: Math.floor(Math.random() * 50),
-            },
-            {
-              color: "green",
-              stock: Math.floor(Math.random() * 50),
-            },
-            {
-              color: "black",
-              stock: Math.floor(Math.random() * 50),
-            },
-            {
-              color: "white",
-              stock: Math.floor(Math.random() * 50),
-            },
-            {
-              color: "orange",
-              stock: Math.floor(Math.random() * 50),
-            },
-            {
-              color: "yellow",
-              stock: Math.floor(Math.random() * 50),
-            },
-            {
-              color: "purple",
-              stock: Math.floor(Math.random() * 50),
-            },
-          ],
-        },
-        {
-          size: "extraLarge",
-          availableColors: [
-            {
-              color: "red",
-              stock: Math.floor(Math.random() * 50),
-            },
-            {
-              color: "blue",
-              stock: Math.floor(Math.random() * 50),
-            },
-            {
-              color: "green",
-              stock: Math.floor(Math.random() * 50),
-            },
-            {
-              color: "black",
-              stock: Math.floor(Math.random() * 50),
-            },
-            {
-              color: "white",
-              stock: Math.floor(Math.random() * 50),
-            },
-            {
-              color: "orange",
-              stock: Math.floor(Math.random() * 50),
-            },
-            {
-              color: "yellow",
-              stock: Math.floor(Math.random() * 50),
-            },
-            {
-              color: "purple",
-              stock: Math.floor(Math.random() * 50),
-            },
-          ],
-        },
-      ],
-      picture:
-        "https://res.cloudinary.com/drscfsenq/image/upload/v1681678298/FakeBrand/pictures/clothing/womanLongSleeve_gfatzd.png",
-      price: 38.0,
-      reviews: [reviewsArray],
-      unitsSold: Math.floor(Math.random() * 500),
-    };
-    console.log(JSON.stringify(obj));   
+      {
+        color: "white",
+        size: "M 7 / W 8",
+        available: Math.floor(Math.random() * 50),
+      },
+      {
+        color: "white",
+        size: "M 7.5 / W 8.5",
+        available: Math.floor(Math.random() * 50),
+      },
+      {
+        color: "white",
+        size: "M 8 / W 9",
+        available: Math.floor(Math.random() * 50),
+      },
+      {
+        color: "white",
+        size: "M 8.5 / W 9.5",
+        available: Math.floor(Math.random() * 50),
+      },
+      {
+        color: "white",
+        size: "M 9 / W 10",
+        available: Math.floor(Math.random() * 50),
+      },
+      {
+        color: "white",
+        size: "M 9.5 / W 10.5",
+        available: Math.floor(Math.random() * 50),
+      },
+      {
+        color: "white",
+        size: "M 10 / W 11",
+        available: Math.floor(Math.random() * 50),
+      },
+      {
+        color: "white",
+        size: "M 10.5 / W 11.5",
+        available: Math.floor(Math.random() * 50),
+      },
+      {
+        color: "white",
+        size: "M 11 / W 12",
+        available: Math.floor(Math.random() * 50),
+      },
+      {
+        color: "white",
+        size: "M 11.5 / W 12.5",
+        available: Math.floor(Math.random() * 50),
+      },
+      {
+        color: "white",
+        size: "M 12 / W 13",
+        available: Math.floor(Math.random() * 50),
+      },
+      {
+        color: "white",
+        size: "M 12.5 / W 13.5",
+        available: Math.floor(Math.random() * 50),
+      },
+      {
+        color: "white",
+        size: "M 13 / W 14",
+        available: Math.floor(Math.random() * 50),
+      },
+      {
+        color: "white",
+        size: "M 13.5 / W 14.5",
+        available: Math.floor(Math.random() * 50),
+      },
+      {
+        color: "white",
+        size: "M 14 / W 15",
+        available: Math.floor(Math.random() * 50),
+      },
+      {
+        color: "black",
+        size: "M 6.5 / W 7.5",
+        available: Math.floor(Math.random() * 50),
+      },
+      {
+        color: "black",
+        size: "M 7 / W 8",
+        available: Math.floor(Math.random() * 50),
+      },
+      {
+        color: "black",
+        size: "M 7.5 / W 8.5",
+        available: Math.floor(Math.random() * 50),
+      },
+      {
+        color: "black",
+        size: "M 8 / W 9",
+        available: Math.floor(Math.random() * 50),
+      },
+      {
+        color: "black",
+        size: "M 8.5 / W 9.5",
+        available: Math.floor(Math.random() * 50),
+      },
+      {
+        color: "black",
+        size: "M 9 / W 10",
+        available: Math.floor(Math.random() * 50),
+      },
+      {
+        color: "black",
+        size: "M 9.5 / W 10.5",
+        available: Math.floor(Math.random() * 50),
+      },
+      {
+        color: "black",
+        size: "M 10 / W 11",
+        available: Math.floor(Math.random() * 50),
+      },
+      {
+        color: "black",
+        size: "M 10.5 / W 11.5",
+        available: Math.floor(Math.random() * 50),
+      },
+      {
+        color: "black",
+        size: "M 11 / W 12",
+        available: Math.floor(Math.random() * 50),
+      },
+      {
+        color: "black",
+        size: "M 11.5 / W 12.5",
+        available: Math.floor(Math.random() * 50),
+      },
+      {
+        color: "black",
+        size: "M 12 / W 13",
+        available: Math.floor(Math.random() * 50),
+      },
+      {
+        color: "black",
+        size: "M 12.5 / W 13.5",
+        available: Math.floor(Math.random() * 50),
+      },
+      {
+        color: "black",
+        size: "M 13 / W 14",
+        available: Math.floor(Math.random() * 50),
+      },
+      {
+        color: "black",
+        size: "M 13.5 / W 14.5",
+        available: Math.floor(Math.random() * 50),
+      },
+      {
+        color: "black",
+        size: "M 14 / W 15",
+        available: Math.floor(Math.random() * 50),
+      },
+      {
+        color: "baby blue",
+        size: "M 6.5 / W 7.5",
+        available: Math.floor(Math.random() * 50),
+      },
+      {
+        color: "baby blue",
+        size: "M 7 / W 8",
+        available: Math.floor(Math.random() * 50),
+      },
+      {
+        color: "baby blue",
+        size: "M 7.5 / W 8.5",
+        available: Math.floor(Math.random() * 50),
+      },
+      {
+        color: "baby blue",
+        size: "M 8 / W 9",
+        available: Math.floor(Math.random() * 50),
+      },
+      {
+        color: "baby blue",
+        size: "M 8.5 / W 9.5",
+        available: Math.floor(Math.random() * 50),
+      },
+      {
+        color: "baby blue",
+        size: "M 9 / W 10",
+        available: Math.floor(Math.random() * 50),
+      },
+      {
+        color: "baby blue",
+        size: "M 9.5 / W 10.5",
+        available: Math.floor(Math.random() * 50),
+      },
+      {
+        color: "baby blue",
+        size: "M 10 / W 11",
+        available: Math.floor(Math.random() * 50),
+      },
+      {
+        color: "baby blue",
+        size: "M 10.5 / W 11.5",
+        available: Math.floor(Math.random() * 50),
+      },
+      {
+        color: "baby blue",
+        size: "M 11 / W 12",
+        available: Math.floor(Math.random() * 50),
+      },
+      {
+        color: "baby blue",
+        size: "M 11.5 / W 12.5",
+        available: Math.floor(Math.random() * 50),
+      },
+      {
+        color: "baby blue",
+        size: "M 12 / W 13",
+        available: Math.floor(Math.random() * 50),
+      },
+      {
+        color: "baby blue",
+        size: "M 12.5 / W 13.5",
+        available: Math.floor(Math.random() * 50),
+      },
+      {
+        color: "baby blue",
+        size: "M 13 / W 14",
+        available: Math.floor(Math.random() * 50),
+      },
+      {
+        color: "baby blue",
+        size: "M 13.5 / W 14.5",
+        available: Math.floor(Math.random() * 50),
+      },
+      {
+        color: "baby blue",
+        size: "M 14 / W 15",
+        available: Math.floor(Math.random() * 50),
+      },
+      {
+        color: "red",
+        size: "M 6.5 / W 7.5",
+        available: Math.floor(Math.random() * 50),
+      },
+      {
+        color: "red",
+        size: "M 7 / W 8",
+        available: Math.floor(Math.random() * 50),
+      },
+      {
+        color: "red",
+        size: "M 7.5 / W 8.5",
+        available: Math.floor(Math.random() * 50),
+      },
+      {
+        color: "red",
+        size: "M 8 / W 9",
+        available: Math.floor(Math.random() * 50),
+      },
+      {
+        color: "red",
+        size: "M 8.5 / W 9.5",
+        available: Math.floor(Math.random() * 50),
+      },
+      {
+        color: "red",
+        size: "M 9 / W 10",
+        available: Math.floor(Math.random() * 50),
+      },
+      {
+        color: "red",
+        size: "M 9.5 / W 10.5",
+        available: Math.floor(Math.random() * 50),
+      },
+      {
+        color: "red",
+        size: "M 10 / W 11",
+        available: Math.floor(Math.random() * 50),
+      },
+      {
+        color: "red",
+        size: "M 10.5 / W 11.5",
+        available: Math.floor(Math.random() * 50),
+      },
+      {
+        color: "red",
+        size: "M 11 / W 12",
+        available: Math.floor(Math.random() * 50),
+      },
+      {
+        color: "red",
+        size: "M 11.5 / W 12.5",
+        available: Math.floor(Math.random() * 50),
+      },
+      {
+        color: "red",
+        size: "M 12 / W 13",
+        available: Math.floor(Math.random() * 50),
+      },
+      {
+        color: "red",
+        size: "M 12.5 / W 13.5",
+        available: Math.floor(Math.random() * 50),
+      },
+      {
+        color: "red",
+        size: "M 13 / W 14",
+        available: Math.floor(Math.random() * 50),
+      },
+      {
+        color: "red",
+        size: "M 13.5 / W 14.5",
+        available: Math.floor(Math.random() * 50),
+      },
+      {
+        color: "red",
+        size: "M 14 / W 15",
+        available: Math.floor(Math.random() * 50),
+      },
+      {
+        color: "dark green",
+        size: "M 6.5 / W 7.5",
+        available: Math.floor(Math.random() * 50),
+      },
+      {
+        color: "dark green",
+        size: "M 7 / W 8",
+        available: Math.floor(Math.random() * 50),
+      },
+      {
+        color: "dark green",
+        size: "M 7.5 / W 8.5",
+        available: Math.floor(Math.random() * 50),
+      },
+      {
+        color: "dark green",
+        size: "M 8 / W 9",
+        available: Math.floor(Math.random() * 50),
+      },
+      {
+        color: "dark green",
+        size: "M 8.5 / W 9.5",
+        available: Math.floor(Math.random() * 50),
+      },
+      {
+        color: "dark green",
+        size: "M 9 / W 10",
+        available: Math.floor(Math.random() * 50),
+      },
+      {
+        color: "dark green",
+        size: "M 9.5 / W 10.5",
+        available: Math.floor(Math.random() * 50),
+      },
+      {
+        color: "dark green",
+        size: "M 10 / W 11",
+        available: Math.floor(Math.random() * 50),
+      },
+      {
+        color: "dark green",
+        size: "M 10.5 / W 11.5",
+        available: Math.floor(Math.random() * 50),
+      },
+      {
+        color: "dark green",
+        size: "M 11 / W 12",
+        available: Math.floor(Math.random() * 50),
+      },
+      {
+        color: "dark green",
+        size: "M 11.5 / W 12.5",
+        available: Math.floor(Math.random() * 50),
+      },
+      {
+        color: "dark green",
+        size: "M 12 / W 13",
+        available: Math.floor(Math.random() * 50),
+      },
+      {
+        color: "dark green",
+        size: "M 12.5 / W 13.5",
+        available: Math.floor(Math.random() * 50),
+      },
+      {
+        color: "dark green",
+        size: "M 13 / W 14",
+        available: Math.floor(Math.random() * 50),
+      },
+      {
+        color: "dark green",
+        size: "M 13.5 / W 14.5",
+        available: Math.floor(Math.random() * 50),
+      },
+      {
+        color: "dark green",
+        size: "M 14 / W 15",
+        available: Math.floor(Math.random() * 50),
+      },
+      {
+        color: "collegiate green",
+        size: "M 6.5 / W 7.5",
+        available: Math.floor(Math.random() * 50),
+      },
+      {
+        color: "collegiate green",
+        size: "M 7 / W 8",
+        available: Math.floor(Math.random() * 50),
+      },
+      {
+        color: "collegiate green",
+        size: "M 7.5 / W 8.5",
+        available: Math.floor(Math.random() * 50),
+      },
+      {
+        color: "collegiate green",
+        size: "M 8 / W 9",
+        available: Math.floor(Math.random() * 50),
+      },
+      {
+        color: "collegiate green",
+        size: "M 8.5 / W 9.5",
+        available: Math.floor(Math.random() * 50),
+      },
+      {
+        color: "collegiate green",
+        size: "M 9 / W 10",
+        available: Math.floor(Math.random() * 50),
+      },
+      {
+        color: "collegiate green",
+        size: "M 9.5 / W 10.5",
+        available: Math.floor(Math.random() * 50),
+      },
+      {
+        color: "collegiate green",
+        size: "M 10 / W 11",
+        available: Math.floor(Math.random() * 50),
+      },
+      {
+        color: "collegiate green",
+        size: "M 10.5 / W 11.5",
+        available: Math.floor(Math.random() * 50),
+      },
+      {
+        color: "collegiate green",
+        size: "M 11 / W 12",
+        available: Math.floor(Math.random() * 50),
+      },
+      {
+        color: "collegiate green",
+        size: "M 11.5 / W 12.5",
+        available: Math.floor(Math.random() * 50),
+      },
+      {
+        color: "collegiate green",
+        size: "M 12 / W 13",
+        available: Math.floor(Math.random() * 50),
+      },
+      {
+        color: "collegiate green",
+        size: "M 12.5 / W 13.5",
+        available: Math.floor(Math.random() * 50),
+      },
+      {
+        color: "collegiate green",
+        size: "M 13 / W 14",
+        available: Math.floor(Math.random() * 50),
+      },
+      {
+        color: "collegiate green",
+        size: "M 13.5 / W 14.5",
+        available: Math.floor(Math.random() * 50),
+      },
+      {
+        color: "collegiate green",
+        size: "M 14 / W 15",
+        available: Math.floor(Math.random() * 50),
+      },
+    ],
+    picture:
+      "https://res.cloudinary.com/drscfsenq/image/upload/v1678300996/FakeBrand/pictures/shoes/result_z5s6cp.png",
+    price: 69.99,
+    reviews: reviewsArray,
+    unitsSold: Math.floor(Math.random() * 500),
+  };
+  console.log(JSON.stringify(obj));
 };
 ///////
 ///////
@@ -395,194 +693,934 @@ const createClothing = () => {
 //////
 ////////
 ////////
-const createShoe= () => {
-  const obj = {
-    name: "NO.1 Slide",
-    description: {
-      title: "The most comfortable slide you can slide",
-      explanation:
-        "Trust us when we say you will want to wear these to work, school, sports, sleeping, etc. SO COMFY!",
-    },
-    details: materialAndDescription,
-    gender: "Unisex",
-    sizes: [
-      {
-        size: 7,
-        availableColors: [
-          {
-            color: "black",
-            stock: Math.floor(Math.random() * 50),
-          },
-          {
-            color: "white",
-            stock: Math.floor(Math.random() * 50),
-          },
-        ],
-      },
-      {
-        size: 7.5,
-        availableColors: [
-          {
-            color: "black",
-            stock: Math.floor(Math.random() * 50),
-          },
-          {
-            color: "white",
-            stock: Math.floor(Math.random() * 50),
-          },
-        ],
-      },
-      {
-        size: 8,
-        availableColors: [
-          {
-            color: "black",
-            stock: Math.floor(Math.random() * 50),
-          },
-          {
-            color: "white",
-            stock: Math.floor(Math.random() * 50),
-          },
-        ],
-      },
-      {
-        size: 8.5,
-        availableColors: [
-          {
-            color: "black",
-            stock: Math.floor(Math.random() * 50),
-          },
-          {
-            color: "white",
-            stock: Math.floor(Math.random() * 50),
-          },
-        ],
-      },
-      {
-        size: 9,
-        availableColors: [
-          {
-            color: "black",
-            stock: Math.floor(Math.random() * 50),
-          },
-          {
-            color: "white",
-            stock: Math.floor(Math.random() * 50),
-          },
-        ],
-      },
-      {
-        size: 9.5,
-        availableColors: [
-          {
-            color: "black",
-            stock: Math.floor(Math.random() * 50),
-          },
-          {
-            color: "white",
-            stock: Math.floor(Math.random() * 50),
-          },
-        ],
-      },
-      {
-        size: 10,
-        availableColors: [
-          {
-            color: "black",
-            stock: Math.floor(Math.random() * 50),
-          },
-          {
-            color: "white",
-            stock: Math.floor(Math.random() * 50),
-          },
-        ],
-      },
-      {
-        size: 10.5,
-        availableColors: [
-          {
-            color: "black",
-            stock: Math.floor(Math.random() * 50),
-          },
-          {
-            color: "white",
-            stock: Math.floor(Math.random() * 50),
-          },
-        ],
-      },
-      {
-        size: 11,
-        availableColors: [
-          {
-            color: "black",
-            stock: Math.floor(Math.random() * 50),
-          },
-          {
-            color: "white",
-            stock: Math.floor(Math.random() * 50),
-          },
-        ],
-      },
-      {
-        size: 11.5,
-        availableColors: [
-          {
-            color: "black",
-            stock: Math.floor(Math.random() * 50),
-          },
-          {
-            color: "white",
-            stock: Math.floor(Math.random() * 50),
-          },
-        ],
-      },
-      {
-        size: 12,
-        availableColors: [
-          {
-            color: "black",
-            stock: Math.floor(Math.random() * 50),
-          },
-          {
-            color: "white",
-            stock: Math.floor(Math.random() * 50),
-          },
-        ],
-      },
-      {
-        size: 12.5,
-        availableColors: [
-          {
-            color: "black",
-            stock: Math.floor(Math.random() * 50),
-          },
-          {
-            color: "white",
-            stock: Math.floor(Math.random() * 50),
-          },
-        ],
-      },
-      {
-        size: 13,
-        availableColors: [
-          {
-            color: "black",
-            stock: Math.floor(Math.random() * 50),
-          },
-          {
-            color: "white",
-            stock: Math.floor(Math.random() * 50),
-          },
-        ],
-      },
-    ],
-    picture:
-      "https://res.cloudinary.com/drscfsenq/image/upload/v1681750876/FakeBrand/pictures/shoes/shoeSlides_c30hv1.png",
-    price: 35.0,
-    reviews: [reviewsArray[0], reviewsArray[1]],
-    unitsSold: Math.floor(Math.random() * 500),
-  };
-  console.log(JSON.stringify(obj));
-};
-//createClothing()
-createShoe()
+createClothing();
+//createShoe()
+// {
+//         color: "red",
+//         size: "xs",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "red",
+//         size: "s",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "red",
+//         size: "m",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "red",
+//         size: "l",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "red",
+//         size: "xl",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "red",
+//         size: "xxl",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "blue",
+//         size: "xs",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "blue",
+//         size: "s",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "blue",
+//         size: "m",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "blue",
+//         size: "l",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "blue",
+//         size: "xl",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "blue",
+//         size: "xxl",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "black",
+//         size: "xs",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "black",
+//         size: "s",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "black",
+//         size: "m",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "black",
+//         size: "l",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "black",
+//         size: "xl",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "black",
+//         size: "xxl",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "white",
+//         size: "xs",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "white",
+//         size: "s",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "white",
+//         size: "m",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "white",
+//         size: "l",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "white",
+//         size: "xl",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "white",
+//         size: "xxl",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "grey",
+//         size: "xs",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "grey",
+//         size: "s",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "grey",
+//         size: "m",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "grey",
+//         size: "l",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "grey",
+//         size: "xl",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "grey",
+//         size: "xxl",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "orange",
+//         size: "xs",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "orange",
+//         size: "s",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "orange",
+//         size: "m",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "orange",
+//         size: "l",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "orange",
+//         size: "xl",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "orange",
+//         size: "xxl",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "yellow",
+//         size: "xs",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "yellow",
+//         size: "s",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "yellow",
+//         size: "m",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "yellow",
+//         size: "l",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "yellow",
+//         size: "xl",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "yellow",
+//         size: "xxl",
+//         available: Math.floor(Math.random() * 50),
+//       },
+
+
+
+
+// {
+//         color: "hemp",
+//         size: "28x30",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "hemp",
+//         size: "28x32",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "hemp",
+//         size: "28x34",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "hemp",
+//         size: "30x30",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "hemp",
+//         size: "30x32",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "hemp",
+//         size: "30x34",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "hemp",
+//         size: "32x30",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "hemp",
+//         size: "32x32",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "hemp",
+//         size: "32x34",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "hemp",
+//         size: "34x30",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "hemp",
+//         size: "34x32",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "hemp",
+//         size: "34x34",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "hemp",
+//         size: "36x30",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "hemp",
+//         size: "36x32",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "hemp",
+//         size: "36x34",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "hemp",
+//         size: "38x30",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "hemp",
+//         size: "38x32",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "hemp",
+//         size: "38x34",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "white",
+//         size: "28x30",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "white",
+//         size: "28x32",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "white",
+//         size: "28x34",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "white",
+//         size: "30x30",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "white",
+//         size: "30x32",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "white",
+//         size: "30x34",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "white",
+//         size: "32x30",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "white",
+//         size: "32x32",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "white",
+//         size: "32x34",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "white",
+//         size: "34x30",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "white",
+//         size: "34x32",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "white",
+//         size: "34x34",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "white",
+//         size: "36x30",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "white",
+//         size: "36x32",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "white",
+//         size: "36x34",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "white",
+//         size: "38x30",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "white",
+//         size: "38x32",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "white",
+//         size: "38x34",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "black",
+//         size: "28x30",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "black",
+//         size: "28x32",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "black",
+//         size: "28x34",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "black",
+//         size: "30x30",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "black",
+//         size: "30x32",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "black",
+//         size: "30x34",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "black",
+//         size: "32x30",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "black",
+//         size: "32x32",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "black",
+//         size: "32x34",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "black",
+//         size: "34x30",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "black",
+//         size: "34x32",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "black",
+//         size: "34x34",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "black",
+//         size: "36x30",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "black",
+//         size: "36x32",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "black",
+//         size: "36x34",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "black",
+//         size: "38x30",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "black",
+//         size: "38x32",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "black",
+//         size: "38x34",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "grey",
+//         size: "28x30",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "grey",
+//         size: "28x32",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "grey",
+//         size: "28x34",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "grey",
+//         size: "30x30",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "grey",
+//         size: "30x32",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "grey",
+//         size: "30x34",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "grey",
+//         size: "32x30",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "grey",
+//         size: "32x32",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "grey",
+//         size: "32x34",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "grey",
+//         size: "34x30",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "grey",
+//         size: "34x32",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "grey",
+//         size: "34x34",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "grey",
+//         size: "36x30",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "grey",
+//         size: "36x32",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "grey",
+//         size: "36x34",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "grey",
+//         size: "38x30",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "grey",
+//         size: "38x32",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "grey",
+//         size: "38x34",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "navy",
+//         size: "28x30",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "navy",
+//         size: "28x32",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "navy",
+//         size: "28x34",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "navy",
+//         size: "30x30",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "navy",
+//         size: "30x32",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "navy",
+//         size: "30x34",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "navy",
+//         size: "32x30",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "navy",
+//         size: "32x32",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "navy",
+//         size: "32x34",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "navy",
+//         size: "34x30",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "navy",
+//         size: "34x32",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "navy",
+//         size: "34x34",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "navy",
+//         size: "36x30",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "navy",
+//         size: "36x32",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "navy",
+//         size: "36x34",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "navy",
+//         size: "38x30",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "navy",
+//         size: "38x32",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "navy",
+//         size: "38x34",
+//         available: Math.floor(Math.random() * 50),
+//       },
+
+
+
+/////
+
+// {
+//         color: "hemp",
+//         size: "00",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "hemp",
+//         size: "0",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "hemp",
+//         size: "2",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "hemp",
+//         size: "4",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "hemp",
+//         size: "6",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "hemp",
+//         size: "8",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "hemp",
+//         size: "10",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "hemp",
+//         size: "12",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "hemp",
+//         size: "14",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "hemp",
+//         size: "16",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "hemp",
+//         size: "18",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "hemp",
+//         size: "00",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "black",
+//         size: "0",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "black",
+//         size: "2",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "black",
+//         size: "4",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "black",
+//         size: "6",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "black",
+//         size: "8",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "black",
+//         size: "10",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "black",
+//         size: "12",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "black",
+//         size: "14",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "black",
+//         size: "16",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "black",
+//         size: "18",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "white",
+//         size: "0",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "white",
+//         size: "2",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "white",
+//         size: "4",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "white",
+//         size: "6",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "white",
+//         size: "8",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "white",
+//         size: "10",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "white",
+//         size: "12",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "white",
+//         size: "14",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "white",
+//         size: "16",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "white",
+//         size: "18",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "navy",
+//         size: "0",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "navy",
+//         size: "2",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "navy",
+//         size: "4",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "navy",
+//         size: "6",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "navy",
+//         size: "8",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "navy",
+//         size: "10",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "navy",
+//         size: "12",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "navy",
+//         size: "14",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "navy",
+//         size: "16",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "navy",
+//         size: "18",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "brown",
+//         size: "0",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "brown",
+//         size: "2",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "brown",
+//         size: "4",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "brown",
+//         size: "6",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "brown",
+//         size: "8",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "brown",
+//         size: "10",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "brown",
+//         size: "12",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "brown",
+//         size: "14",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "brown",
+//         size: "16",
+//         available: Math.floor(Math.random() * 50),
+//       },
+//       {
+//         color: "brown",
+//         size: "18",
+//         available: Math.floor(Math.random() * 50),
+//       },

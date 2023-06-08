@@ -5,13 +5,30 @@ import ScrollingSmallTiles from "../components/UI/tiles/ScrollingSmallTiles";
 import ScrollingLargeTiles from "../components/UI/tiles/ScrollingLargeTiles";
 import PopularRightNow from "../components/UI/PopularRightNow";
 import CompanyStory from "../components/UI/CompanyStory";
+import prisma from "../libs/primadb";
 
-const Home = () => {
+const Home = async () => {
+  const showcaseProductsLargeTiles = await prisma.product.findMany({
+    where: {
+      showcase: true,
+    }
+  });
+  const showcaseProductsSmallTiles = await prisma.product.findMany({
+    take: 10,
+    where: {
+      unitsSold: {
+        gte: 250
+      }
+    },
+  });
+  
+
   return (
     <div>
       <FirstCustomerSee />
-      <LargeTileProductShowcase />
-      <ScrollingSmallTiles />
+      <ShowcaseVideoFrontPage/>
+      <LargeTileProductShowcase productsList={showcaseProductsLargeTiles} />
+      <ScrollingSmallTiles productsList={showcaseProductsSmallTiles} />
       <ScrollingLargeTiles />
       <PopularRightNow />
       <CompanyStory />

@@ -1,8 +1,14 @@
 "use client";
+import { Product } from "@prisma/client";
 import SmallTile from "../../models/SmallTile";
 import { useRef } from "react";
 
-const ScrollingSmallTiles = () => {
+interface ScrollingSmallTilesProps {
+  productsList: Product[];
+}
+const ScrollingSmallTiles: React.FC<ScrollingSmallTilesProps> = ({
+  productsList,
+}) => {
   const trendingScrollable = useRef<HTMLDivElement>(null);
   return (
     <div className="py-8 border-t-2">
@@ -67,30 +73,15 @@ const ScrollingSmallTiles = () => {
         ref={trendingScrollable}
       >
         <div className="mt-8 mx-6 flex">
-          <SmallTile
-            title="shoes"
-            imgURL="https://res.cloudinary.com/drscfsenq/image/upload/v1678300996/FakeBrand/pictures/shoes/result_z5s6cp.png"
-            gender="Male"
-            collection="NO.3"
-          />
-          <SmallTile
-            title="shoes"
-            imgURL="https://res.cloudinary.com/drscfsenq/image/upload/v1678300996/FakeBrand/pictures/shoes/result_z5s6cp.png"
-            gender="Male"
-            collection="NO.3"
-          />
-          <SmallTile
-            title="shoes"
-            imgURL="https://res.cloudinary.com/drscfsenq/image/upload/v1678300996/FakeBrand/pictures/shoes/result_z5s6cp.png"
-            gender="Male"
-            collection="NO.3"
-          />
-          <SmallTile
-            title="shoes"
-            imgURL="https://res.cloudinary.com/drscfsenq/image/upload/v1678300996/FakeBrand/pictures/shoes/result_z5s6cp.png"
-            gender="Male"
-            collection="NO.3"
-          />
+          {productsList.map((item) => (
+            <SmallTile
+            key={item.id} 
+              title={item.name}
+              imgURL={item.picture}
+              gender={item.gender}
+              collection={item.collection}
+            />
+          ))}
         </div>
       </div>
     </div>
