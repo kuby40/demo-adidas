@@ -3,11 +3,12 @@ import ScrollingSmallTiles from "../../components/UI/tiles/ScrollingSmallTiles";
 import { User } from "@prisma/client";
 import { useState } from "react";
 import Account from "../../components/UI/account/Account"
-
+import { Product } from "@prisma/client";
 interface UserPageProps {
   currentUser: User;
+  productsShowcase: Product[];
 }
-const AccountPage: React.FC<UserPageProps> = ({ currentUser }) => {
+const AccountPage: React.FC<UserPageProps> = ({ currentUser, productsShowcase }) => {
   const [orderOrAccount, setOrderOrAccount] = useState("order");
   const orders = <div className="flex justify-center">Orders</div>;
   const account = <Account currentUser={currentUser}/>
@@ -47,7 +48,7 @@ const AccountPage: React.FC<UserPageProps> = ({ currentUser }) => {
           We’ve collected some of our favorite products based on customers
           preferences and purchases.
         </h4>
-        <ScrollingSmallTiles />
+        <ScrollingSmallTiles productsList={productsShowcase} />
       </div>
     </div>
   );

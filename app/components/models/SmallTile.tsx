@@ -32,7 +32,10 @@ const SmallTile = (props: {
       </div>
       <h2 className="font-semibold">{props.title}</h2>
       <h4 className="font-thin">
-        {props.gender} {props.collection}
+        {props.gender}
+      </h4>
+      <h4 className="font-thin">
+        {props.collection}
       </h4>
     </div>
   );

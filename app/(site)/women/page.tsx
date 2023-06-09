@@ -3,27 +3,17 @@ import ScrollingLargeTiles from "../../components/UI/tiles/ScrollingLargeTiles";
 import ScrollingSmallTiles from "../../components/UI/tiles/ScrollingSmallTiles";
 import LargeTileProductShowcase from "../../components/UI/tiles/LargeTileProductShowcase";
 import PageDescriptionModal from "../../components/models/PageDescriptionModal";
-import prisma from '../../libs/primadb'
+import getShowcaseProducts from "../../actions/getShowcaseProducts";
+import getMostBoughtProducts from "../../actions/getMostBoughtProducts";
 const WomenPage = async () => {
-  const showcaseProductsLargeTiles = await prisma.product.findMany({
-    where: {
-      showcase: true,
-    },
-  });
-  const showcaseProductsSmallTiles = await prisma.product.findMany({
-    take: 10,
-    where: {
-      unitsSold: {
-        gte: 250,
-      },
-    },
-  });
+  const showcaseProductsLargeTiles = await getShowcaseProducts();
+  const mostBoughtProductsShowcase = await getMostBoughtProducts();
   return (
     <div>
       <FirstCustomerSee />
       <LargeTileProductShowcase productsList={showcaseProductsLargeTiles} />
       <ScrollingLargeTiles />
-      <ScrollingSmallTiles productsList={showcaseProductsSmallTiles} />
+      <ScrollingSmallTiles productsList={mostBoughtProductsShowcase} />
       <PageDescriptionModal
         title="WOMEN'S CLOTHING & SHOES"
         description="In sport and in life, creators aren’t content on the sidelines. adidas
