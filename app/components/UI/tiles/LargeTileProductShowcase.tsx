@@ -15,6 +15,7 @@ const LargeTileProductShowcase: React.FC<LargeTileProps> = ({
       {productsList.map((item) => ( 
         <LargeTile
         key={item.id}
+          id={item.id}
           imgAlt={item.name}
           imgURL={item.picture}
           title={item.name}

@@ -1,5 +1,7 @@
 import { CldImage } from "next-cloudinary";
+import Link from "next/link";
 const LargeTile = (props: {
+  id: string
   imgAlt: string;
   imgWidth: number;
   imgHeight: number;
@@ -8,6 +10,7 @@ const LargeTile = (props: {
 }) => {
   return (
     <div className="bg-gray-200 w-2/5 m-2 cursor-pointer">
+      <Link href={`/products/${props.id}`}>
       <div className="flex justify-center h-32">
         <CldImage
           alt={props.imgAlt}
@@ -21,6 +24,7 @@ const LargeTile = (props: {
           <p className="hover:text-white hover:bg-black">{props.title}</p>
         </h5>
       </div>
+      </Link>
     </div>
   );
 };
