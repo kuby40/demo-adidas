@@ -2,6 +2,9 @@
 import { Product } from "@prisma/client";
 import Image from "next/image";
 import { useState } from "react";
+import Button from "../UI/Button";
+import {AiOutlineHeart} from 'react-icons/ai'
+
 interface ProductsProps {
   product: Product;
 }
@@ -30,7 +33,8 @@ const Product: React.FC<ProductsProps> = ({ product }) => {
     return list;
   };
   const sizes = getSizes(selectedColor)
-
+  const addToBag = () => {return null}
+  const addToWishlist = () => {return null}
   return (
     <div className="grid lg:grid-cols-2">
       <div className="ml-7">
@@ -45,6 +49,7 @@ const Product: React.FC<ProductsProps> = ({ product }) => {
           fill
         ></Image>
       </div>
+      <Button label='Wishlist' icon={AiOutlineHeart} onClick={addToWishlist}></Button>
       <div className="col-span-1 ml-6">
         <div className="my-3 font-bold">
           {productColors.length} Colors Available:
@@ -59,8 +64,12 @@ const Product: React.FC<ProductsProps> = ({ product }) => {
           <div className="text-xs mr-7">Find your Size</div>
         </div>
         <div className="flex flex-wrap justify-center">{sizes.map((element) => (
-            <button className={`text-xs border w-40 p-3 ` + (selectedSize === element.size ? 'bg-black text-white ' : '') + (element.available === 0 ? 'line-through text-gray-400' : '')} onClick={(e) => setSelectedSize(element.size)}>{element.size}</button>
-          ))}</div>
+            <button className={`text-xs border w-40 p-3 ` + (selectedSize === element.size ? 'bg-black text-white ' : '') + (element.available === 0 ? 'line-through text-gray-400' : '')} onClick={(e) => {if(element.available != 0){setSelectedSize(element.size)}}}>{element.size}</button>
+          ))}
+        </div>
+        <div className="my-5">
+          <Button label="Add to Bag" onClick={addToBag}></Button>
+        </div>
       </div>
     </div>
   );
