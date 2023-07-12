@@ -3,14 +3,15 @@ import { Product } from "@prisma/client";
 import Image from "next/image";
 import { useState } from "react";
 import Button from "../UI/Button";
-import {AiOutlineHeart} from 'react-icons/ai'
-
+import { AiOutlineHeart } from "react-icons/ai";
+import { BsBagPlus } from "react-icons/bs";
 interface ProductsProps {
   product: Product;
 }
 const Product: React.FC<ProductsProps> = ({ product }) => {
   const [selectedColor, setSelectedColor] = useState(product.stock[0].color);
-  const [selectedSize, setSelectedSize] = useState('');
+  const [selectedSize, setSelectedSize] = useState("");
+  const [addBagLabel, setAddToBagLabel] = useState("Select a Size");
   const findUniqueColors = () => {
     const colorsArray: string | string[] = [];
 
@@ -32,9 +33,13 @@ const Product: React.FC<ProductsProps> = ({ product }) => {
     });
     return list;
   };
-  const sizes = getSizes(selectedColor)
-  const addToBag = () => {return null}
-  const addToWishlist = () => {return null}
+  const sizes = getSizes(selectedColor);
+  const addToBag = () => {
+    return null;
+  };
+  const addToWishlist = () => {
+    return null;
+  };
   return (
     <div className="grid lg:grid-cols-2">
       <div className="ml-7">
@@ -49,26 +54,61 @@ const Product: React.FC<ProductsProps> = ({ product }) => {
           fill
         ></Image>
       </div>
-      <Button label='Wishlist' icon={AiOutlineHeart} onClick={addToWishlist}></Button>
+      <Button
+        label="Wishlist"
+        icon={AiOutlineHeart}
+        onClick={addToWishlist}
+      ></Button>
       <div className="col-span-1 ml-6">
         <div className="my-3 font-bold">
           {productColors.length} Colors Available:
         </div>
         <div>
           {productColors.map((color) => (
-            <button className={`bg-slate-100 p-4 mx-1 uppercase ` + (selectedColor === color ? 'underline bg-slate-300' : '')} onClick={(e) => setSelectedColor(color)}>{color}</button>
+            <button
+              className={
+                `bg-slate-100 p-4 mx-1 my-1 uppercase ` +
+                (selectedColor === color ? "underline bg-slate-300" : "")
+              }
+              onClick={(e) => {
+                setSelectedColor(color);
+                setSelectedSize("");
+                setAddToBagLabel('Select a Size')
+              }}
+            >
+              {color}
+            </button>
           ))}
         </div>
-        <div className="flex justify-between mt-5">
+        <div className="flex justify-between my-5">
           <div className="font-bold">Sizes</div>
           <div className="text-xs mr-7">Find your Size</div>
         </div>
-        <div className="flex flex-wrap justify-center">{sizes.map((element) => (
-            <button className={`text-xs border w-40 p-3 ` + (selectedSize === element.size ? 'bg-black text-white ' : '') + (element.available === 0 ? 'line-through text-gray-400' : '')} onClick={(e) => {if(element.available != 0){setSelectedSize(element.size)}}}>{element.size}</button>
+        <div className="flex flex-wrap justify-center">
+          {sizes.map((element) => (
+            <button
+              className={
+                `text-xs border w-40 p-3 ` +
+                (selectedSize === element.size ? "bg-black text-white " : "") +
+                (element.available === 0 ? "line-through text-gray-400" : "")
+              }
+              onClick={(e) => {
+                if (element.available != 0) {
+                  setSelectedSize(element.size);
+                  setAddToBagLabel("Add to Bag");
+                }
+              }}
+            >
+              {element.size}
+            </button>
           ))}
         </div>
-        <div className="my-5">
-          <Button label="Add to Bag" onClick={addToBag}></Button>
+        <div className="m-5">
+          <Button
+            icon={BsBagPlus}
+            label={addBagLabel}
+            onClick={addToBag}
+          ></Button>
         </div>
       </div>
     </div>
