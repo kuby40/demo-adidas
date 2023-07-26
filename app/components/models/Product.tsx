@@ -13,6 +13,7 @@ import ReactStars from "react-stars";
 import { toast } from "react-hot-toast";
 import axios from "axios";
 import { useRouter } from "next/navigation";
+import useCart from "../../hooks/useCart";
 interface ProductsProps {
   product: Product;
   currentUser: User | null;
@@ -26,6 +27,7 @@ const Product: React.FC<ProductsProps> = ({ product, currentUser }) => {
   const [showDetailsList, setShowDetailsList] = useState(false);
   const wishlisted = currentUser?.favoriteIDs?.includes(product.id)
   const router = useRouter();
+  const cart = useCart();
   
   const showReviewsListHandler = () => {
     setReviewList(!showReviewList);
@@ -59,7 +61,7 @@ const Product: React.FC<ProductsProps> = ({ product, currentUser }) => {
   };
   const sizes = getSizes(selectedColor);
   const addToBag = () => {
-    return null;
+    cart.addItem(product, selectedColor, selectedSize)
   };
   const addToWishlistHandler = async () => {
     const data = product.id;
@@ -75,7 +77,7 @@ const Product: React.FC<ProductsProps> = ({ product, currentUser }) => {
   const averageReviewStars =
     product.reviews.reduce((p, c) => p + c.stars, 0) / product.reviews.length;
   const reviewList = (
-    <div>
+    <div className="cursor-default" onClick={e => {e.stopPropagation()}}>
       <ul>
       {product.reviews.map((review, inx) => (
         <li className="m-5" key={inx}>
@@ -88,12 +90,12 @@ const Product: React.FC<ProductsProps> = ({ product, currentUser }) => {
     </div>
   )
   const descriptionList = (
-    <div className="">
+    <div className="cursor-default" onClick={e => {e.stopPropagation()}}>
       <h1 className="mt-5 mb-3 text-3xl">{product.description.title}</h1>
       <p className="font-normal mt-5">{product.description.explanation}</p>
     </div>)
   const detailsList = (
-    <ul className="mt-5 font-normal list-disc ml-5">
+    <ul className="mt-5 font-normal list-disc ml-5 cursor-default" onClick={e => {e.stopPropagation()}}>
       {product.details.map((item, inx) => (
         <li key={inx}>{item}</li>
       ))}
@@ -102,9 +104,10 @@ const Product: React.FC<ProductsProps> = ({ product, currentUser }) => {
   
   return (
     <div className="grid lg:grid-cols-2">
+      <div className="">
       <div className="ml-7">
-        <div className="font-extrabold text-xl">{product.name}</div>
-        <div className="my-2 font-bold">$ {product.price}</div>
+        <div className="font-extrabold text-xl lg:hidden">{product.name}</div>
+        <div className="my-2 font-bold lg:hidden">$ {product.price}</div>
       </div>
       <div className="col-span-1 relative h-[35rem] sm:h[40rem] md:h-[50rem]">
         <Image
@@ -114,15 +117,17 @@ const Product: React.FC<ProductsProps> = ({ product, currentUser }) => {
           fill
         ></Image>
       </div>
-      
       <Button
         fillIn={wishlisted ? true : false}
         label={`${wishlisted ? "Wishlisted" : "Wishlist"}`}
         icon={wishlisted ? BsHeartFill : AiOutlineHeart}
         onClick={addToWishlistHandler}
-      ></Button>
+        ></Button>
+        </div>
 
       <div className="col-span-1 ml-6">
+      <div className="font-extrabold text-xl hidden lg:flex justify-center">{product.name}</div>
+        <div className="my-2 font-bold hidden lg:flex justify-center">$ {product.price}</div>
         <div className="my-3 font-bold">
           {productColors.length} Colors Available:
         </div>
@@ -176,6 +181,7 @@ const Product: React.FC<ProductsProps> = ({ product, currentUser }) => {
             icon={BsBagPlus}
             label={addBagLabel}
             onClick={addToBag}
+            disabled={selectedSize != '' ? false : true}
           ></Button>
         </div>
         <div>
@@ -192,7 +198,6 @@ const Product: React.FC<ProductsProps> = ({ product, currentUser }) => {
             </span>
           </div>
         </div>
-      </div>
       <div className="mt-10 hover:cursor-pointer">
         <div className="border p-5 font-bold inline-block w-full"
         onClick={showReviewsListHandler}>
@@ -219,12 +224,13 @@ const Product: React.FC<ProductsProps> = ({ product, currentUser }) => {
         <div
           className="border p-5 font-bold inline-block w-full"
           onClick={showDetailsListHandler}
-        >
+          >
           Details <MdKeyboardDoubleArrowDown className="text-xl float-right" />
           {showDetailsList ? detailsList : ""}
         </div>
       </div>
     </div>
+          </div>
   );
 };
 

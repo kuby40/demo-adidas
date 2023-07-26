@@ -30,7 +30,6 @@ const ScrollingSmallTiles: React.FC<ScrollingSmallTilesProps> = ({
               d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"
             />
           </svg>
-          <h3 className="font-extrabold cursor-pointer">New Arrivals</h3>
           <h3 className="font-extrabold ml-4 cursor-pointer">
             What's Trending
           </h3>

@@ -26,7 +26,6 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
       router.push("/account");
     }
   };
-  //States
   const [showBanner, setShowBanner] = useState(false);
   const showBannerHandler = () => {
     setShowBanner(!showBanner);
@@ -51,8 +50,11 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
       </div>
       <div className="flex p-4">
         <div className="flex flex-1 place-items-center">
-          <IoMenuSharp className="w-8 h-10 ml-3 cursor-pointer hover:-translate-y-1" />
+          <IoMenuSharp className="w-8 h-10 ml-3 cursor-pointer hover:-translate-y-1" />         
           <IoHeartOutline className="w-8 h-10 ml-3 cursor-pointer hover:-translate-y-1" />
+          <h4 className="bg-blue-500 text-s px-2 rounded-full -translate-y-4 -translate-x-3">{currentUser != null ? 
+          currentUser.favoriteIDs.length 
+          : ''}</h4>
         </div>
         <div className="flex flex-1 place-content-center">
           <Link href={"/"}>
