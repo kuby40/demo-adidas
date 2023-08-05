@@ -7,7 +7,6 @@ import PopularRightNow from "../components/UI/PopularRightNow";
 import CompanyStory from "../components/UI/CompanyStory";
 import getMostBoughtProducts from "../actions/getMostBoughtProducts";
 import getShowcaseProducts from "../actions/getShowcaseProducts";
-import getCurrentProduct from "../actions/getCurrentProduct";
 import getCurrentUser from "../actions/getCurrentUser";
 
 const Home = async () => {

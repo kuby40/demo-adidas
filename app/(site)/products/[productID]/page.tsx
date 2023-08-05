@@ -1,4 +1,4 @@
-import Image from "next/image";
+
 import { Product } from "@prisma/client";
 interface ProductPageProps {
     product: Product
@@ -6,6 +6,7 @@ interface ProductPageProps {
 const ProductPage: React.FC<ProductPageProps> = ({
     product
 }) => {
+    
     return (
         <div></div>
     )

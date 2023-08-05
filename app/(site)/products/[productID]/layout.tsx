@@ -1,6 +1,8 @@
+import { Suspense } from "react";
 import getCurrentProduct from "../../../actions/getCurrentProduct";
 import getCurrentUser from "../../../actions/getCurrentUser";
 import Product from "../../../components/models/Product";
+import Loading from "./loading";
 
 export default async function ProductLayout({
     children,
@@ -18,8 +20,10 @@ export default async function ProductLayout({
     }
     return (
       <div>
-        <Product product={product} currentUser={currentUser}/>
         {children}
+        <Product product={product} currentUser={currentUser}/>
+        <Suspense fallback={<Loading/>}>
+        </Suspense>
       </div>
 
     );

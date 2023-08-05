@@ -34,7 +34,7 @@ const SmallTile = (props: {
         {wishlisted ? 
         <BsHeartFill className='absolute right-3 top-3 w-8 h-8 cursor-pointer text-red-600' onClick={addToWishlistHandler}/>:
         <AiOutlineHeart className='absolute right-3 top-3 w-8 h-8 cursor-pointer' onClick={addToWishlistHandler}/>}
-        <Link href={`products/${props.id}`}>
+        <Link href={`/products/${props.id}`} scroll={true}>
         <Image
           alt={props.title}
           width={300}

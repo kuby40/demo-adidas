@@ -7,8 +7,10 @@ import LoginModal from "./components/models/LoginModal";
 import AuthContext from "./context/AuthContext";
 import getCurrentUser from "./actions/getCurrentUser";
 import WishlistModal from "./components/models/WishlistModal";
-import { Product } from "@prisma/client";
+import { Product, User } from "@prisma/client";
 import getWishlist from "./actions/getWishList";
+import { Suspense } from "react";
+import Loading from "./loading";
 
 export default async function RootLayout({
   children,
@@ -16,7 +18,7 @@ export default async function RootLayout({
   children: React.ReactNode;
 }) {
   const wishlist: Product[] = await getWishlist();
-  const currentUser = await getCurrentUser();
+  const currentUser: User | null = await getCurrentUser();
   return (
     <html>
       <body>
@@ -24,10 +26,10 @@ export default async function RootLayout({
           <ToasterProvider />
           <LoginModal />
           <RegisterModal />
-          <WishlistModal wishlist={wishlist}/>
-          <Header currentUser={currentUser!} />
-          {children}
-          <Footer currentUser={currentUser!} />
+          <WishlistModal wishlist={wishlist} currentUser={currentUser!}/>
+          <Header currentUser={currentUser!}/>
+          <Suspense fallback={<Loading/>}>{children}</Suspense>
+          <Footer currentUser={currentUser!}/>
         </AuthContext>
       </body>
     </html>

@@ -5,7 +5,9 @@
 .scrollbar-hide::-webkit-scrollbar {
     display: none;
 }
-
+html, body {
+    overflow-x: clip;
+    }
 /* For IE, Edge and Firefox */
 .scrollbar-hide {
     -ms-overflow-style: none;
