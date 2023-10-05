@@ -7,6 +7,7 @@ interface ButtonProps {
   disabled?: boolean;
   small?: boolean;
   icon?: IconType;
+  fillIn?: boolean
 }
 
 const Button: React.FC<ButtonProps> = ({
@@ -15,6 +16,7 @@ const Button: React.FC<ButtonProps> = ({
   disabled,
   small,
   icon: Icon,
+  fillIn
 }) => {
   return (
       <button
@@ -27,7 +29,7 @@ const Button: React.FC<ButtonProps> = ({
             ${small ? "w-1/4" : "w-full"}
       `}
       >
-          {Icon && (<Icon size={24} className="absolute left-4 top-3"/>)}
+          {Icon && (<Icon size={24} className={`absolute left-4 top-3 ${fillIn ? 'text-red-600' : ''}`}/>)}
       {label}
     </button>
   );

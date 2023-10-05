@@ -48,7 +48,7 @@ const AccountPage: React.FC<UserPageProps> = ({ currentUser, productsShowcase })
           We’ve collected some of our favorite products based on customers
           preferences and purchases.
         </h4>
-        <ScrollingSmallTiles productsList={productsShowcase} />
+        <ScrollingSmallTiles productsList={productsShowcase} currentUser={currentUser} />
       </div>
     </div>
   );

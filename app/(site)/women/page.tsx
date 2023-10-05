@@ -5,15 +5,14 @@ import LargeTileProductShowcase from "../../components/UI/tiles/LargeTileProduct
 import PageDescriptionModal from "../../components/models/PageDescriptionModal";
 import getShowcaseProducts from "../../actions/getShowcaseProducts";
 import getMostBoughtProducts from "../../actions/getMostBoughtProducts";
+import getCurrentUser from "../../actions/getCurrentUser";
+
 const WomenPage = async () => {
   const showcaseProductsLargeTiles = await getShowcaseProducts();
   const mostBoughtProductsShowcase = await getMostBoughtProducts();
+  const currentUser = await getCurrentUser();
   return (
     <div>
-      <FirstCustomerSee />
-      <LargeTileProductShowcase productsList={showcaseProductsLargeTiles} />
-      <ScrollingLargeTiles />
-      <ScrollingSmallTiles productsList={mostBoughtProductsShowcase} />
       <PageDescriptionModal
         title="WOMEN'S CLOTHING & SHOES"
         description="In sport and in life, creators aren’t content on the sidelines. adidas
@@ -25,6 +24,9 @@ const WomenPage = async () => {
           women’s clothing and footwear from adidas exist to help you redefine
           what’s possible."
       />
+      <LargeTileProductShowcase productsList={showcaseProductsLargeTiles} />
+      <ScrollingLargeTiles />
+      <ScrollingSmallTiles productsList={mostBoughtProductsShowcase} currentUser={currentUser} />
     </div>
   );
 };

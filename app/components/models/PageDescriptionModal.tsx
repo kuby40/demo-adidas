@@ -10,7 +10,7 @@ const PageDescriptionModal: React.FC<PageDescriptionProps> = ({
     return (
       <div>
         <h1 className="flex justify-center text-4xl font-extrabold py-4">{title}</h1>
-            <p className="flex justify-center px-96">{description}</p>
+        <p className="px-48 lg:px-96">{description}</p>
       </div>
     );
 }

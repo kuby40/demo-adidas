@@ -11,6 +11,7 @@ import { IoHeartOutline } from "react-icons/io5";
 import { IoPersonOutline } from "react-icons/io5";
 import { IoBagOutline } from "react-icons/io5";
 import { IoSearchOutline } from "react-icons/io5";
+import useWishlistModal from "../../hooks/useWishlistModal";
 
 interface HeaderProps {
   currentUser: User;
@@ -18,6 +19,7 @@ interface HeaderProps {
 
 const Header: React.FC<HeaderProps> = ({ currentUser }) => {
   const loginModal = useLoginModal();
+  const wishlistModal = useWishlistModal();
   const router = useRouter();
   const handleProfileClick = () => {
     if (!currentUser) {
@@ -26,10 +28,12 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
       router.push("/account");
     }
   };
-  //States
   const [showBanner, setShowBanner] = useState(false);
   const showBannerHandler = () => {
     setShowBanner(!showBanner);
+  };
+  const showWishlistHandler = () => {
+    wishlistModal.onOpen();
   };
 
   return (
@@ -51,8 +55,11 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
       </div>
       <div className="flex p-4">
         <div className="flex flex-1 place-items-center">
-          <IoMenuSharp className="w-8 h-10 ml-3 cursor-pointer hover:-translate-y-1" />
-          <IoHeartOutline className="w-8 h-10 ml-3 cursor-pointer hover:-translate-y-1" />
+          <IoMenuSharp className="w-8 h-10 ml-3 cursor-pointer hover:-translate-y-1" />         
+          <IoHeartOutline onClick={showWishlistHandler} className="w-8 h-10 ml-3 cursor-pointer hover:-translate-y-1" />
+          <h4 className="bg-blue-500 text-s px-2 rounded-full -translate-y-4 -translate-x-3">{currentUser != null ? 
+          currentUser.favoriteIDs.length 
+          : ''}</h4>
         </div>
         <div className="flex flex-1 place-content-center">
           <Link href={"/"}>

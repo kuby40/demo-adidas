@@ -1,13 +1,15 @@
 "use client";
-import { Product } from "@prisma/client";
+import { Product, User } from "@prisma/client";
 import SmallTile from "../../models/SmallTile";
 import { useRef } from "react";
 
 interface ScrollingSmallTilesProps {
+  currentUser: User | null
   productsList: Product[];
 }
 const ScrollingSmallTiles: React.FC<ScrollingSmallTilesProps> = ({
   productsList,
+  currentUser
 }) => {
   const trendingScrollable = useRef<HTMLDivElement>(null);
   return (
@@ -28,7 +30,6 @@ const ScrollingSmallTiles: React.FC<ScrollingSmallTilesProps> = ({
               d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"
             />
           </svg>
-          <h3 className="font-extrabold cursor-pointer">New Arrivals</h3>
           <h3 className="font-extrabold ml-4 cursor-pointer">
             What's Trending
           </h3>
@@ -44,7 +45,7 @@ const ScrollingSmallTiles: React.FC<ScrollingSmallTilesProps> = ({
             onClick={() => {
               if (trendingScrollable.current != null) {
                 trendingScrollable.current.scrollBy({
-                  left: -300,
+                  left: -500,
                   behavior: "smooth",
                 });
               }
@@ -57,10 +58,9 @@ const ScrollingSmallTiles: React.FC<ScrollingSmallTilesProps> = ({
             onClick={() => {
               if (trendingScrollable.current != null) {
                 trendingScrollable.current.scrollBy({
-                  left: 300,
+                  left: 500,
                   behavior: "smooth",
                 });
-                console.log(trendingScrollable);
               }
             }}
           >
@@ -75,7 +75,9 @@ const ScrollingSmallTiles: React.FC<ScrollingSmallTilesProps> = ({
         <div className="mt-8 mx-6 flex">
           {productsList.map((item) => (
             <SmallTile
-            key={item.id} 
+              currentUser={currentUser}
+              key={item.id} 
+              id={item.id}
               title={item.name}
               imgURL={item.picture}
               gender={item.gender}

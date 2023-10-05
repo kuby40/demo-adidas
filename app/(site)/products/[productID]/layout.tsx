@@ -1,5 +1,8 @@
+import { Suspense } from "react";
 import getCurrentProduct from "../../../actions/getCurrentProduct";
+import getCurrentUser from "../../../actions/getCurrentUser";
 import Product from "../../../components/models/Product";
+import Loading from "./loading";
 
 export default async function ProductLayout({
     children,
@@ -10,15 +13,17 @@ export default async function ProductLayout({
         productID: string
     }
   }) {
-    let product = await getCurrentProduct(params.productID)
+    const currentUser = await getCurrentUser();
+    const product = await getCurrentProduct(params.productID)
     if (!product) {
       return <div>PRODUCT DOESN'T EXIST</div>
     }
     return (
-      
       <div>
-        <Product product={product}/>
         {children}
+        <Product product={product} currentUser={currentUser}/>
+        <Suspense fallback={<Loading/>}>
+        </Suspense>
       </div>
 
     );
