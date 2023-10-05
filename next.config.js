@@ -5,7 +5,6 @@ module.exports = {
     domains: ['res.cloudinary.com']
   },
   experimental: {
-     appDir: true,
     // swcPlugins: [
     //   ["next-superjson-plugin", {}]
     // ]
