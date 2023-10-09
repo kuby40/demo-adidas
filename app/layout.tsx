@@ -11,6 +11,7 @@ import { Product, User } from "@prisma/client";
 import getWishlist from "./actions/getWishList";
 import { Suspense } from "react";
 import Loading from "./loading";
+import CartModal from "./components/models/CartModal"
 
 export default async function RootLayout({
   children,
@@ -27,6 +28,7 @@ export default async function RootLayout({
           <LoginModal />
           <RegisterModal />
           <WishlistModal wishlist={wishlist} currentUser={currentUser!}/>
+          <CartModal/>
           <Header currentUser={currentUser!}/>
           <Suspense fallback={<Loading/>}>{children}</Suspense>
           <Footer currentUser={currentUser!}/>

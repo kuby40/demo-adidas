@@ -3,7 +3,6 @@ import { IoMdClose } from "react-icons/io";
 import useWishlistModal from "../../hooks/useWishlistModal";
 import { useCallback, useEffect, useState } from "react";
 import { Product, User } from "@prisma/client";
-import Image from "next/image";
 import SmallTile from "./SmallTile";
 interface WishlistModalProps {
     wishlist: Product[]
@@ -48,7 +47,7 @@ const WishlistModal: React.FC<WishlistModalProps> = ({wishlist, currentUser}) =>
             <div className="flex justify-center relative p-6 flex-wrap h-full">
                 {currentUser ? 
                 wishlist.map((element) => 
-                <div className='p-5'>
+                <div className='p-5' onClick={handleClose}>
                   <SmallTile currentUser={currentUser} id={element.id} title={element.name} imgURL={element.picture} gender={element.gender} collection={element.collection}/>
                   </div>
                   )

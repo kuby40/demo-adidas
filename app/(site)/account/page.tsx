@@ -10,7 +10,10 @@ interface UserPageProps {
 }
 const AccountPage: React.FC<UserPageProps> = ({ currentUser, productsShowcase }) => {
   const [orderOrAccount, setOrderOrAccount] = useState("order");
-  const orders = <div className="flex justify-center">Orders</div>;
+  const orders = <div className="">
+    <h1 className="flex justify-center font-bold pt-4">Orders</h1>
+    <div className="flex items-center justify-center h-96 underline">You Have no Orders</div>
+  </div>;
   const account = <Account currentUser={currentUser}/>
   return (
     <div>

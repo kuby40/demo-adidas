@@ -12,6 +12,7 @@ import { IoPersonOutline } from "react-icons/io5";
 import { IoBagOutline } from "react-icons/io5";
 import { IoSearchOutline } from "react-icons/io5";
 import useWishlistModal from "../../hooks/useWishlistModal";
+import useCartModal from "../../hooks/useCartModal";
 
 interface HeaderProps {
   currentUser: User;
@@ -20,6 +21,7 @@ interface HeaderProps {
 const Header: React.FC<HeaderProps> = ({ currentUser }) => {
   const loginModal = useLoginModal();
   const wishlistModal = useWishlistModal();
+  const cartModal = useCartModal();
   const router = useRouter();
   const handleProfileClick = () => {
     if (!currentUser) {
@@ -35,6 +37,10 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
   const showWishlistHandler = () => {
     wishlistModal.onOpen();
   };
+
+  const openCartHandler = () => {
+    cartModal.onOpen();
+  }
 
   return (
     <div className="grid grid-rows-2">
@@ -78,7 +84,7 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
             onClick={handleProfileClick}
           />
           <IoSearchOutline className="w-8 h-10 ml-3 cursor-pointer hover:-translate-y-1" />
-          <IoBagOutline className="w-8 h-10 ml-3 cursor-pointer hover:-translate-y-1" />
+          <IoBagOutline className="w-8 h-10 ml-3 cursor-pointer hover:-translate-y-1" onClick={openCartHandler} />
         </div>
       </div>
 
