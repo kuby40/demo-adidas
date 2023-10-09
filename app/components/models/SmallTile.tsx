@@ -64,12 +64,14 @@ const SmallTile = (props: {
       <h4 className="font-thin">
         {props.collection}
       </h4>
-      <h4 className="font-bold uppercase">
+      {props.color ?
+        <h4 className="font-bold uppercase">
         <span className='font-normal'>COLOR:</span> {props.color}
-      </h4>
-      <h4 className="font-bold uppercase">
+      </h4> : ''}
+      {props.size ?
+        <h4 className="font-bold uppercase">
         <span className='font-normal'>Size:</span> {props.size}
-      </h4>
+      </h4> : '' }
     </div>
   );
 };
