@@ -28,12 +28,9 @@ const CartModal: React.FC<CartModalProps> = () => {
     return null;
     }
 
-    const itemsInCart = cart.items.map((item) => {
-        <div>{item.product.name}</div>
-    })
-
     const checkoutRoute = () => {
-        router.push('/checkout')
+      router.push('/checkout')
+      cartModal.onClose();
     }
     
     
@@ -60,7 +57,7 @@ const CartModal: React.FC<CartModalProps> = () => {
             <div className="flex justify-center relative p-6 flex-wrap h-full">
               { cart.items.length != 0 ?
                 cart.items.map((element, index) => (
-                  <div className="p-5">
+                  <div className="p-5" key={index}>
                         <SmallTile
                             cartLayout={true}
                             currentUser={null}

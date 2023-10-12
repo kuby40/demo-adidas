@@ -26,7 +26,7 @@ const changePasswordModal = useChangePasswordModal();
   const onSubmit: SubmitHandler<FieldValues> = (data) => {
     setIsLoading(true);
     axios
-      .post("api/updatePassword", data)
+      .post("api/account/updatePassword", data)
       .then(() => {
         changePasswordModal.onClose();
         toast.success("Password Updated");

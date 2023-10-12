@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Logo from "../../../public/logo.png";
 import useLoginModal from "../../hooks/useLoginModal";
 import { useRouter } from "next/navigation";
@@ -13,16 +13,21 @@ import { IoBagOutline } from "react-icons/io5";
 import { IoSearchOutline } from "react-icons/io5";
 import useWishlistModal from "../../hooks/useWishlistModal";
 import useCartModal from "../../hooks/useCartModal";
-
+import useCart from "../../hooks/useCart";
 interface HeaderProps {
   currentUser: User;
 }
 
 const Header: React.FC<HeaderProps> = ({ currentUser }) => {
+  const cart = useCart();
   const loginModal = useLoginModal();
   const wishlistModal = useWishlistModal();
   const cartModal = useCartModal();
   const router = useRouter();
+  const [isClient, setIsClient] = useState(false);
+  useEffect(() => {
+    setIsClient(true)
+  }, [])
   const handleProfileClick = () => {
     if (!currentUser) {
       loginModal.onOpen(); 
@@ -61,11 +66,14 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
       </div>
       <div className="flex p-4">
         <div className="flex flex-1 place-items-center">
-          <IoMenuSharp className="w-8 h-10 ml-3 cursor-pointer hover:-translate-y-1" />         
-          <IoHeartOutline onClick={showWishlistHandler} className="w-8 h-10 ml-3 cursor-pointer hover:-translate-y-1" />
-          <h4 className="bg-blue-500 text-s px-2 rounded-full -translate-y-4 -translate-x-3">{currentUser != null ? 
-          currentUser.favoriteIDs.length 
-          : ''}</h4>
+          <IoMenuSharp className="w-8 h-10 ml-3 cursor-pointer hover:-translate-y-1" />
+          <IoHeartOutline
+            onClick={showWishlistHandler}
+            className="w-8 h-10 ml-3 cursor-pointer hover:-translate-y-1"
+          />
+          <h4 className="bg-blue-500 text-s px-2 rounded-full -translate-y-4 -translate-x-3">
+            {currentUser != null ? currentUser.favoriteIDs.length : ""}
+          </h4>
         </div>
         <div className="flex flex-1 place-content-center">
           <Link href={"/"}>
@@ -84,7 +92,13 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
             onClick={handleProfileClick}
           />
           <IoSearchOutline className="w-8 h-10 ml-3 cursor-pointer hover:-translate-y-1" />
-          <IoBagOutline className="w-8 h-10 ml-3 cursor-pointer hover:-translate-y-1" onClick={openCartHandler} />
+          <IoBagOutline
+            className="w-8 h-10 ml-3 cursor-pointer hover:-translate-y-1"
+            onClick={openCartHandler}
+          />
+          <h4 className="bg-blue-500 text-s px-2 rounded-full -translate-y-4 -translate-x-3">
+            {isClient ? cart.items.length : 0}
+          </h4>
         </div>
       </div>
 

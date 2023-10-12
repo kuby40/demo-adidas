@@ -25,7 +25,7 @@ const router = useRouter()
   const onSubmit: SubmitHandler<FieldValues> = (data) => {
     setIsLoading(true);
     axios
-      .post("api/updateName", data)
+      .post("api/account/updateName", data)
       .then(() => {
         changeNameModal.onClose();
         toast.success("Name Change Successful");

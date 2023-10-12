@@ -28,7 +28,7 @@ const RegisterModal: React.FC = () => {
   const onSubmit: SubmitHandler<FieldValues> = (data) => {
     setIsLoading(true);
     axios
-      .post("api/register", data).then(() => {
+      .post("api/account/register", data).then(() => {
         RegisterModal.onClose();
         toast.success('Account Successfully Created');
       }).catch(() => {  

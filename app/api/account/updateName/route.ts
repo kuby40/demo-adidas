@@ -1,33 +1,24 @@
 import { NextResponse } from "next/server";
-import prisma from "../../libs/primadb";
-import getCurrentUser from "../../actions/getCurrentUser";
-import bcrypt from "bcrypt";
+import prisma from "../../../libs/primadb";
+import getCurrentUser from "../../../actions/getCurrentUser";
 
 export async function POST(request: Request) {
   try {
     const currentUser = await getCurrentUser();
     const body = await request.json();
-    const { currentPassword, newPassword } = body;
+    const { newName } = body;
     if (!currentUser?.id) {
       return new NextResponse("Unauthorized", { status: 401 });
     }
-    if (!newPassword || !currentPassword) {
+    if (!newName) {
       return new NextResponse("Missing Info", { status: 400 });
     }
-    const isCorrectPassword = await bcrypt.compare(
-      currentPassword,
-      currentUser.password!
-    );
-    if (!isCorrectPassword) {
-      return new NextResponse("Incorrect Information", { status: 400 });
-    }
-    const hashedPassword = await bcrypt.hash(newPassword, 12);
     const user = await prisma.user.update({
       where: {
         id: currentUser.id,
       },
       data: {
-        password: hashedPassword,
+        name: newName,
       },
     });
     return NextResponse.json(user);

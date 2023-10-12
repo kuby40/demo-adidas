@@ -13,7 +13,7 @@ const Account: React.FC<AccountProps> = ({ currentUser }) => {
   const changeNameModal = useChangeNameModal();
   const changePasswordModal = useChangePasswordModal();
   const deleteUser = async () => {
-    await axios.post('api/delete').then(async () => {
+    await axios.post('api/account/delete').then(async () => {
     await signOut();
       toast.success('Successfully Deleted Account'); 
     })

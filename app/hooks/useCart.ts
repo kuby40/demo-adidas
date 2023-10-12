@@ -4,8 +4,9 @@ import { persist, createJSONStorage } from "zustand/middleware";
 import { Product } from '@prisma/client';
 
 interface CartStore {
-  items: {product: Product, size: string, color: string}[];
+  items: {product: Product, size: string, color: string, quantity: number}[];
   addItem: (product: Product, color: string, size: string) => void;
+  updateItem: (product: Product, color: string, size: string, quantity: number) => void;
   removeItem: (index: number) => void;
   removeAll: () => void;
 }
@@ -25,9 +26,12 @@ const useCart = create(
       return toast.error('Item Already in cart')
     }
 
-    set({ items: [...get().items, {product, color, size}] });
+    set({ items: [...get().items, {product, color, size, quantity: 1}] });
     toast.success('Item added to cart.');
-  },
+    },
+    updateItem: (product: Product, color: string, size: string) => {
+      
+    },
   removeItem: (index: number) => {
     set({ items: [...get().items.filter((_item, itemIndex) => index != itemIndex)] });
     toast.success('Item removed from cart.');
