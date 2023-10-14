@@ -7,7 +7,7 @@ import toast from 'react-hot-toast';
 import { AiOutlineHeart } from "react-icons/ai";
 import { BsHeartFill } from 'react-icons/bs'
 import useCart from '../../hooks/useCart';
-import { useState } from 'react';
+import { ChangeEvent, useState } from 'react';
 const WideTile = (props: {
   currentUser: User | null
   id: string;
@@ -17,8 +17,8 @@ const WideTile = (props: {
   size: string;
   price: number;
   indexNumber: number;
+  quantity: number;
 }) => {
-  const [selectedQuantity, setSelectedQuantity] = useState(1);
   const cart = useCart();
   const router = useRouter();
   const wishlisted = props.currentUser?.favoriteIDs.includes(props.id);
@@ -33,6 +33,9 @@ const WideTile = (props: {
       .catch((e) => {
         toast.error("Please Log In To Wishlist");
       });
+  }
+  const updateCart = (e: ChangeEvent<HTMLSelectElement>) => {
+    cart.updateItem(props.indexNumber, Number(e.target.value))
   }
 
   return (
@@ -59,7 +62,7 @@ const WideTile = (props: {
           <span className='font-normal hidden'>Size:</span> {props.size}
         </h4>
         <div className=''>
-          <select className='border-black border px-6 py-1 sm:py-3' value={selectedQuantity} title={props.title} onChange={e => setSelectedQuantity(Number(e.target.value))}>
+          <select className='border-black border px-6 py-1 sm:py-3' value={props.quantity} title={props.title} onChange={e => updateCart(e)}>
             <option value={1}>1</option>
             <option value={2}>2</option>
             <option value={3}>3</option>
@@ -73,7 +76,7 @@ const WideTile = (props: {
           </select>
         </div>
         </div>
-      <div className='p-3 w-full flex justify-end'>$ {(props.price * selectedQuantity).toFixed(2)}</div>
+      <div className='p-3 w-full flex justify-end'>$ {(props.price * props.quantity).toFixed(2)}</div>
       <div className='p-3 font-bold cursor-pointer' onClick={() => cart.removeItem(props.indexNumber)}>x</div>
     </div>
   );

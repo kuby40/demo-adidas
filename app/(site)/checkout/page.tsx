@@ -6,7 +6,7 @@ const CheckoutPage = () => {
     const cart = useCart();
     let cartTotal = 0;
     cart.items.forEach(element => {
-        cartTotal += element.product.price
+        cartTotal += element.product.price * element.quantity
     });
     const [isClient, setIsClient] = useState(false)
     useEffect(() => {
@@ -18,7 +18,7 @@ const CheckoutPage = () => {
             <h3 className="py-1">TOTAL ({isClient ? cart.items.length : 0} items) <span className="font-bold">$ {isClient ? cartTotal.toFixed(2) : 0}</span></h3>
             <h3 className="py-1">Items in your bag are not reserved — check out now to make them yours.</h3>
             {isClient ? cart.items.map((element, index) => 
-                <WideTile key={element.product.id} currentUser={null} id={element.product.id} title={element.product.name} imgURL={element.product.picture} color={element.color} size={element.size} price={element.product.price} indexNumber={index} />
+                <WideTile key={element.product.id} currentUser={null} id={element.product.id} title={element.product.name} imgURL={element.product.picture} color={element.color} size={element.size} price={element.product.price} indexNumber={index} quantity={element.quantity} />
             ): ''}
 
         </div>
