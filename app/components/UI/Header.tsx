@@ -5,8 +5,8 @@ import { useEffect, useState } from "react";
 import Logo from "../../../public/logo.png";
 import useLoginModal from "../../hooks/useLoginModal";
 import { useRouter } from "next/navigation";
-import { User } from "@prisma/client";
-import { IoMenuSharp } from "react-icons/io5";
+import { Product, User } from "@prisma/client";
+import { IoCloseSharp, IoMenuSharp } from "react-icons/io5";
 import { IoHeartOutline } from "react-icons/io5";
 import { IoPersonOutline } from "react-icons/io5";
 import { IoBagOutline } from "react-icons/io5";
@@ -14,6 +14,7 @@ import { IoSearchOutline } from "react-icons/io5";
 import useWishlistModal from "../../hooks/useWishlistModal";
 import useCartModal from "../../hooks/useCartModal";
 import useCart from "../../hooks/useCart";
+import axios from "axios";
 interface HeaderProps {
   currentUser: User;
 }
@@ -46,6 +47,27 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
   const openCartHandler = () => {
     cartModal.onOpen();
   }
+  const [showSearch, setShowSearch] = useState(false);
+  const openSearchHandler = () => {
+    setShowSearch(!showSearch)
+  }
+  const [inputValue, setInputValue] = useState('');
+  const [foundItems, setFoundItems] = useState<Product[]>([])
+  const searchItems = async () => {
+    axios.get('api/products/search', {
+      params: {
+        find: inputValue
+      }
+    }).then((response) => {
+      setFoundItems(response.data)
+    })
+  };
+
+  useEffect(() => {
+    if (showSearch && inputValue != '') {
+      searchItems()
+    }
+  }, [inputValue]);
 
   return (
     <div className="grid grid-rows-2">
@@ -91,7 +113,7 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
             className="w-8 h-10 ml-3 cursor-pointer hover:-translate-y-1"
             onClick={handleProfileClick}
           />
-          <IoSearchOutline className="w-8 h-10 ml-3 cursor-pointer hover:-translate-y-1" />
+          <IoSearchOutline className="w-8 h-10 ml-3 cursor-pointer hover:-translate-y-1" onClick={openSearchHandler} />
           <IoBagOutline
             className="w-8 h-10 ml-3 cursor-pointer hover:-translate-y-1"
             onClick={openCartHandler}
@@ -101,7 +123,8 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
           </h4>
         </div>
       </div>
-
+      {showSearch ? <div className="h-10 flex"><input placeholder="What are you trying to find?" className="rounded-lg w-full bg-slate-100 pl-5" type="text" value={inputValue} onChange={e => setInputValue(e.target.value)} /><span className="relative text-4xl bg-black rounded-lg cursor-pointer" onClick={openSearchHandler}><IoCloseSharp className="text-white"/></span></div> : ''}
+      {foundItems ? '' : ''}
       {showBanner ? (
         <div className="absolute top-0 h-screen lg:h-1/2 w-full grid grid-row-4 bg-white lg:grid-cols-4 lg:flex lg:flex-row-reverse lg:text-left z-10">
           <div>

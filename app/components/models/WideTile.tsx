@@ -39,18 +39,17 @@ const WideTile = (props: {
   }
 
   return (
-    <div className=" border-black w-full lg:w-1/2 border-2 inline-flex">
-      <div className="relative w-96 bg-gray-200">
-        <Link href={`/products/${props.id}`} scroll={true}>
+    <div className="border-black w-full lg:w-1/2 border-2 inline-flex">
+        <Link href={`/products/${props.id}`} scroll={true} className='bg-gray-200'>
+        <div className="relative w-20 h-20 sm:w-36 sm:h-36">
           <Image
+            fill={true}
+            sizes=""
             alt={props.title}
-            width={200}
-            height={200}
             src={props.imgURL}
-            className=""
           />
-        </Link>
       </div>
+        </Link>
       <div className='p-3 w-full text-sm'>
         <h2 className="font-semibold">{props.title}</h2>
 
