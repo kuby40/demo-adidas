@@ -50,16 +50,19 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
   const [showSearch, setShowSearch] = useState(false);
   const openSearchHandler = () => {
     setShowSearch(!showSearch)
+    setFoundItems([]);
+    setInputValue('')
   }
   const [inputValue, setInputValue] = useState('');
   const [foundItems, setFoundItems] = useState<Product[]>([])
   const searchItems = async () => {
-    axios.get('api/products/search', {
+    axios.get('/api/products/search', {
       params: {
         find: inputValue
       }
     }).then((response) => {
       setFoundItems(response.data)
+      console.log(foundItems)
     })
   };
 
@@ -124,7 +127,17 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
         </div>
       </div>
       {showSearch ? <div className="h-10 flex"><input placeholder="What are you trying to find?" className="rounded-lg w-full bg-slate-100 pl-5" type="text" value={inputValue} onChange={e => setInputValue(e.target.value)} /><span className="relative text-4xl bg-black rounded-lg cursor-pointer" onClick={openSearchHandler}><IoCloseSharp className="text-white"/></span></div> : ''}
-      {foundItems ? '' : ''}
+      {foundItems.length !== 0 ? 
+      <div className='h-auto pt-2'>
+        <h3 className='font-bold'>Found Items</h3>
+        <ul>
+        {foundItems.map(data => {
+          return <div className='pl-2'><Link className="hover:font-medium" href={`/products/${data.id}`} onClick={() => openSearchHandler()}>-{data.name}</Link></div>
+          
+        })}
+        </ul>
+      </div> 
+      : ''}
       {showBanner ? (
         <div className="absolute top-0 h-screen lg:h-1/2 w-full grid grid-row-4 bg-white lg:grid-cols-4 lg:flex lg:flex-row-reverse lg:text-left z-10">
           <div>
