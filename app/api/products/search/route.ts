@@ -4,7 +4,6 @@ import prisma from "../../../libs/primadb";
 export async function GET(request: Request) {
     const { searchParams } = new URL(request.url);
     const inputValue = searchParams.get('find')
-    console.log(inputValue)
     try {
         if (inputValue != undefined) {
             const foundProducts = await prisma.product.findMany({
