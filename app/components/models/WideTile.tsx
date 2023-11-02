@@ -4,8 +4,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import toast from 'react-hot-toast';
-import { AiOutlineHeart } from "react-icons/ai";
-import { BsHeartFill } from 'react-icons/bs'
 import useCart from '../../hooks/useCart';
 import { ChangeEvent, useState } from 'react';
 const WideTile = (props: {

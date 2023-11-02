@@ -4,12 +4,14 @@ import useLoginModal from "../../hooks/useLoginModal";
 import { signOut } from "next-auth/react";
 import { User } from "@prisma/client";
 import Link from "next/link";
+import useCartModal from "../../hooks/useCartModal";
 interface FooterProps {
   currentUser: User;
 }
 const Footer: React.FC<FooterProps> = ({ currentUser }) => {
   const registerModal = useRegisterModal();
   const loginModal = useLoginModal();
+  const cartModal = useCartModal();
   return (
     <div>
       <div className="flex justify-center cursor-pointer p-4">
@@ -39,9 +41,10 @@ const Footer: React.FC<FooterProps> = ({ currentUser }) => {
               Logout
             </button>
           )}
-          <button className="uppercase hover:underline hover:cursor-pointer">
+          <button className="uppercase hover:underline hover:cursor-pointer"
+          onClick={cartModal.onOpen}>
             Your bag
-          </button>
+            </button>
         </div>
         {currentUser === null && (
           <div className="bg-amber-300 h-40">

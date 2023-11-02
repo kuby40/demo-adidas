@@ -56,7 +56,7 @@ const HeaderBanner = () => {
     return (
             <div
                 onClick={showBannerHandler}
-                className="row-span-1 bg-black text-white cursor-pointer"
+                className="row-span-1 bg-black text-white cursor-pointer h-12"
             >
                 {showBanner ? banner : ''}
                 <div className="grid grid-cols-3 h-full">
