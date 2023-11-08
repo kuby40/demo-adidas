@@ -12,6 +12,7 @@ import axios from "axios";
 import useCart from "../../hooks/useCart";
 import HamburgerNav from "./HamburgerNav";
 import useNavBar from "../../hooks/useNavBar";
+import disableScroll from 'disable-scroll'
 
 interface NavBarMobileInterface {
     currentUser: User;
@@ -62,7 +63,7 @@ const NavBarMobile: React.FC<NavBarMobileInterface> = ({ currentUser }) => {
         setIsClient(true)
     }, [])
     useEffect(() => {
-        if (showSearch && inputValue != '') {
+        if (showSearch && inputValue !== '') {
             searchItems()
         }
     }, [inputValue]);
@@ -70,7 +71,7 @@ const NavBarMobile: React.FC<NavBarMobileInterface> = ({ currentUser }) => {
         <div className='lg:hidden'>
             <div className="flex p-4">
                 <div className="flex flex-1 place-items-center">
-                    <IoMenuSharp className="w-8 h-10 ml-3 cursor-pointer hover:-translate-y-1" onClick={navBar.onOpen} />
+                    <IoMenuSharp className="w-8 h-10 ml-3 cursor-pointer hover:-translate-y-1" onClick={() => { navBar.onOpen(); disableScroll.on() }} />
                     <IoHeartOutline
                         onClick={showWishlistHandler}
                         className="w-8 h-10 ml-3 cursor-pointer hover:-translate-y-1"
