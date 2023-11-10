@@ -73,8 +73,8 @@ const NavBarDesktop: React.FC<NavBarDesktopInterface> = ({ currentUser }) => {
                     ></Image>
                 </Link>
                 <div className="xl:m-auto pt-4">
-                    <Link href={'/demo'} className="font-bold p-2 border-black hover:border-b-4">MEN</Link>
-                    <Link href={'/demo'} className="font-bold p-2 border-black hover:border-b-4">WOMEN</Link>
+                    <Link href={'/men'} className="font-bold p-2 border-black hover:border-b-4">MEN</Link>
+                    <Link href={'/women'} className="font-bold p-2 border-black hover:border-b-4">WOMEN</Link>
                     <Link href={'/demo'} className="font-bold p-2 border-black hover:border-b-4">KIDS</Link>
                     <Link href={'/demo'} className="p-2 border-black hover:border-b-4">GIFTS</Link>
                     <Link href={'/demo'} className="p-2 border-black hover:border-b-4">OUTLET</Link>

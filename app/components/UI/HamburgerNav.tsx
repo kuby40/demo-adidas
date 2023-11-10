@@ -26,8 +26,8 @@ const HamburgerNav: React.FC = () => {
                 <span className="text-4xl cursor-pointer" onClick={closeNav}>X</span>
             </div>
             <div className="border-t-2 border-b-2 p-5 text-lg tracking-widest">
-                <Link href={'/demo'} onClick={closeNav}><div className="font-bold flex justify-between p-2 cursor-pointer"><span>MEN</span><span className="">&gt;</span></div></Link>
-                <Link href={'/demo'} onClick={closeNav}><div className="font-bold flex justify-between p-2 cursor-pointer"><span>WOMAN</span><span>&gt;</span></div></Link>
+                <Link href={'/men'} onClick={closeNav}><div className="font-bold flex justify-between p-2 cursor-pointer"><span>MEN</span><span className="">&gt;</span></div></Link>
+                <Link href={'/women'} onClick={closeNav}><div className="font-bold flex justify-between p-2 cursor-pointer"><span>WOMAN</span><span>&gt;</span></div></Link>
                 <Link href={'/demo'} onClick={closeNav}><div className="font-bold flex justify-between p-2 cursor-pointer"><span>KIDS</span><span>&gt;</span></div></Link>
                 <Link href={'/demo'} onClick={closeNav}><div className="flex justify-between p-2 cursor-pointer"><span>GIFTS</span><span>&gt;</span></div></Link >
                 <Link href={'/demo'} onClick={closeNav}><div className="flex justify-between p-2 cursor-pointer"><span>OUTLET</span><span>&gt;</span></div></Link >
