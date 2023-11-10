@@ -1,14 +1,23 @@
 'use client'
 import { useState } from "react";
 import Link from 'next/link'
+import disableScroll from 'disable-scroll';
 
 const HeaderBanner = () => {
     const [showBanner, setShowBanner] = useState(false);
     const showBannerHandler = () => {
         setShowBanner(!showBanner);
+        if (showBanner) {
+            disableScroll.off()
+        }
+        else {
+            disableScroll.on();
+        }
     };
     const banner =
-    <div className="absolute top-0 h-screen lg:h-1/2 w-full grid grid-row-4 bg-white lg:grid-cols-4 lg:flex lg:flex-row-reverse lg:text-left z-10 text-black">
+        <div className={`translate duration-300 absolute top-0 h-screen lg:h-1/2 w-full grid grid-row-4 bg-white lg:grid-cols-4 lg:flex lg:flex-row-reverse lg:text-left z-10 text-black
+            ${showBanner ? "translate-y-0" : ""}
+            ${showBanner ? "opacity-100" : ""}`}>
         <div>
             <button
                 type="button"
@@ -55,11 +64,10 @@ const HeaderBanner = () => {
     </div >
     return (
             <div
-                onClick={showBannerHandler}
                 className="row-span-1 bg-black text-white cursor-pointer h-12"
             >
-                {showBanner ? banner : ''}
-                <div className="grid grid-cols-3 h-full">
+            {showBanner ? banner :
+                <div onClick={showBannerHandler} className="grid grid-cols-3 h-full">
                     <span className="col-span-1"></span>
                     <p className="col-span-1 m-auto text-sm">
                         Join the Club Today.
@@ -69,6 +77,7 @@ const HeaderBanner = () => {
                         &#8659;
                     </span>
                 </div>
+            }
             </div>
     )
 }

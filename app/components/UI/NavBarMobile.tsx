@@ -57,16 +57,16 @@ const NavBarMobile: React.FC<NavBarMobileInterface> = ({ currentUser }) => {
             console.log(foundItems)
         })
     };
-    const [isClient, setIsClient] = useState(false);
-
-    useEffect(() => {
-        setIsClient(true)
-    }, [])
     useEffect(() => {
         if (showSearch && inputValue !== '') {
             searchItems()
         }
     }, [inputValue]);
+    
+    const [isClient, setIsClient] = useState(false);
+    useEffect(() => {
+        setIsClient(true)
+    }, [])
     return (
         <div className='lg:hidden'>
             <div className="flex p-4">
@@ -112,7 +112,7 @@ const NavBarMobile: React.FC<NavBarMobileInterface> = ({ currentUser }) => {
                     <div className="h-10 flex"><input placeholder="What are you trying to find?" className="rounded-lg w-full bg-slate-100 pl-5" type="text" value={inputValue} onChange={e => setInputValue(e.target.value)} />
                         <span className="relative text-4xl bg-black rounded-lg cursor-pointer" onClick={openSearchHandler}><IoCloseSharp className="text-white" /></span>
                     </div> : ''}
-                {foundItems.length !== 0 ?
+                {foundItems.length !== 0 && inputValue !== '' ?
                     <div className='h-auto pt-2'>
                         <h3 className='font-bold'>Found Items</h3>
                         <ul className="table m-auto">
