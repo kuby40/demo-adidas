@@ -1,7 +1,7 @@
 const ShowcaseVideoFrontPage = () => {
     return (
       <div className="relative ">
-        <video className="-z-10" autoPlay loop muted itemType="video/mp4"><source src="WebsiteVideo.mp4"></source></video>
+        <video className="-z-10" autoPlay loop muted><source src="/websiteVideo.mp4" type="video/mp4"></source></video>
            {/* <a href="https://www.vecteezy.com/video/13219158-young-athletic-caucasian-girl-in-a-red-tank-top-doing-squats-on-a-lake-background-he-is-engaged-in-fitness">
             Young athletic Caucasian girl in a red tank top doing squats on a
             lake background. He is engaged in fitness. Stock Videos by Vecteezy

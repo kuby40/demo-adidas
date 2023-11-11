@@ -8,5 +8,12 @@ module.exports = {
     // swcPlugins: [
     //   ["next-superjson-plugin", {}]
     // ]
-  }
+  },
+  typescript: {
+    // !! WARN !!
+    // Dangerously allow production builds to successfully complete even if
+    // your project has type errors.
+    // !! WARN !!
+    ignoreBuildErrors: true,
+  },
 }

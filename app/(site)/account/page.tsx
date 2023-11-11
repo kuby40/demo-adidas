@@ -1,9 +1,9 @@
 "use client";
 import ScrollingSmallTiles from "../../components/UI/tiles/ScrollingSmallTiles";
-import { User } from "@prisma/client";
+import { User, Product } from "@prisma/client";
 import { useState } from "react";
 import Account from "../../components/UI/account/Account"
-import { Product } from "@prisma/client";
+
 interface UserPageProps {
   currentUser: User;
   productsShowcase: Product[];
