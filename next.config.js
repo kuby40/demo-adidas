@@ -4,15 +4,11 @@ module.exports = {
   images: {
     domains: ['res.cloudinary.com']
   },
-  experimental: {
-    // swcPlugins: [
-    //   ["next-superjson-plugin", {}]
-    // ]
-  },
   typescript: {
     // !! WARN !!
     // Dangerously allow production builds to successfully complete even if
     // your project has type errors.
+    // **Needs to use as interfaces create unnecessary type errors while building
     // !! WARN !!
     ignoreBuildErrors: true,
   },
