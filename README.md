@@ -4,12 +4,12 @@ This is the documentation to my [Demo Adidas Website](https://demo-adidas.vercel
 
 ## Table of Contents
 
-*#Overview
-*#Key-features
-*#Technologies-used
-*#Setup-instructions
-*#Running-the-website-locally
-*#License
+1. [Overview](#example)
+2. [Key Features](#key-features)
+3. [Technologies Used](#technologies-used)
+4. [Setup Instructions](#setup-instructions)
+5. [Running the Website Locally](#running-the-website-locally)
+6. [License](#License)
 
 ## Overview
 This e-commerce website is a complete solution for online stores. It provides a user-friendly interface for customers to browse products, add them to their carts, and complete secure purchases. The website also includes features for managing products, orders, and customers.
