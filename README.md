@@ -1,20 +1,20 @@
 
 # E-Commerce Website Demo
-This is the documentation to my [Demo Adidas Website](demo-adidas.vercel.app) inspired e-commerce platform
+This is the documentation to my [Demo Adidas Website](https://demo-adidas.vercel.app) inspired e-commerce platform
 
-Table of Contents
+## Table of Contents
 
-Overview: #overview
-Features: #features
-Technologies Used: #technologies-used
-Setup Instructions: #setup-instructions
-Running the Website Locally: #running-the-website-locally
-Contributing: #contributing
-License: #license
-Overview
+### Overview: #overview
+### Features: #key-features
+### Technologies Used: #technologies-used
+### Setup Instructions: #setup-instructions
+### Running the Website Locally: #running-the-website-locally
+### License: #license
+
+## Overview
 This e-commerce website is a complete solution for online stores. It provides a user-friendly interface for customers to browse products, add them to their carts, and complete secure purchases. The website also includes features for managing products, orders, and customers.
 
-Key Features:
+## Key Features:
 
 Product Management:
 Add, edit, and delete products.
@@ -44,14 +44,16 @@ Ensure a seamless shopping experience on any device.
 SEO-Friendly:
 The website is optimized for search engines to improve visibility.
 Increase organic traffic and attract more customers.
-Technologies Used
+
+## Technologies Used
 This website is built using the following technologies:
 
 Front-End: HTML, CSS, JavaScript
 Back-End: [Insert back-end technology here, e.g., PHP, Python, Node.js]
 Database: [Insert database technology here, e.g., MySQL, PostgreSQL, MongoDB]
 Payment Gateway: [Insert payment gateway name here, e.g., Stripe, PayPal]
-Setup Instructions
+
+## Setup Instructions
 1. Prerequisites:
 
 [Insert list of required software and versions here]
@@ -68,17 +70,9 @@ Running the Website Locally
 2. Open the website in your browser:
 
 Go to [Insert website URL]
-Contributing
-We encourage contributions to this project. Please follow the guidelines below before submitting a pull request:
 
-Fork the repository.
-Create a new branch for your feature or bug fix.
-Implement your changes.
-Add unit tests for your changes.
-Commit your changes and push them to your fork.
-Create a pull request to the main repository.
-License
+## License
 This project is licensed under the [Insert license name here].
 
-Contact
+## Contact
 For any questions or support, please contact [Insert contact information here].
