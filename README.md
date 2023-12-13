@@ -8,50 +8,47 @@ This is the documentation to my [Demo Adidas Website](https://demo-adidas.vercel
 2. [Key Features](#key-features)
 3. [Technologies Used](#technologies-used)
 4. [Setup Instructions](#setup-instructions)
-5. [Running the Website Locally](#running-the-website-locally)
-6. [License](#License)
+5. [License](#License)
 
 ## Overview
-This e-commerce website is a complete solution for online stores. It provides a user-friendly interface for customers to browse products, add them to their carts, and complete secure purchases. The website also includes features for managing products, orders, and customers.
+This e-commerce website is a complete solution for online stores. It provides a user-friendly interface for customers to browse products, and add them to their carts.
 
 ## Key Features:
 
 Product Management:
+
 Add, edit, and delete products.
-Categorize products for easy navigation.
-Manage product images, descriptions, and pricing.
-Upload product images directly through the website interface. Image of the product management interface: /images/product_management.png
-Order Management:
-View and manage customer orders.
-Process and fulfill orders efficiently.
-Track order status and shipping information. Image of the order management interface: /images/order_management.png
+Search for products for easy navigation.
+
 Customer Management:
+
 Create and manage customer accounts.
 Track customer orders and purchase history.
-Allow customers to update their account information. Image of the customer management interface: /images/customer_management.png
-Payment Processing:
-Securely process payments through various payment gateways.
-Integrate popular payment gateways like Stripe and PayPal.
+Allow customers to update their account information.
+
 Search and Filtering:
+
 Allow customers to easily search for products by name, category, and other criteria.
-Use filters to narrow down search results.
+
 User Accounts:
+
 Customers can create accounts to manage their orders, addresses, and payment information.
 Store customer information securely.
+
 Responsive Design:
+
 The website is responsive and optimized for all devices.
 Ensure a seamless shopping experience on any device.
-SEO-Friendly:
-The website is optimized for search engines to improve visibility.
-Increase organic traffic and attract more customers.
 
 ## Technologies Used
 This website is built using the following technologies:
 
-Front-End: HTML, CSS, JavaScript
-Back-End: [Insert back-end technology here, e.g., PHP, Python, Node.js]
-Database: [Insert database technology here, e.g., MySQL, PostgreSQL, MongoDB]
-Payment Gateway: [Insert payment gateway name here, e.g., Stripe, PayPal]
+Front-End: React, JavaScript/Typescript, TailwindCSS
+
+Back-End: Next.js
+
+Database: MongoDB, Prisma
+
 
 ## Setup Instructions
 1. Prerequisites:
